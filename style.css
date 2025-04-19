@@ -82,9 +82,30 @@ time {
     box-shadow: 2px 2px 8px rgba(0,0,0,.2);
     margin: 0 auto;
 }
+.image-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc (nếu cần) */
+    gap: 10px; /* Khoảng cách giữa hai hình ảnh */
+}
+
+.image-container img {
+    max-width: 100px; /* Điều chỉnh kích thước hình ảnh nếu cần */
+    height: auto;
+    border-radius: 10px; /* Bo tròn các góc nếu cần */
+}
+
+#info .col-12 {
+    margin-bottom: 10px !important; /* Giảm khoảng cách giữa các cột */
+}
 
 #info {
-    margin-top: 2rem;
+    margin-top: 1rem;
+}
+
+#heart {
+    margin: 0 auto; /* Căn chỉnh lại nếu cần */
+    padding: 5px; /* Thêm padding hoặc giảm */
 }
 
 #heart img {
