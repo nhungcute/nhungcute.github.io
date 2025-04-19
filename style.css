@@ -1,160 +1,119 @@
+/* Đặt màu nền ngoài vùng body */
+html {
+    background-color: #F4E2EF; /* Màu nền ngoài vùng body */
+}
+/* Đổi màu nền toàn trang */
 html, body {
-    
- 
-      margin: 0;
-      padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    color: #3e3e3e;
+    text-shadow: 0.4px 0.4px 0.4px rgba(0,0,0,.2);
+    background-color: #F4E2EF !important;; /* Màu nền toàn trang */
 }
 
-img {max-width: 100%;}
-
-body {
-      display: grid;
-      font-family: "Segoe UI", sans-serif;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: minmax(auto, auto);
-      color: #3e3e3e;
-      text-shadow: 0.4px 0.4px 0.4px rgba(0,0,0,.2);
-    /*background-image: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);*/
-	background-color: #F4E2EF
-
-
+img {
+    max-width: 100%;
 }
 
+/* Tiêu đề chính */
 h1 {
-      font-weight: lighter;
-      grid-column: span 3;
-      text-align: center;
-      color: #ec407a;
- font-size: 25px;
+    font-weight: lighter;
+    text-align: center;
+    color: red !important;
+    font-size: 2rem;
+    margin-top: 1rem;
 }
-
+h2 {
+    font-weight: lighter;
+    text-align: center;
+    color: red !important;
+    font-size: 1.5rem !important;
+    margin-top: 1rem;
+}
+/* Wrapper chính */
 #wrapper {
-      display: grid;
-      grid-column: 3 / 11;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: minmax(auto, auto);
-      grid-row-gap: 10px;
-      margin-top: 3.6rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
 }
 
-#clock-box, #info {
-      grid-column: span 3;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
+/* Đồng hồ */
+#clock-box {
+    background-color: #F2BDCB; /* Màu nền của clock-box */
+    color: #3e3e3e; /* Màu chữ trong clock-box */
+    padding: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 15px !important;;
+    margin: 0;
 }
 
 #clock-box #clock {
-      grid-column: 4 / 10;
-      background-color: #F2BDCB;
-      padding: .6rem 2rem;
-      padding-top: .8rem;
-      text-align: center;
-      font-size: 2.4rem;
-      border-radius: 10rem;
+    background-color: #F2BDCB !important;; /* Giữ nguyên màu nền */
+    color: #3e3e3e; /* Màu chữ */
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    margin: 1rem auto;
 }
 
 date, time {
-      display: block;
+    display: block;
 }
 
 date {
-      font-size: 40px;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 time {
-      font-family: "Arial", sans-serif;
-      line-height: 3.2rem;
-      letter-spacing: 2px;
+    font-family: "Arial", sans-serif;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
 }
 
+/* Ảnh đại diện */
 .avt {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      box-shadow: 2px 2px 8px rgba(0,0,0,.2);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.2);
+    margin: 0 auto;
 }
 
 #info {
-      margin-top: 2.6rem;
+    margin-top: 2rem;
 }
 
-#heart {
-      grid-column: span 2;
-      display: grid;
-      grid-template-rows: 2;
-      font-size: 120px;
-      color: #b90d46;
-      align-self: center;
-      padding-bottom: 2.6rem;
-      text-align: center;
+#heart img {
+    max-width: 120px;
+    margin: 0 auto;
+    display: block;
 }
 
-anni {
-      font-size: 16px;
-      letter-spacing: 0.2px;
+/* Âm nhạc */
+#music audio {
+    display: block;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 500px;
 }
 
-#info .one {
-      grid-column: 3 / 6;
-      text-align: center;
-}
+/* Responsive */
+@media (max-width: 768px) {
+    #clock-box #clock {
+        font-size: 1.2rem;
+        padding: 0.8rem 1rem;
+    }
 
-#info .two {
-      grid-column: 8 / 11;
-      text-align: center;
-}
+    .avt {
+        width: 100px;
+        height: 100px;
+    }
 
-footer {
-      grid-column: span 3;
-      text-align: center;
-      font-size: 1.6rem;
-      font-weight: lighter;
-      margin-top: 1.2rem;
-}
-
-#music {
-      grid-column: 2;
-      position: relative;
-      z-index: 1000;
-      opacity: .4;
-}
-
-#mask {
-      background-image: linear-gradient(to top, #6d44cc5d 0%, #f09cd880 100%);
-      opacity: .42;
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-}
-
-@media (max-width: 992px) {
-      #wrapper {
-            grid-column: span 12;
-      }
-
-      #clock-box #clock {
-            grid-column: 2 / 12;
-      }
-
-      .avt {
-            width: 120px;
-            height: 120px;
-      }
-
-      #info .one, #info .two{
-            grid-column: span 12;;
-      }
-
-      #heart {
-            grid-column: span 12;
-            padding-bottom: 1rem;
-      }
-
-      footer {
-            font-size: 1.2rem;
-            margin: 0;
-            padding-bottom: 2rem;
-      }
+    h1 {
+        font-size: 1.5rem;
+    }
 }
