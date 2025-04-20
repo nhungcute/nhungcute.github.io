@@ -1,11 +1,7 @@
 const yourDate = new Date("2022-02-22T00:00:00"),
 music = ['myheart','betifulinwhite','mylove'];
 
-const audioElement = document.querySelector("audio");
-audioElement.setAttribute("src", `music/${music[Math.floor(Math.random() * music.length)]}.mp3`);
-audioElement.play().catch(error => {
-    console.log("Không thể tự động phát do chính sách trình duyệt:", error);
-});
+
 
 document.addEventListener('DOMContentLoaded', function(){
       var rootTime = document.querySelector("time");
