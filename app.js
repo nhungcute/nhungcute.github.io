@@ -38,77 +38,44 @@ document.addEventListener('DOMContentLoaded', function(){
 	
 	// Slideshow
 	
-	const slideshowContainer = document.getElementById("slideshow");
-    const nextButton = document.getElementById("next");
-    const prevButton = document.getElementById("prev");
+	const apiURL = "https://api.github.com/repos/nhungcute/nhungcute.github.io/contents/slideshow";
 
-    let currentIndex = 0;
-    let images = [];
-    const slideshowPath = "https://github.com/nhungcute/nhungcute.github.io/tree/refs/heads/main/slideshow/";
+fetch(apiURL)
+    .then(response => response.json())
+    .then(data => {
+        // Lọc file ảnh (jpg, jpeg, png)
+        const images = data
+            .filter(file => /\.(jpg|jpeg|png)$/i.test(file.name))
+            .map(file => file.download_url);
 
-    // Tải danh sách ảnh từ thư mục
-    async function loadImages() {
-        try {
-            const response = await fetch(slideshowPath);
-            if (!response.ok) {
-                throw new Error("Không thể tải danh sách ảnh");
-            }
-            const parser = new DOMParser();
-            const html = await response.text();
-            const doc = parser.parseFromString(html, "text/html");
-            const links = Array.from(doc.querySelectorAll("a"))
-                .map((a) => a.href)
-                .filter((href) =>
-                    /\.(jpg|jpeg|png|gif)$/i.test(href)
-                ); // Lọc chỉ lấy file ảnh
-            images = links;
-            initSlideshow();
-        } catch (error) {
-            console.error(error);
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const slideshowContainer = document.getElementById("slideshow");
+            slideshowContainer.innerHTML = `<img src="${images[index]}" alt="Slideshow image" style="width: 100%; height: auto;">`;
         }
-    }
 
-    // Khởi tạo slideshow
-    function initSlideshow() {
-        images.forEach((src, index) => {
-            const img = document.createElement("img");
-            img.src = src;
-            if (index === 0) img.classList.add("active");
-            slideshowContainer.appendChild(img);
-        });
-        startAutoSlide();
-    }
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
 
-    // Hiển thị ảnh tiếp theo
-    function showNextImage() {
-        const currentImage = document.querySelector(".slideshow img.active");
-        currentImage.classList.remove("active");
-        currentIndex = (currentIndex + 1) % images.length;
-        slideshowContainer.children[currentIndex].classList.add("active");
-    }
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
 
-    // Hiển thị ảnh trước đó
-    function showPrevImage() {
-        const currentImage = document.querySelector(".slideshow img.active");
-        currentImage.classList.remove("active");
-        currentIndex =
-            (currentIndex - 1 + images.length) % images.length;
-        slideshowContainer.children[currentIndex].classList.add("active");
-    }
+        // Tự động chuyển ảnh sau mỗi 5 giây
+        setInterval(nextImage, 10000);
 
-    // Tự động chuyển ảnh sau 5 giây
-    function startAutoSlide() {
-        setInterval(() => {
-            showNextImage();
-        }, 5000);
-    }
+        // Hiển thị ảnh đầu tiên khi tải trang
+        //showImage(currentIndex);
 
-    // Gắn sự kiện cho nút
-    nextButton.addEventListener("click", showNextImage);
-    prevButton.addEventListener("click", showPrevImage);
-
-    // Tải ảnh
-    loadImages();
+        // Gắn sự kiện cho nút
+        document.getElementById("next").addEventListener("click", nextImage);
+        document.getElementById("prev").addEventListener("click", prevImage);
+    })
+    .catch(error => console.error("Lỗi khi tải nội dung:", error));
 	
 /*
       document.getElementsByTagName("body")[0].insertAdjacentHTML(
