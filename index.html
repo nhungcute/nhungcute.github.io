@@ -44,16 +44,20 @@
             </audio>
         </div>
         <!-- SlideShow Section -->
-        <div id="slideshow-container" class="my-4">
-			<div id="slideshow" class="slideshow">
-				<!-- Hình ảnh sẽ được thêm tự động bằng JavaScript -->
-			<img src="https://drive.google.com/file/d/1ym_0fzO0JVuKY3Kh7rdV15STaAThyS8Z/view?usp=drive_link" alt="Slideshow Image" style="width: 100%; height: auto;">
-			</div>
-			<div class="slideshow-controls">
-				<button id="prev" class="btn btn-primary">Back</button>
-				<button id="next" class="btn btn-primary">Next</button>
-			</div>
+        <div class="slideshow-container">
+		<!-- Nơi chứa các slide -->
+		<div class="slide">
+		<img src="https://drive.google.com/file/d/177t_bi23Bhedw5ItsAnAfWdU2ReTsKt3/view?usp=drive_link" alt="Image 1">
 		</div>
+		<div class="slide">
+		<img src="https://drive.google.com/file/d/1ssNW3EBSnj1rRuSBv9i536JuCqAdtx66/view?usp=drive_link" alt="Image 2">
+		</div>
+		
+		<!-- Nút điều hướng -->
+		<button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+		<button class="next" onclick="changeSlide(1)">&#10095;</button>
+	</div>
+
         
         <h2 class="mt-4">Thank you for your love <3</h2>
     </div>
