@@ -82,6 +82,27 @@ time {
     box-shadow: 2px 2px 8px rgba(0,0,0,.2);
     margin: 0 auto;
 }
+
+#pic1 img {
+    width: 120px; /* Kích thước chiều rộng ảnh */
+    height: 120px; /* Kích thước chiều cao ảnh */
+    border-radius: 50%; /* Bo tròn thành hình tròn */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng đổ bóng (tuỳ chọn) */
+    margin: 0 auto; /* Căn giữa */
+    display: block; /* Căn giữa ảnh trong div */
+}
+
+#pic2 img {
+    width: 120px; /* Kích thước chiều rộng ảnh */
+    height: 120px; /* Kích thước chiều cao ảnh */
+    border-radius: 50%; /* Bo tròn thành hình tròn */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng đổ bóng (tuỳ chọn) */
+    margin: 0 auto; /* Căn giữa */
+    display: block; /* Căn giữa ảnh trong div */
+}
+
 #info .col-12 {
     margin-bottom: 10px !important; /* Giảm khoảng cách giữa các cột */
 }
@@ -111,6 +132,17 @@ time {
  
 /* Responsive */
 @media (max-width: 768px) {
+
+     #pic1 img {
+        width: 100px; /* Giảm kích thước ảnh trên màn hình nhỏ */
+        height: 100px;
+    }
+
+    #pic2 img {
+        width: 100px; /* Giảm kích thước ảnh trên màn hình nhỏ */
+        height: 100px;
+    }
+    
     #clock-box #clock {
         font-size: 1.2rem;
         padding: 0.8rem 1rem;
