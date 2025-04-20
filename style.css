@@ -10,7 +10,7 @@ html, body {
     font-family: "Segoe UI", sans-serif;
     color: #3e3e3e;
     text-shadow: 0.4px 0.4px 0.4px rgba(0,0,0,.2);
-    background-color: #F4E2EF; /* Màu nền toàn trang */
+    background-color: #F4E2EF !important; /* Màu nền toàn trang */
 }
 
 img {
