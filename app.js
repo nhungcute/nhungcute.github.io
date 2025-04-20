@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	
 	
 	// Slideshow
-
+/*
 	const folderId = "1B_tpWbLwlc7mqT789-g2RO9K2pYNXVav"; // ID folder Google Drive
 	const apiKey = "AIzaSyDJddlVwOWA8vzdVNrcp70if4eOL30xjp0"; // API Key từ Google Cloud
 	
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	
 	// Khởi động slideshow
 	initSlideshow();
-	
+	*/
 	/*
  const apiURL = "https://api.github.com/repos/nhungcute/nhungcute.github.io/contents/slideshow";
 
