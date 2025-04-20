@@ -10,7 +10,7 @@ html, body {
     font-family: "Segoe UI", sans-serif;
     color: #3e3e3e;
     text-shadow: 0.4px 0.4px 0.4px rgba(0,0,0,.2);
-    background-color: #F4E2EF !important;; /* Màu nền toàn trang */
+    background-color: #F4E2EF; /* Màu nền toàn trang */
 }
 
 img {
@@ -45,12 +45,12 @@ h2 {
     padding: 0;
     text-align: center;
     font-size: 1.5rem;
-    border-radius: 15px !important;;
+    border-radius: 15px;
     margin: 0;
 }
 
 #clock-box #clock {
-    background-color: #F2BDCB !important;; /* Giữ nguyên màu nền */
+    background-color: #F2BDCB !important; /* Giữ nguyên màu nền */
     color: #3e3e3e; /* Màu chữ */
     padding: 1rem 2rem;
     text-align: center;
@@ -82,19 +82,6 @@ time {
     box-shadow: 2px 2px 8px rgba(0,0,0,.2);
     margin: 0 auto;
 }
-.image-container {
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center; /* Căn giữa theo chiều dọc (nếu cần) */
-    gap: 10px; /* Khoảng cách giữa hai hình ảnh */
-}
-
-.image-container img {
-    max-width: 100px; /* Điều chỉnh kích thước hình ảnh nếu cần */
-    height: auto;
-    border-radius: 10px; /* Bo tròn các góc nếu cần */
-}
-
 #info .col-12 {
     margin-bottom: 10px !important; /* Giảm khoảng cách giữa các cột */
 }
