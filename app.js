@@ -37,8 +37,61 @@ document.addEventListener('DOMContentLoaded', function(){
 	
 	
 	// Slideshow
+
+	const folderId = "1B_tpWbLwlc7mqT789-g2RO9K2pYNXVav"; // ID folder Google Drive
+	const apiKey = "AIzaSyDJddlVwOWA8vzdVNrcp70if4eOL30xjp0"; // API Key từ Google Cloud
 	
-	const apiURL = "https://api.github.com/repos/nhungcute/nhungcute.github.io/contents/slideshow";
+	async function fetchImages() {
+	  const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,webContentLink,mimeType)`;
+	
+	  try {
+	    const response = await fetch(url);
+	    const data = await response.json();
+	    // Lọc các file có định dạng ảnh
+	    const images = data.files.filter(file => file.mimeType.startsWith("image/"));
+	    return images.map(image => image.webContentLink);
+	  } catch (error) {
+	    console.error("Error fetching images:", error);
+	    return [];
+	  }
+	}
+
+
+	async function initSlideshow() {
+	const images = await fetchImages(); // Lấy danh sách URL ảnh
+	let currentIndex = 0;
+	
+	function showImage(index) {
+	const slideshowContainer = document.getElementById("slideshow");
+	slideshowContainer.innerHTML = `<img src="${images[index]}" alt="Slideshow Image" style="width: 100%; height: auto;">`;
+	}
+	
+	function nextImage() {
+	currentIndex = (currentIndex + 1) % images.length;
+	showImage(currentIndex);
+	}
+	
+	function prevImage() {
+	currentIndex = (currentIndex - 1 + images.length) % images.length;
+	showImage(currentIndex);
+	}
+	
+	// Hiển thị ảnh đầu tiên
+	showImage(currentIndex);
+	
+	// Tự động chuyển ảnh sau 5 giây
+	setInterval(nextImage, 10000);
+	
+	// Gắn sự kiện cho các nút
+	document.getElementById("next").addEventListener("click", nextImage);
+	document.getElementById("prev").addEventListener("click", prevImage);
+	}
+	
+	// Khởi động slideshow
+	initSlideshow();
+	
+	/*
+ const apiURL = "https://api.github.com/repos/nhungcute/nhungcute.github.io/contents/slideshow";
 
 fetch(apiURL)
     .then(response => response.json())
@@ -76,7 +129,7 @@ fetch(apiURL)
         document.getElementById("prev").addEventListener("click", prevImage);
     })
     .catch(error => console.error("Lỗi khi tải nội dung:", error));
-	
+	*/
 /*
       document.getElementsByTagName("body")[0].insertAdjacentHTML(
             "beforeend",
