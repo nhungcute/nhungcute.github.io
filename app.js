@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let currentIndex = 0;
     let images = [];
-    const slideshowPath = "./slideshow/";
+    const slideshowPath = "https://github.com/nhungcute/nhungcute.github.io/tree/refs/heads/main/slideshow/";
 
     // Tải danh sách ảnh từ thư mục
     async function loadImages() {
