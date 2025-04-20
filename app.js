@@ -69,7 +69,7 @@ fetch(apiURL)
         setInterval(nextImage, 10000);
 
         // Hiển thị ảnh đầu tiên khi tải trang
-        //showImage(currentIndex);
+        showImage(currentIndex);
 
         // Gắn sự kiện cho nút
         document.getElementById("next").addEventListener("click", nextImage);
