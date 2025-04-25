@@ -162,24 +162,24 @@ time {
 /* Thêm khung cho slideshow */
 .slideshow-container {
     position: relative;
-    width: 90%; /* Đặt chiều rộng 90% màn hình */
+    width: 90%; /* Chiều rộng tự động phù hợp với thiết bị */
     max-width: 800px; /* Giới hạn chiều rộng tối đa */
+    height: 450px; /* Chiều cao cố định để khung không bị thay đổi */
     margin: auto;
-    border: 2px solid #007BFF; /* Màu viền xanh */
-    border-radius: 10px; /* Bo tròn góc */
-    overflow: hidden; /* Đảm bảo không vượt ra ngoài khung */
+    border: 5px solid #007BFF; /* Viền khung */
+    border-radius: 10px; /* Bo góc */
+    overflow: hidden; /* Ẩn phần nội dung vượt quá khung */
     background: #f9f9f9; /* Màu nền khung */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng bóng */
 }
 
-/* Đảm bảo ảnh vừa khung */
 .slides {
     display: block;
-    width: 100%;
-    height: auto; /* Tự động scale để ảnh không bị méo */
-    object-fit: contain; /* Đảm bảo ảnh vừa khung mà không bị cắt */
+    width: 100%; /* Ảnh chiếm toàn bộ chiều rộng khung */
+    height: 100%; /* Ảnh chiếm toàn bộ chiều cao khung */
+    object-fit: cover; /* Đảm bảo ảnh vừa khung mà không bị méo */
+    object-position: center; /* Căn chỉnh ảnh ở giữa */
 }
-
 .buttons {
     text-align: center;
     margin-top: 10px;
