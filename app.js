@@ -106,3 +106,26 @@ document.addEventListener('DOMContentLoaded', function(){
 
  
 });
+
+// Danh sách file nhạc
+const musicFiles = [
+	"music/betifulinwhite.mp3",
+	"music/liloveyou.mp3",
+	"music/myheart.mp3",
+	"music/mylove.mp3"
+];
+
+let currentIndex_music = 0;
+
+document.getElementById("next-button").addEventListener("click", function () {
+  // Tăng chỉ số bài hát
+  currentIndex_music = (currentIndex_music + 1) % musicFiles.length;
+
+  // Cập nhật source của audio
+  const audioPlayer = document.getElementById("audio-player");
+  const audioSource = document.getElementById("audio-source");
+
+  audioSource.src = musicFiles[currentIndex_music];
+  audioPlayer.load(); // Load lại bài nhạc mới
+  audioPlayer.play(); // Phát bài nhạc
+});
