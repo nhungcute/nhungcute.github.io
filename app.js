@@ -51,7 +51,7 @@ async function fetchFileIds(folderId, apiKey) {
 function showImage(index) {
     const slideImg = document.getElementById('slide-img');
     const fileId = fileIds[index];
-    slideImg.src = `https://drive.google.com/thumbnail?id=${fileId}`;
+    slideImg.src = `https://lh3.googleusercontent.com/u/0/d/${fileId}=w1912-h954-iv1?auditContext=forDisplay`;
     slideImg.style.display = 'block';
 }
 
