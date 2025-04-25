@@ -181,6 +181,28 @@ time {
     object-position: center; /* Căn chỉnh ảnh ở giữa */
 }
 /* Next & previous buttons */
+.prev {
+    position: absolute;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    width: auto;
+    color: white;
+    font-weight: bold;
+    left: 2px; /* Sát mép trái */
+    transform: translateY(-50%); /* Căn chỉnh chính xác */
+    z-index: 10; /* Đảm bảo nút hiển thị trên nội dung */
+}
+
+.next {
+    position: absolute;
+    top: 50%; /* Căn giữa theo chiều dọc */
+    width: auto;
+    color: white;
+    font-weight: bold;
+    right: 2px; /* Sát mép phải */
+    transform: translateY(-50%); /* Căn chỉnh chính xác */
+    z-index: 10; /* Đảm bảo nút hiển thị trên nội dung */
+}
+
 .prev,
 .next {
   cursor: pointer;
