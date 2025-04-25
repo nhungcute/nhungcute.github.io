@@ -180,39 +180,31 @@ time {
     object-fit: cover; /* Đảm bảo ảnh vừa khung mà không bị méo */
     object-position: center; /* Căn chỉnh ảnh ở giữa */
 }
-/* Định dạng chung cho nút */
-.slideshow-container .button {
-    position: absolute; /* Đặt nút trong slideshow */
-    top: 50%; /* Canh giữa theo chiều dọc */
-    transform: translateY(-50%); /* Giữ vị trí chính xác giữa khung */
-    background: rgba(255, 255, 255, 0.3); /* Màu trắng mờ */
-    border: none;
-    color: white; /* Màu chữ trắng */
-    font-size: 2rem; /* Kích thước chữ lớn */
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%; /* Bo tròn nút */
-    z-index: 10; /* Đảm bảo nút nằm trên ảnh */
-    opacity: 0; /* Ẩn nút mặc định */
-    transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi */
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-/* Hiển thị nút khi di chuột vào slideshow */
-.slideshow-container:hover .button {
-    opacity: 1;
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-/* Nút Back (sát trái) */
-.slideshow-container .prev {
-    left: 10px; /* Cách mép trái 10px */
-}
-
-/* Nút Next (sát phải) */
-.slideshow-container .next {
-    right: 10px; /* Cách mép phải 10px */
-}
-
-/* Hiệu ứng hover cho nút */
-.slideshow-container .button:hover {
-    background: rgba(255, 255, 255, 0.6); /* Tăng độ sáng khi hover */
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
