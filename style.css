@@ -180,21 +180,39 @@ time {
     object-fit: cover; /* Đảm bảo ảnh vừa khung mà không bị méo */
     object-position: center; /* Căn chỉnh ảnh ở giữa */
 }
-.buttons {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
+/* Định dạng chung cho nút */
+.slideshow-container .button {
+    position: absolute; /* Đặt nút trong slideshow */
+    top: 50%; /* Canh giữa theo chiều dọc */
+    transform: translateY(-50%); /* Giữ vị trí chính xác giữa khung */
+    background: rgba(255, 255, 255, 0.3); /* Màu trắng mờ */
     border: none;
+    color: white; /* Màu chữ trắng */
+    font-size: 2rem; /* Kích thước chữ lớn */
     cursor: pointer;
-    margin: 0 5px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 50%; /* Bo tròn nút */
+    z-index: 10; /* Đảm bảo nút nằm trên ảnh */
+    opacity: 0; /* Ẩn nút mặc định */
+    transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi */
 }
 
-.button:hover {
-    background-color: #0056b3;
+/* Hiển thị nút khi di chuột vào slideshow */
+.slideshow-container:hover .button {
+    opacity: 1;
+}
+
+/* Nút Back (sát trái) */
+.slideshow-container .prev {
+    left: 10px; /* Cách mép trái 10px */
+}
+
+/* Nút Next (sát phải) */
+.slideshow-container .next {
+    right: 10px; /* Cách mép phải 10px */
+}
+
+/* Hiệu ứng hover cho nút */
+.slideshow-container .button:hover {
+    background: rgba(255, 255, 255, 0.6); /* Tăng độ sáng khi hover */
 }
