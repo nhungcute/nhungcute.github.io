@@ -69,9 +69,20 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 
 // Biến toàn cục theo dõi ảnh hiện tại
 let currentIndex = 0;
-// Slideshow 
+
+// Hàm tự động chuyển ảnh sau 10 giây
+function autoSlideShow() {
+    setInterval(() => {
+        currentIndex = (currentIndex < fileIds.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    }, 10000); // 10 giây
+}
+
+// Gọi API và khởi động slide show tự động
 fetchFileIds(folderId, API_KEY);
- 
+autoSlideShow();
+
+//auto next time
 document.addEventListener('DOMContentLoaded', function(){
 	var rootTime = document.querySelector("time");
 
