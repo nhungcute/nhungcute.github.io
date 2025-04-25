@@ -162,9 +162,9 @@ time {
 /* Thêm khung cho slideshow */
 .slideshow-container {
     position: relative;
-    width: 90%; /* Chiều rộng tự động phù hợp với thiết bị */
-    max-width: 800px; /* Giới hạn chiều rộng tối đa */
-    height: 450px; /* Chiều cao cố định để khung không bị thay đổi */
+    width: 95%; /* Chiều rộng tự động phù hợp với thiết bị */
+    max-width: 900px; /* Giới hạn chiều rộng tối đa */
+    height: 550px; /* Chiều cao cố định để khung không bị thay đổi */
     margin: auto;
     border: 2px solid #007BFF; /* Viền khung */
     border-radius: 10px; /* Bo góc */
