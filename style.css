@@ -165,7 +165,7 @@ time {
     width: 90%; /* Đặt chiều rộng 90% màn hình */
     max-width: 800px; /* Giới hạn chiều rộng tối đa */
     margin: auto;
-    border: 5px solid #007BFF; /* Màu viền xanh */
+    border: 2px solid #007BFF; /* Màu viền xanh */
     border-radius: 10px; /* Bo tròn góc */
     overflow: hidden; /* Đảm bảo không vượt ra ngoài khung */
     background: #f9f9f9; /* Màu nền khung */
