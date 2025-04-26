@@ -17,35 +17,47 @@ var folderId = '1B_tpWbLwlc7mqT789-g2RO9K2pYNXVav';
 let fileIds = [];
 var randomNumber = 0;
 
-// Hàm gọi API để lấy danh sách file từ Google Drive
+// Hàm gọi API để lấy danh sách file từ Google Drive (hỗ trợ phân trang)
 async function fetchFileIds(folderId, apiKey) {
-    const endpoint = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id,name)&key=${apiKey}`;
+    let allFileIds = [];
+    let nextPageToken = null;
 
+    do {
+        const endpoint = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=nextPageToken,files(id,name)&key=${apiKey}` +
+            (nextPageToken ? `&pageToken=${nextPageToken}` : '');
 
-    try {
-        const response = await fetch(endpoint, { method: 'GET' });
-        if (!response.ok) {
-            throw new Error(`HTTP lỗi! Trạng thái: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // Thêm các ID nhận được vào mảng fileIds
-        if (data.files && data.files.length > 0) {
-            fileIds = data.files.map(file => file.id); // Cập nhật fileIds
-            console.log('Danh sách ID file:', fileIds);
-
-            // Hiển thị ảnh random sau khi tải xong dữ liệu 
-            if (fileIds.length > 0) {
-		randomNumber = Math.floor(Math.random() * fileIds.length);
-		console.log('randomNumber:', randomNumber);
-                showImage(randomNumber);
+        try {
+            const response = await fetch(endpoint, { method: 'GET' });
+            if (!response.ok) {
+                throw new Error(`HTTP lỗi! Trạng thái: ${response.status}`);
             }
-        } else {
-            console.log('Thư mục không có file nào.');
+
+            const data = await response.json();
+
+            // Thêm các ID nhận được vào mảng fileIds
+            if (data.files && data.files.length > 0) {
+                allFileIds = allFileIds.concat(data.files.map(file => file.id)); // Cập nhật fileIds
+            }
+
+            // Cập nhật nextPageToken
+            nextPageToken = data.nextPageToken || null;
+
+        } catch (error) {
+            console.error('Có lỗi xảy ra khi gọi API:', error.message);
+            break;
         }
-    } catch (error) {
-        console.error('Có lỗi xảy ra khi gọi API:', error.message);
+    } while (nextPageToken);
+
+    fileIds = allFileIds; // Cập nhật biến toàn cục fileIds
+    console.log('Danh sách ID file đầy đủ:', fileIds);
+
+    // Hiển thị ảnh random sau khi tải xong dữ liệu 
+    if (fileIds.length > 0) {
+        randomNumber = Math.floor(Math.random() * fileIds.length);
+        console.log('randomNumber:', randomNumber);
+        showImage(randomNumber);
+    } else {
+        console.log('Thư mục không có file nào.');
     }
 }
 
