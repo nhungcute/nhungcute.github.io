@@ -38,6 +38,7 @@ async function fetchFileIds(folderId, apiKey) {
             // Hiển thị ảnh random sau khi tải xong dữ liệu 
             if (fileIds.length > 0) {
 		randomNumber = Math.floor(Math.random() * fileIds.length);
+		console.log('randomNumber:', randomNumber);
                 showImage(randomNumber);
             }
         } else {
@@ -66,6 +67,7 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 // Nút Next
 document.getElementById('nextBtn').addEventListener('click', () => {
     randomNumber = (randomNumber < fileIds.length - 1) ? randomNumber + 1 : 0;
+    console.log('randomNumber:', randomNumber);
     showImage(randomNumber);
 });
 
