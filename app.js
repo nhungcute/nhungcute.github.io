@@ -35,9 +35,10 @@ async function fetchFileIds(folderId, apiKey) {
             fileIds = data.files.map(file => file.id); // Cập nhật fileIds
             console.log('Danh sách ID file:', fileIds);
 
-            // Hiển thị ảnh đầu tiên sau khi tải xong dữ liệu
+            // Hiển thị ảnh random sau khi tải xong dữ liệu 
             if (fileIds.length > 0) {
-                showImage(0);
+		var randomNumber = Math.floor(Math.random() * fileIds.length);
+                showImage(randomNumber);
             }
         } else {
             console.log('Thư mục không có file nào.');
