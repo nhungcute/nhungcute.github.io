@@ -15,7 +15,7 @@ music = ['myheart','betifulinwhite','mylove'];
 var folderId = '1B_tpWbLwlc7mqT789-g2RO9K2pYNXVav';
 // Danh sách ID file từ API Google Drive
 let fileIds = [];
-
+var randomNumber = 0;
 
 // Hàm gọi API để lấy danh sách file từ Google Drive
 async function fetchFileIds(folderId, apiKey) {
@@ -37,7 +37,7 @@ async function fetchFileIds(folderId, apiKey) {
 
             // Hiển thị ảnh random sau khi tải xong dữ liệu 
             if (fileIds.length > 0) {
-		var randomNumber = Math.floor(Math.random() * fileIds.length);
+		randomNumber = Math.floor(Math.random() * fileIds.length);
                 showImage(randomNumber);
             }
         } else {
@@ -58,24 +58,24 @@ function showImage(index) {
 
 // Nút Back
 document.getElementById('prevBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : fileIds.length - 1;
-    showImage(currentIndex);
+    randomNumber = (randomNumber > 0) ? randomNumber - 1 : fileIds.length - 1;
+    showImage(randomNumber);
 });
 
 // Nút Next
 document.getElementById('nextBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex < fileIds.length - 1) ? currentIndex + 1 : 0;
-    showImage(currentIndex);
+    randomNumber = (randomNumber < fileIds.length - 1) ? randomNumber + 1 : 0;
+    showImage(randomNumber);
 });
 
 // Biến toàn cục theo dõi ảnh hiện tại
-let currentIndex = 0;
+//let currentIndex = 0;
 
 // Hàm tự động chuyển ảnh sau 10 giây
 function autoSlideShow() {
     setInterval(() => {
-        currentIndex = (currentIndex < fileIds.length - 1) ? currentIndex + 1 : 0;
-        showImage(currentIndex);
+        randomNumber = (randomNumber < fileIds.length - 1) ? randomNumber + 1 : 0;
+        showImage(randomNumber);
     }, 10000); // 10 giây
 }
 
