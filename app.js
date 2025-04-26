@@ -59,6 +59,7 @@ function showImage(index) {
 // Nút Back
 document.getElementById('prevBtn').addEventListener('click', () => {
     randomNumber = (randomNumber > 0) ? randomNumber - 1 : fileIds.length - 1;
+    console.log('randomNumber:', randomNumber);
     showImage(randomNumber);
 });
 
@@ -75,6 +76,7 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 function autoSlideShow() {
     setInterval(() => {
         randomNumber = (randomNumber < fileIds.length - 1) ? randomNumber + 1 : 0;
+	console.log('autoSlideShow:', randomNumber);
         showImage(randomNumber);
     }, 10000); // 10 giây
 }
