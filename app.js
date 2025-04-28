@@ -103,7 +103,7 @@ autoSlideShow();
 document.addEventListener('DOMContentLoaded', function(){
 	var rootTime = document.querySelector("time");
 
-	document.querySelector("anni").textContent = `${(yourDate.getDate()>9)?yourDate.getDate():"0"+yourDate.getDate()}-${(yourDate.getMonth()>8)?(yourDate.getMonth()+1):"0"+(yourDate.getMonth()+1)}-${yourDate.getFullYear()}`;
+	document.querySelector("anni").textContent = `${(yourDate.getDate()>9)?yourDate.getDate():"0"+yourDate.getDate()}-${(yourDate.getMonth()>8)?(yourDate.getMonth()+1):"0"+(yourDate.getMonth()+1)}-${yourDate.getFullYear()}` +"  "+"00:00:00";
 
 	document.querySelector("date").textContent = Math.floor( Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24)+" DAYS";
 
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		hrs = (Math.floor( Math.floor((today - yourDate) / 1000) / 60 / 60)) % 24,
 		min = (Math.floor( Math.floor((today - yourDate) / 1000) / 60)) % 60,
 		sec =  Math.floor((today - yourDate) / 1000) % 60;
-		rootTime.textContent = `${(hrs>9)?hrs:"0"+hrs}:${(min>9)?min:"0"+min}:${(sec>9)?sec:"0"+sec}`;
+		rootTime.textContent = `${(today.getDate()>9)?today.getDate():"0"+today.getDate()}-${(today.getMonth()>8)?(today.getMonth()+1):"0"+(today.getMonth()+1)}-${today.getFullYear()}` +"  "+`${(hrs>9)?hrs:"0"+hrs}:${(min>9)?min:"0"+min}:${(sec>9)?sec:"0"+sec}`;
 	} olock();
 	var timer = setInterval(function(){olock()}, 1000);
 
@@ -122,3 +122,70 @@ document.addEventListener('DOMContentLoaded', function(){
 	 
 });
  
+
+
+(function() {
+    var canvas = document.getElementById('snowCanvas');
+    var ctx = canvas.getContext('2d');
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    var flakes = [];
+
+    function Snowflake() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.radius = Math.random() * 3 + 1;
+        this.speedY = Math.random() * 1 + 0.5;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.opacity = Math.random();
+    }
+
+    Snowflake.prototype.update = function() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+
+        if (this.y > height) {
+            this.y = 0;
+            this.x = Math.random() * width;
+        }
+
+        if (this.x > width || this.x < 0) {
+            this.x = Math.random() * width;
+        }
+    }
+
+    Snowflake.prototype.draw = function() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 255, 255," + this.opacity + ")";
+        ctx.fill();
+    }
+
+    function createFlakes() {
+        for (var i = 0; i < 100; i++) {
+            flakes.push(new Snowflake());
+        }
+    }
+
+    function drawFlakes() {
+        ctx.clearRect(0, 0, width, height);
+        for (var i = 0; i < flakes.length; i++) {
+            flakes[i].update();
+            flakes[i].draw();
+        }
+        requestAnimationFrame(drawFlakes);
+    }
+
+    window.addEventListener('resize', function() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    });
+
+    createFlakes();
+    drawFlakes();
+})();
