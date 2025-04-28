@@ -7,10 +7,10 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family: 'Poppins', sans-serif; /* Font mềm mại hơn */
     color: #3e3e3e;
     text-shadow: 0.4px 0.4px 0.4px rgba(0,0,0,.2);
-    background-color: #F4E2EF !important; /* Màu nền toàn trang */
+    background: linear-gradient(to bottom right, #ffe0e9, #ffffff) !important; /* Màu nền toàn trang */
 }
 
 img {
@@ -68,7 +68,7 @@ date {
     font-weight: bold;
 }
 
-time {
+time, anni {
     font-family: "Arial", sans-serif;
     line-height: 1.5rem;
     letter-spacing: 1px;
@@ -129,10 +129,22 @@ time {
     width: 100%;
     max-width: 500px;
 }
+
+#container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa các thẻ */
+}
  
 /* Responsive */
 @media (max-width: 768px) {
 
+	#container {
+        flex-wrap: wrap; /* Cho phép xuống hàng nếu không đủ không gian */
+        gap: 5px; /* Giảm khoảng cách trên màn hình nhỏ */
+    }
+	
      #pic1 img {
         width: 100px; /* Giảm kích thước ảnh trên màn hình nhỏ */
         height: 100px;
@@ -252,4 +264,16 @@ time {
 
 #next-button:hover {
   background-color: #0056b3;
+}
+
+
+
+#snowCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Không ảnh hưởng việc bấm vào nút */
+    width: 100%;
+    height: 100%;
+    z-index: 9998; /* Thấp hơn hiệu ứng trái tim một chút nếu có */
 }
