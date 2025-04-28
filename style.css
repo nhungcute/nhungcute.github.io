@@ -69,9 +69,10 @@ date {
 }
 
 time, anni {
-    font-family: "Arial", sans-serif;
+    font-family: 'Poppins', sans-serif; /* Font mềm mại hơn */
     line-height: 1.5rem;
     letter-spacing: 1px;
+    font-size: 1.2rem; /* Thay đổi kích thước font */
 }
 
 /* Ảnh đại diện */
