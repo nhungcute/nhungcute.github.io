@@ -11,18 +11,7 @@ const yourDate = new Date("2022-02-22T00:00:00");
         appId: "APP_ID"
     };
 
-    // Khởi tạo Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
-
-    // Đếm số lần truy cập
-    const visitRef = database.ref('visitCount');
-    visitRef.once('value').then(snapshot => {
-        let count = snapshot.val() || 0; // Lấy giá trị hiện tại
-        count++;
-        visitRef.set(count); // Cập nhật giá trị
-        document.body.innerHTML += `<p>Số lần truy cập: ${count}</p>`;
-    });
+   
 // end connect
 const CLIENT_ID = '451667163554-rrbvqoahepjlq35d634c09fgc8ssuofo.apps.googleusercontent.com'; // Lấy từ Google Cloud Console
 const API_KEY = 'AIzaSyDJddlVwOWA8vzdVNrcp70if4eOL30xjp0'; // Lấy từ Google Cloud Console
