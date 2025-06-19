@@ -1,80 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Gửi dữ liệu vào Google Sheets bằng OAuth</title>
-  <script src="https://apis.google.com/js/api.js"></script>
+  <meta charset="UTF-8" />
+  <title>Demo gửi dữ liệu vào Google Sheets</title>
 </head>
 <body>
-  <h2>Gửi dữ liệu vào Google Sheets bằng Google Sheets API</h2>
-  <button onclick="handleAuthClick()">🔐 Đăng nhập</button>
-  <button onclick="appendData()">📤 Gửi dữ liệu</button>
+  <h2>Gửi dữ liệu</h2>
+  <form id="myForm">
+    <label>Họ tên: <input type="text" name="name" /></label><br />
+    <label>Email: <input type="email" name="email" /></label><br />
+    <button type="submit">Gửi</button>
+  </form>
+
+  <p id="status"></p>
 
   <script>
-    const CLIENT_ID = 'PASTE_YOUR_CLIENT_ID_HERE.apps.googleusercontent.com';
-    const API_KEY = 'PASTE_YOUR_API_KEY_HERE';
-    const SPREADSHEET_ID = 'PASTE_YOUR_SPREADSHEET_ID_HERE';
-    const SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx_Qo2PWeC_J4_AO58DdHF4DwIjfHPvZddoX_JypN2QehqHuAWMs9ml9N4DFlNaa3EF/exec';
 
-    // 1️⃣ Tải Google API và khởi tạo client
-    function initApiClient() {
-      return gapi.client.init({
-        apiKey: API_KEY,
-        clientId: CLIENT_ID,
-        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-        scope: SCOPE
-      });
-    }
-
-    // 2️⃣ Bắt đầu khi trang tải xong
-    function start() {
-      gapi.load('client:auth2', () => {
-        initApiClient().then(() => {
-          console.log('✅ GAPI client đã sẵn sàng');
-        });
-      });
-    }
-
-    window.onload = start;
-
-    // 3️⃣ Đăng nhập với OAuth2
-    function handleAuthClick() {
-      gapi.auth2.getAuthInstance().signIn().then(() => {
-        console.log("🔐 Đã xác thực người dùng");
-      });
-    }
-
-    // 4️⃣ Gửi dữ liệu vào Google Sheets
-    function appendData() {
-      if (!gapi.client.sheets) {
-        alert("Google Sheets API chưa sẵn sàng. Hãy thử lại sau khi xác thực.");
-        return;
-      }
-
-      const values = [
-        ["Tên", "Email", "Thời gian"],
-        ["Mạnh", "manh@example.com", new Date().toLocaleString()]
+    document.getElementById('myForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const form = e.target;
+      const data = [
+        form.name.value,
+        form.email.value,
+        new Date().toLocaleString()
       ];
 
-      const params = {
-        spreadsheetId: SPREADSHEET_ID,
-        range: 'Sheet1!A1',
-        valueInputOption: 'USER_ENTERED',
-        insertDataOption: 'INSERT_ROWS'
-      };
-
-      const body = {
-        values: values
-      };
-
-      gapi.client.sheets.spreadsheets.values.append(params, body).then(response => {
-        console.log("📄 Dữ liệu đã ghi:", response);
-        alert("🎉 Gửi dữ liệu thành công!");
-      }, error => {
-        console.error("❌ Lỗi ghi dữ liệu:", error);
-        alert("Lỗi gửi dữ liệu. Xem console để biết thêm chi tiết.");
+      fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(res => res.text())
+      .then(msg => {
+        document.getElementById("status").textContent = "🎉 Gửi thành công!";
+        form.reset();
+      })
+      .catch(err => {
+        document.getElementById("status").textContent = "❌ Lỗi gửi dữ liệu";
+        console.error("Error!", err);
       });
-    }
+    });
   </script>
 </body>
 </html>
