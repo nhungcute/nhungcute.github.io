@@ -9,6 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Thêm Dancing Script font từ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Thêm Pacifico font từ Google Fonts cho đoạn thơ -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <!-- Thêm Remixicon cho các biểu tượng -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
@@ -17,9 +19,11 @@
             --text-white: #ffffff;
             --primary-color: #e63946;
             --date-color: #6d3e28; /* Màu cho 14/07 */
+            --poem-color: #6d3e28; /* Màu cho đoạn thơ */
             --gap: 20px;
             --title-fs: 2rem;
             --title-font: 'Dancing Script', cursive;
+            --poem-font: 'Pacifico', cursive;
             --biger-size: 1.5rem;
         }
 
@@ -35,10 +39,10 @@
             }
         }
 
-        /* Hiệu ứng chạy từ trái vào */
+        /* Hiệu ứng chạy từ trái vào - chỉ lệch 30% */
         @keyframes slideInFromLeft {
             0% {
-                transform: translateX(-100%);
+                transform: translateX(-30%);
                 opacity: 0;
             }
             100% {
@@ -47,10 +51,10 @@
             }
         }
 
-        /* Hiệu ứng chạy từ phải vào */
+        /* Hiệu ứng chạy từ phải vào - chỉ lệch 30% */
         @keyframes slideInFromRight {
             0% {
-                transform: translateX(100%);
+                transform: translateX(30%);
                 opacity: 0;
             }
             100% {
@@ -59,26 +63,15 @@
             }
         }
 
-        /* Hiệu ứng chạy ra khỏi màn hình */
-        @keyframes slideOutToLeft {
+        /* Hiệu ứng fade in từ dưới lên */
+        @keyframes fadeInUp {
             0% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(-100%);
+                transform: translateY(50px);
                 opacity: 0;
             }
-        }
-
-        @keyframes slideOutToRight {
-            0% {
-                transform: translateX(0);
-                opacity: 1;
-            }
             100% {
-                transform: translateX(100%);
-                opacity: 0;
+                transform: translateY(0);
+                opacity: 1;
             }
         }
 
@@ -408,23 +401,6 @@
             animation-delay: 0.9s; /* Delay để hiệu ứng xảy ra sau section-4 */
         }
 
-        /* Hiệu ứng khi phần tử rời khỏi viewport */
-        .fami-section-1.animate-out {
-            animation: slideOutToLeft 1s forwards;
-        }
-
-        .fami-section-2.animate-out {
-            animation: slideOutToRight 1s forwards;
-        }
-
-        .fami-section-4.animate-out {
-            animation: slideOutToRight 1s forwards;
-        }
-
-        .fami-section-3.animate-out {
-            animation: slideOutToLeft 1s forwards;
-        }
-
         .fami-section.image-section {
             background-size: cover;
             background-position: center;
@@ -476,6 +452,128 @@
 
         .fami-content .person {
             margin-top: 10px;
+        }
+
+        /* Định dạng cho invitation-album */
+        .invitation-album {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+            gap: 20px;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Định dạng cho đoạn thơ */
+        .poem-container {
+            width: 100%;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+            animation-delay: 0.5s;
+        }
+
+        .poem-text {
+            font-family: var(--poem-font);
+            font-size: 2vw;
+            color: var(--poem-color);
+            line-height: 1.6;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        /* Định dạng cho album ảnh */
+        .album-container {
+            width: 100%;
+            height: 40vw;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .album-slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .album-slide {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 25%; /* Căn giữa slide chính */
+            transition: all 0.5s ease;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .album-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Đảm bảo ảnh lấp đầy khung và cắt bớt phần thừa */
+        }
+
+        .album-slide.prev,
+        .album-slide.next {
+            width: 25%;
+            height: 100%;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .album-slide.prev {
+            left: 0;
+        }
+
+        .album-slide.next {
+            left: 75%;
+        }
+
+        .album-slide.active {
+            z-index: 2;
+        }
+
+        /* Nút điều hướng album */
+        .album-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .album-nav:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .album-nav.prev-btn {
+            left: 10px;
+        }
+
+        .album-nav.next-btn {
+            right: 10px;
+        }
+
+        .album-nav i {
+            color: var(--primary-color);
+            font-size: 20px;
         }
 
         @media (max-width: 768px) {
@@ -532,6 +630,34 @@
             
             .fami-content .address {
                 font-size: 0.75rem;
+            }
+
+            /* Điều chỉnh kích thước đoạn thơ trên mobile */
+            .poem-text {
+                font-size: 4vw;
+            }
+
+            /* Điều chỉnh album trên mobile */
+            .album-container {
+                height: 60vw;
+            }
+
+            .album-slide {
+                width: 80%;
+                left: 10%;
+            }
+
+            .album-slide.prev,
+            .album-slide.next {
+                width: 10%;
+            }
+
+            .album-slide.prev {
+                left: 0;
+            }
+
+            .album-slide.next {
+                left: 90%;
             }
         }
     </style>
@@ -613,7 +739,7 @@
                         </div>
                     </div>
 
-                    <!-- Thêm khối invitation-fami -->
+                    <!-- Khối invitation-fami -->
                     <div class="invitation-fami">
                         <h3 class="card-title">Thông Tin Gia Đình</h3>
                         <div class="fami-grid">
@@ -649,6 +775,31 @@
                             <!-- Phần 4: Dưới bên phải - có ảnh nền -->
                             <div class="fami-section image-section image-section-4 fami-section-4">
                                 <!-- Phần này có ảnh nền từ CSS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thêm khối invitation-album với đoạn thơ và album ảnh -->
+                    <div class="invitation-album">
+                        <div class="poem-container">
+                            <p class="poem-text">
+                                Hôn nhân là chuyện cả đời,<br>
+                                Yêu người vừa ý, cưới người mình thương...
+                            </p>
+                        </div>
+                        
+                        <!-- Album ảnh -->
+                        <div class="album-container">
+                            <div class="album-slider">
+                                <!-- Slides sẽ được thêm bằng JavaScript -->
+                            </div>
+                            
+                            <!-- Nút điều hướng -->
+                            <div class="album-nav prev-btn">
+                                <i class="ri-arrow-left-s-line"></i>
+                            </div>
+                            <div class="album-nav next-btn">
+                                <i class="ri-arrow-right-s-line"></i>
                             </div>
                         </div>
                     </div>
@@ -759,7 +910,7 @@
                     // Nếu phần tử đang trong viewport và chưa được hiển thị
                     if (isInView && !sectionStates[sectionId]) {
                         // Xóa tất cả các class animation trước đó
-                        section.classList.remove('animate-in', 'animate-out');
+                        section.classList.remove('animate-in');
                         
                         // Thêm hiệu ứng animate-in
                         setTimeout(() => {
@@ -770,7 +921,7 @@
                     // Nếu phần tử đã ra khỏi viewport và đang được hiển thị
                     else if (isOutOfView && sectionStates[sectionId]) {
                         // Xóa tất cả các class animation trước đó
-                        section.classList.remove('animate-in', 'animate-out');
+                        section.classList.remove('animate-in');
                         
                         // Đặt lại trạng thái để khi cuộn lại sẽ hiển thị lại hiệu ứng
                         sectionStates[sectionId] = false;
@@ -791,18 +942,125 @@
             famiSections.forEach(section => {
                 section.addEventListener('animationend', function() {
                     animationInProgress = false;
-                    
-                    // Nếu animation là animate-out, đặt opacity về 0
-                    if (section.classList.contains('animate-out')) {
-                        section.style.opacity = '0';
-                        section.classList.remove('animate-out');
-                    }
                 });
                 
                 section.addEventListener('animationstart', function() {
                     animationInProgress = true;
                 });
             });
+
+            // Xử lý album ảnh
+            const albumSlider = document.querySelector('.album-slider');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            
+            // Danh sách ảnh
+            const images = [
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_95422.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9567.JPG'
+            ];
+            
+            let currentIndex = 0;
+            
+            // Hàm tạo slide
+            function createSlide(imgSrc, className) {
+                const slide = document.createElement('div');
+                slide.className = `album-slide ${className}`;
+                
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = 'Wedding Photo';
+                
+                slide.appendChild(img);
+                return slide;
+            }
+            
+            // Hàm cập nhật album
+            function updateAlbum() {
+                // Xóa tất cả slide hiện tại
+                albumSlider.innerHTML = '';
+                
+                // Tính toán chỉ số cho slide trước và sau
+                const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                const nextIndex = (currentIndex + 1) % images.length;
+                
+                // Thêm slide trước
+                albumSlider.appendChild(createSlide(images[prevIndex], 'prev'));
+                
+                // Thêm slide hiện tại
+                albumSlider.appendChild(createSlide(images[currentIndex], 'active'));
+                
+                // Thêm slide sau
+                albumSlider.appendChild(createSlide(images[nextIndex], 'next'));
+            }
+            
+            // Hàm chuyển đến slide trước
+            function goToPrevSlide() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateAlbum();
+            }
+            
+            // Hàm chuyển đến slide tiếp theo
+            function goToNextSlide() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateAlbum();
+            }
+            
+            // Thêm sự kiện cho nút điều hướng
+            prevBtn.addEventListener('click', goToPrevSlide);
+            nextBtn.addEventListener('click', goToNextSlide);
+            
+            // Xử lý vuốt trên thiết bị cảm ứng
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            const albumContainer = document.querySelector('.album-container');
+            
+            albumContainer.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            albumContainer.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                // Tính khoảng cách vuốt
+                const swipeDistance = touchEndX - touchStartX;
+                
+                // Nếu vuốt đủ xa (hơn 50px)
+                if (Math.abs(swipeDistance) > 50) {
+                    if (swipeDistance > 0) {
+                        // Vuốt từ trái sang phải -> hiển thị ảnh trước
+                        goToPrevSlide();
+                    } else {
+                        // Vuốt từ phải sang trái -> hiển thị ảnh tiếp theo
+                        goToNextSlide();
+                    }
+                }
+            }
+            
+            // Tự động chuyển slide sau mỗi 5 giây
+            let autoSlideInterval = setInterval(goToNextSlide, 5000);
+            
+            // Dừng tự động chuyển slide khi người dùng tương tác
+            albumContainer.addEventListener('mouseenter', function() {
+                clearInterval(autoSlideInterval);
+            });
+            
+            albumContainer.addEventListener('mouseleave', function() {
+                autoSlideInterval = setInterval(goToNextSlide, 5000);
+            });
+            
+            // Khởi tạo album ban đầu
+            updateAlbum();
         });
     </script>
 </body>
