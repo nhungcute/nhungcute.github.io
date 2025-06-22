@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEDDING: Mạnh Tín & Hồng Nhung</title>
+    <title>WEDDING: Mạnh Tín &amp; Hồng Nhung</title>
     <!-- Thêm favicon -->
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/Logo.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Thêm Dancing Script font từ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&amp;display=swap" rel="stylesheet">
     <!-- Thêm Pacifico font từ Google Fonts cho đoạn thơ -->
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
     <!-- Thêm Remixicon cho các biểu tượng -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -224,27 +222,18 @@
             position: relative;
         }
 
-        /* Thêm overlay cho invitation-card để văn bản dễ đọc hơn */
-        .invitation-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 12px;
-            z-index: 0;
-        }
-
+        /* Thêm overlay cho invitation-card để văn bản dễ đọc hơn - đã bỏ theo yêu cầu */
         .invitation-card > * {
             position: relative;
             z-index: 1;
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.9); /* Thêm text-shadow để văn bản dễ đọc hơn */
+            font-weight: 600; /* Làm đậm văn bản để dễ đọc hơn */
         }
 
         .invitation-card .social-link a {
             color: var(--primary-color);
             border: 1px solid var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.7); /* Thêm background cho nút để dễ nhìn */
         }
 
         .invitation-card .social-link a i {
@@ -575,6 +564,46 @@
             transform: translateY(0);
         }
 
+        /* Định dạng cho album ảnh */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .gallery-item.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
         /* Định dạng cho nút điều khiển */
         .control-buttons {
             position: fixed;
@@ -752,9 +781,14 @@
                 font-size: 1.2rem;
                 padding: 10px;
             }
+            
+            /* Điều chỉnh gallery trên mobile */
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-</head>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.inset-0{inset:0px}.m-0{margin:0px}.p-0{padding:0px}</style></head>
 <body class="m-0 p-0">
     <!-- Nút điều khiển -->
     <div class="control-buttons">
@@ -772,7 +806,7 @@
     </div>
 
     <!-- Audio element (ẩn) -->
-    <audio id="backgroundMusic" loop preload="auto">
+    <audio id="backgroundMusic" loop="" preload="auto">
         <source src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/music/betifulinwhite.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -792,10 +826,10 @@
                     <a href="tel:0868920090" class="phone-menu-item">
                         <!-- Icon nữ kiểu WC (đổi ngược lại) -->
                         <svg class="gender-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" fill="#e63946"/>
-                            <path d="M14 16V19H10V16H8V19C8 20.1046 8.89543 21 10 21H14C15.1046 21 16 20.1046 16 19V16H14Z" fill="#e63946"/>
-                            <path d="M14 12H10C7.79086 12 6 13.7909 6 16H8C8 14.8954 8.89543 14 10 14H14C15.1046 14 16 14.8954 16 16H18C18 13.7909 16.2091 12 14 12Z" fill="#e63946"/>
-                            <path d="M12 13L12 17" stroke="#e63946" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" fill="#e63946"></path>
+                            <path d="M14 16V19H10V16H8V19C8 20.1046 8.89543 21 10 21H14C15.1046 21 16 20.1046 16 19V16H14Z" fill="#e63946"></path>
+                            <path d="M14 12H10C7.79086 12 6 13.7909 6 16H8C8 14.8954 8.89543 14 10 14H14C15.1046 14 16 14.8954 16 16H18C18 13.7909 16.2091 12 14 12Z" fill="#e63946"></path>
+                            <path d="M12 13L12 17" stroke="#e63946" stroke-width="2" stroke-linecap="round"></path>
                         </svg>
                         <div class="phone-menu-item-content">
                             <span class="role">Chú rể:</span>
@@ -805,8 +839,8 @@
                     <a href="tel:0393697098" class="phone-menu-item">
                         <!-- Icon nam kiểu WC (đổi ngược lại) -->
                         <svg class="gender-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" fill="#e63946"/>
-                            <path d="M14 12H10C7.79086 12 6 13.7909 6 16V19H8V21H10V19H14V21H16V19H18V16C18 13.7909 16.2091 12 14 12Z" fill="#e63946"/>
+                            <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" fill="#e63946"></path>
+                            <path d="M14 12H10C7.79086 12 6 13.7909 6 16V19H8V21H10V19H14V21H16V19H18V16C18 13.7909 16.2091 12 14 12Z" fill="#e63946"></path>
                         </svg>
                         <div class="phone-menu-item-content">
                             <span class="role">Cô dâu:</span>
@@ -834,8 +868,8 @@
                                 <button class="copy-btn" onclick="copyToClipboard('2223904506')">
                                     <!-- Icon copy mới - hai tờ giấy chồng lên nhau -->
                                     <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"/>
-                                        <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"/>
+                                        <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"></path>
+                                        <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"></path>
                                     </svg>
                                 </button>
                             </div>
@@ -848,8 +882,8 @@
                                 <button class="copy-btn" onclick="copyToClipboard('2224404902')">
                                     <!-- Icon copy mới - hai tờ giấy chồng lên nhau -->
                                     <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"/>
-                                        <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"/>
+                                        <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"></path>
+                                        <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"></path>
                                     </svg>
                                 </button>
                             </div>
@@ -867,7 +901,7 @@
             <div class="name-container">
                 <p class="banner-text">Mạnh Tín</p>
             </div>
-            <p class="banner-text">&</p>
+            <p class="banner-text">&amp;</p>
             <div class="name-container">
                 <p class="banner-text">Hồng Nhung</p>
             </div>
@@ -932,12 +966,12 @@
                         <h3 class="card-title">Thông Tin Gia Đình</h3>
                         <div class="fami-grid">
                             <!-- Phần 1: Trên bên trái - có ảnh nền -->
-                            <div class="fami-section image-section image-section-1 fami-section-1">
+                            <div class="fami-section image-section image-section-1 fami-section-1 animate-in">
                                 <!-- Phần này có ảnh nền từ CSS -->
                             </div>
                             
                             <!-- Phần 2: Trên bên phải - Nhà Trai -->
-                            <div class="fami-section fami-section-2">
+                            <div class="fami-section fami-section-2 animate-in">
                                 <h4 class="fami-title">NHÀ TRAI</h4>
                                 <div class="fami-content">
                                     <p>Bố: HÀ VĂN THÚ</p>
@@ -949,7 +983,7 @@
                             </div>
                             
                             <!-- Phần 3: Dưới bên trái - Nhà Gái -->
-                            <div class="fami-section fami-section-3">
+                            <div class="fami-section fami-section-3 animate-in">
                                 <h4 class="fami-title">NHÀ GÁI</h4>
                                 <div class="fami-content">
                                     <p>Bố: NGUYỄN VĂN PHƯƠNG</p>
@@ -961,7 +995,7 @@
                             </div>
                             
                             <!-- Phần 4: Dưới bên phải - có ảnh nền -->
-                            <div class="fami-section image-section image-section-4 fami-section-4">
+                            <div class="fami-section image-section image-section-4 fami-section-4 animate-in">
                                 <!-- Phần này có ảnh nền từ CSS -->
                             </div>
                         </div>
@@ -969,15 +1003,16 @@
                     
                     <!-- Khối invitation-album mới -->
                     <div class="invitation-album" id="invitation-album">
-                        <h3 class="card-title">Album Cưới</h3>
-                        
                         <!-- Đoạn thơ với font chữ đặc biệt -->
-                        <div class="poem" id="wedding-poem">
+                        <div class="poem animate-in" id="wedding-poem">
                             Hôn nhân là chuyện cả đời,<br>
                             Yêu người vừa ý, cưới người mình thương...
                         </div>
                         
-                        <!-- Phần nội dung album sẽ được thêm sau -->
+                        <!-- Phần gallery ảnh 2 cột -->
+                        <div class="photo-gallery" id="photo-gallery">
+                            <!-- Cột 1 và Cột 2 sẽ được tạo bằng JavaScript -->
+                        <div class="photo-column"><div class="gallery-item animate-in" id="gallery-item-0"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.JPG" alt="Ảnh cưới 1" loading="lazy"></div><div class="gallery-item animate-in" id="gallery-item-2"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.JPG" alt="Ảnh cưới 3" loading="lazy"></div><div class="gallery-item animate-in" id="gallery-item-4"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.JPG" alt="Ảnh cưới 5" loading="lazy"></div><div class="gallery-item animate-in" id="gallery-item-6"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.JPG" alt="Ảnh cưới 7" loading="lazy"></div></div><div class="photo-column"><div class="gallery-item animate-in" id="gallery-item-1"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.JPG" alt="Ảnh cưới 2" loading="lazy"></div><div class="gallery-item animate-in" id="gallery-item-3"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.JPG" alt="Ảnh cưới 4" loading="lazy"></div><div class="gallery-item animate-in" id="gallery-item-5"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_95422.JPG" alt="Ảnh cưới 6" loading="lazy"></div><div class="gallery-item animate-in" id="gallery-item-7"><img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9567.JPG" alt="Ảnh cưới 8" loading="lazy"></div></div></div>
                     </div>
                 </div>
             </div>
@@ -1092,6 +1127,7 @@
                 
                 if (isElementInViewport(invitationAlbum)) {
                     animatePoem();
+                    animateGalleryItems();
                 }
             }
 
@@ -1124,7 +1160,61 @@
                     notification.style.display = 'none';
                 }, 2000);
             };
+            
+            // Tạo gallery ảnh
+            const images = [
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_95422.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.JPG',
+                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9567.JPG'
+            ];
+            
+            // Tạo hai cột cho gallery
+            const photoGallery = document.getElementById('photo-gallery');
+            const column1 = document.createElement('div');
+            column1.className = 'photo-column';
+            const column2 = document.createElement('div');
+            column2.className = 'photo-column';
+            
+            photoGallery.appendChild(column1);
+            photoGallery.appendChild(column2);
+            
+            // Phân phối ảnh vào hai cột
+            images.forEach((imageUrl, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.id = `gallery-item-${index}`;
+                
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = `Ảnh cưới ${index + 1}`;
+                img.loading = 'lazy'; // Lazy loading để tối ưu hiệu suất
+                
+                galleryItem.appendChild(img);
+                
+                // Phân phối ảnh vào hai cột, cột nào ngắn hơn thì thêm vào
+                if (index % 2 === 0) {
+                    column1.appendChild(galleryItem);
+                } else {
+                    column2.appendChild(galleryItem);
+                }
+            });
+            
+            // Hàm kích hoạt animation cho các ảnh trong gallery
+            function animateGalleryItems() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                galleryItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate-in');
+                    }, 300 + index * 150); // Delay tăng dần cho mỗi ảnh
+                });
+            }
         });
     </script>
-</body>
-</html>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'953c83ced7071c68',t:'MTc1MDYwMzM3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+<style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
