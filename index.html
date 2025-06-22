@@ -22,6 +22,14 @@
             font-display: swap;
         }
 
+        @font-face {
+            font-family: 'Light';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/Light.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --bg: #f9f7f7;
             --text-white: #ffffff;
@@ -121,19 +129,14 @@
             text-align: center;
         }
 
-        .name-container {
-            white-space: nowrap; /* Đảm bảo không bị xuống dòng */
-            margin: 0.5rem 0;
-        }
-
-        .banner-text {
-            font-family: 'Dancing Script', cursive;
+        .couple-names {
+            font-family: 'Light', sans-serif;
             font-size: 4vw;
             font-weight: 700;
             color: rgb(255, 255, 255);
             text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.33), 0 2px 8px #fae1dd;
             line-height: 1.2;
-            display: inline-block; /* Hiển thị trên cùng một dòng */
+            margin: 0.5rem 0;
         }
 
         .divider {
@@ -222,12 +225,12 @@
             position: relative;
         }
 
-        /* Thêm overlay cho invitation-card để văn bản dễ đọc hơn - đã bỏ theo yêu cầu */
+        /* Thêm text-shadow để văn bản dễ đọc hơn */
         .invitation-card > * {
             position: relative;
             z-index: 1;
-            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.9); /* Thêm text-shadow để văn bản dễ đọc hơn */
-            font-weight: 600; /* Làm đậm văn bản để dễ đọc hơn */
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.9);
+            font-weight: 600;
         }
 
         .invitation-card .social-link a {
@@ -731,13 +734,63 @@
             font-weight: 500;
         }
 
+        /* Popup menu styles */
+        .popup-menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 1100;
+            max-width: 90%;
+            width: 600px;
+            display: none;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1050;
+            display: none;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .popup-close:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
         @media (max-width: 768px) {
             .banner-content {
                 width: 80%;
                 padding: 1.5rem;
             }
             
-            .banner-text {
+            .couple-names {
                 font-size: 7vw;
             }
             
@@ -795,7 +848,7 @@
         <button class="control-button toggleAudio">
             <i class="ri-volume-mute-fill"></i>
         </button>
-        <button class="control-button toggleGift" data-bs-toggle="modal" data-bs-target="#giftModal">
+        <button class="control-button toggleGift">
             <svg class="gift-icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                 <g fill="#fff">
                     <path d="M208 128v72a8 8 0 0 1-8 8H56a8 8 0 0 1-8-8v-72Z" opacity=".2"></path>
@@ -852,45 +905,38 @@
         </div>
     </div>
 
-    <!-- Gift Modal (Bootstrap) -->
-    <div class="modal fade" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Gift Popup Menu -->
+    <div class="popup-overlay" id="giftOverlay"></div>
+    <div class="popup-menu gift-menu" id="giftMenu">
+        <button class="popup-close" id="closeGiftMenu">×</button>
+        <div class="gift-grid">
+            <div class="gift-column">
+                <div class="gift-title">CHÚ RỂ</div>
+                <div class="account-number">
+                    <span>STK: 2223904506</span>
+                    <button class="copy-btn" onclick="copyToClipboard('2223904506')">
+                        <!-- Icon copy mới - hai tờ giấy chồng lên nhau -->
+                        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"></path>
+                            <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"></path>
+                        </svg>
+                    </button>
                 </div>
-                <div class="modal-body">
-                    <div class="gift-grid">
-                        <div class="gift-column">
-                            <div class="gift-title">CHÚ RỂ</div>
-                            <div class="account-number">
-                                <span>STK: 2223904506</span>
-                                <button class="copy-btn" onclick="copyToClipboard('2223904506')">
-                                    <!-- Icon copy mới - hai tờ giấy chồng lên nhau -->
-                                    <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"></path>
-                                        <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/ckbid.jpg" alt="QR Code Chú rể" class="gift-image">
-                        </div>
-                        <div class="gift-column">
-                            <div class="gift-title">CÔ DÂU</div>
-                            <div class="account-number">
-                                <span>STK: 2224404902</span>
-                                <button class="copy-btn" onclick="copyToClipboard('2224404902')">
-                                    <!-- Icon copy mới - hai tờ giấy chồng lên nhau -->
-                                    <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"></path>
-                                        <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/vkbid.jpg" alt="QR Code Cô dâu" class="gift-image">
-                        </div>
-                    </div>
+                <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/ckbid.jpg" alt="QR Code Chú rể" class="gift-image">
+            </div>
+            <div class="gift-column">
+                <div class="gift-title">CÔ DÂU</div>
+                <div class="account-number">
+                    <span>STK: 2224404902</span>
+                    <button class="copy-btn" onclick="copyToClipboard('2224404902')">
+                        <!-- Icon copy mới - hai tờ giấy chồng lên nhau -->
+                        <svg class="copy-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#e63946" opacity="0.4"></path>
+                            <path d="M17.1 2H12.9C9.45 2 8.05 3.37 8.01 6.75H11.1C15.3 6.75 17.25 8.7 17.25 12.9V15.99C20.63 15.95 22 14.55 22 11.1V6.9C22 3.4 20.6 2 17.1 2Z" fill="#e63946"></path>
+                        </svg>
+                    </button>
                 </div>
+                <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/vkbid.jpg" alt="QR Code Cô dâu" class="gift-image">
             </div>
         </div>
     </div>
@@ -898,13 +944,8 @@
     <div class="banner-container">
         <div class="banner-background absolute inset-0"></div>
         <div class="banner-content">
-            <div class="name-container">
-                <p class="banner-text">Mạnh Tín</p>
-            </div>
-            <p class="banner-text">&amp;</p>
-            <div class="name-container">
-                <p class="banner-text">Hồng Nhung</p>
-            </div>
+            <!-- Gộp tên cô dâu chú rể thành một khối với font Light.ttf -->
+            <div class="couple-names">Mạnh Tín &amp; Hồng Nhung</div>
             
             <div class="divider"></div>
             
@@ -966,12 +1007,12 @@
                         <h3 class="card-title">Thông Tin Gia Đình</h3>
                         <div class="fami-grid">
                             <!-- Phần 1: Trên bên trái - có ảnh nền -->
-                            <div class="fami-section image-section image-section-1 fami-section-1 animate-in">
+                            <div class="fami-section image-section image-section-1 fami-section-1 animate-in" style="transform: translateX(-30%); opacity: 0;">
                                 <!-- Phần này có ảnh nền từ CSS -->
                             </div>
                             
                             <!-- Phần 2: Trên bên phải - Nhà Trai -->
-                            <div class="fami-section fami-section-2 animate-in">
+                            <div class="fami-section fami-section-2 animate-in" style="transform: translateX(30%); opacity: 0;">
                                 <h4 class="fami-title">NHÀ TRAI</h4>
                                 <div class="fami-content">
                                     <p>Bố: HÀ VĂN THÚ</p>
@@ -983,7 +1024,7 @@
                             </div>
                             
                             <!-- Phần 3: Dưới bên trái - Nhà Gái -->
-                            <div class="fami-section fami-section-3 animate-in">
+                            <div class="fami-section fami-section-3 animate-in" style="transform: translateX(-30%); opacity: 0;">
                                 <h4 class="fami-title">NHÀ GÁI</h4>
                                 <div class="fami-content">
                                     <p>Bố: NGUYỄN VĂN PHƯƠNG</p>
@@ -995,7 +1036,7 @@
                             </div>
                             
                             <!-- Phần 4: Dưới bên phải - có ảnh nền -->
-                            <div class="fami-section image-section image-section-4 fami-section-4 animate-in">
+                            <div class="fami-section image-section image-section-4 fami-section-4 animate-in" style="transform: translateX(30%); opacity: 0;">
                                 <!-- Phần này có ảnh nền từ CSS -->
                             </div>
                         </div>
@@ -1079,6 +1120,7 @@
             const famiSections = document.querySelectorAll('.fami-section');
             const invitationFami = document.getElementById('invitation-fami');
             let famiAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation chưa
+            let lastScrollTop = 0; // Biến để theo dõi vị trí cuộn trước đó
 
             // Xử lý hiệu ứng cho đoạn thơ
             const poemElement = document.getElementById('wedding-poem');
@@ -1095,6 +1137,21 @@
                     rect.top <= windowHeight * 0.8 && 
                     rect.bottom >= windowHeight * 0.2
                 );
+            }
+
+            // Hàm reset animation cho các section trong invitation-fami
+            function resetFamiSections() {
+                famiSections.forEach((section) => {
+                    section.classList.remove('animate-in');
+                    // Đặt lại trạng thái ban đầu
+                    if (section.classList.contains('fami-section-1') || section.classList.contains('fami-section-3')) {
+                        section.style.transform = 'translateX(-30%)';
+                    } else {
+                        section.style.transform = 'translateX(30%)';
+                    }
+                    section.style.opacity = '0';
+                });
+                famiAnimationTriggered = false;
             }
 
             // Hàm kích hoạt animation cho các section trong invitation-fami
@@ -1121,6 +1178,18 @@
 
             // Hàm xử lý sự kiện cuộn
             function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Kiểm tra nếu đã cuộn lên đầu trang và sau đó cuộn xuống lại
+                if (scrollTop < 10 && lastScrollTop > scrollTop) {
+                    // Đã cuộn lên đầu trang, reset animation
+                    resetFamiSections();
+                }
+                
+                // Cập nhật vị trí cuộn trước đó
+                lastScrollTop = scrollTop;
+                
+                // Kích hoạt animation khi phần tử vào viewport
                 if (isElementInViewport(invitationFami)) {
                     animateFamiSections();
                 }
@@ -1137,21 +1206,56 @@
             // Kích hoạt kiểm tra ban đầu (trong trường hợp các phần tử đã hiển thị khi tải trang)
             setTimeout(handleScroll, 500);
 
-            // Hàm copy số tài khoản vào clipboard
+            // Hàm copy số tài khoản vào clipboard - cải tiến để hoạt động trên cả mobile
             window.copyToClipboard = function(text) {
+                // Kiểm tra hỗ trợ Clipboard API (phương pháp hiện đại)
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text)
+                        .then(() => {
+                            showCopyNotification();
+                        })
+                        .catch(err => {
+                            console.error('Không thể copy: ', err);
+                            fallbackCopyTextToClipboard(text);
+                        });
+                } else {
+                    // Phương pháp dự phòng cho các trình duyệt cũ hơn
+                    fallbackCopyTextToClipboard(text);
+                }
+            };
+            
+            // Phương pháp dự phòng để copy text
+            function fallbackCopyTextToClipboard(text) {
                 // Tạo một phần tử input tạm thời
                 const tempInput = document.createElement('input');
                 tempInput.value = text;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = 0;
+                tempInput.style.top = '0';
+                tempInput.style.left = '0';
                 document.body.appendChild(tempInput);
                 
                 // Chọn và copy nội dung
+                tempInput.focus();
                 tempInput.select();
-                document.execCommand('copy');
+                
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        showCopyNotification();
+                    } else {
+                        console.error('Không thể copy');
+                    }
+                } catch (err) {
+                    console.error('Lỗi khi copy: ', err);
+                }
                 
                 // Xóa phần tử input tạm thời
                 document.body.removeChild(tempInput);
-                
-                // Hiển thị thông báo
+            }
+            
+            // Hiển thị thông báo đã copy
+            function showCopyNotification() {
                 const notification = document.getElementById('copyNotification');
                 notification.style.display = 'block';
                 
@@ -1159,7 +1263,7 @@
                 setTimeout(function() {
                     notification.style.display = 'none';
                 }, 2000);
-            };
+            }
             
             // Tạo gallery ảnh
             const images = [
@@ -1213,8 +1317,32 @@
                     }, 300 + index * 150); // Delay tăng dần cho mỗi ảnh
                 });
             }
+
+            // Xử lý popup gift menu
+            const giftButton = document.querySelector('.toggleGift');
+            const giftMenu = document.getElementById('giftMenu');
+            const giftOverlay = document.getElementById('giftOverlay');
+            const closeGiftMenu = document.getElementById('closeGiftMenu');
+
+            // Hiển thị gift menu khi nhấn nút
+            giftButton.addEventListener('click', function() {
+                giftMenu.style.display = 'block';
+                giftOverlay.style.display = 'block';
+            });
+
+            // Đóng gift menu khi nhấn nút đóng
+            closeGiftMenu.addEventListener('click', function() {
+                giftMenu.style.display = 'none';
+                giftOverlay.style.display = 'none';
+            });
+
+            // Đóng gift menu khi nhấn vào overlay
+            giftOverlay.addEventListener('click', function() {
+                giftMenu.style.display = 'none';
+                giftOverlay.style.display = 'none';
+            });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'953c83ced7071c68',t:'MTc1MDYwMzM3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'953cb97003590705',t:'MTc1MDYwNTU3MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 
 <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
