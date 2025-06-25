@@ -243,7 +243,6 @@
         }
 
         .couple-and {
-            font-family: var(--title-font);
             color: var(--primary-color);
             font-size: 2.5rem;
             margin: 10px 0;
@@ -284,7 +283,6 @@
 
         /* Thêm khối chữ TRÂN TRỌNG KÍNH MỜI - đã xóa class="invitation-heading" nhưng giữ lại styling */
         .banner-content h2 {
-            font-family: var(--title-font);
             font-size: 2rem;
             color: var(--primary-color);
             text-align: center;
@@ -304,7 +302,7 @@
             background-position: center;
             background-repeat: no-repeat;
             margin: 10px auto;
-            border-radius: 50%; /* Bo viền hình tròn */
+            border-radius: 50%; 
         }
 
         /* Styles cho mid-container */
@@ -390,7 +388,6 @@
 
         .card-title {
             font-size: var(--title-fs);
-            font-family: var(--title-font);
         }
 
         .invitation-subtitle {
@@ -670,7 +667,6 @@
         .fami-title {
             font-size: 3rem;
             margin-bottom: 30px;
-            font-family: var(--title-font);
         }
 
         .fami-content {
@@ -704,15 +700,13 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            font-family: inherit;
             color: inherit;
             margin-top: 20px;
         }
 
         .poem {
-            font-family: var(--poem-font);
             color: var(--poem-color);
-            font-size: 2rem; /* Tăng kích thước chữ lên 2rem theo yêu cầu */
+            font-size: 2rem;
             line-height: 1.6;
             margin: 20px 0;
             padding: 15px;
@@ -942,7 +936,378 @@
             background-color: #f0f0f0;
             color: #333;
         }
+ 
+.album-pic {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
 
+        .album-pic.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Các kiểu khung ảnh */
+        .photo-frame {
+            position: relative;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .photo-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 8px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+			z-index: 1;
+            transition: filter 0.5s ease, opacity 0.5s ease;
+    }
+
+    .photo-frame img.loading {
+        filter: blur(10px);
+        opacity: 0.7;
+    }
+
+    /* Hiệu ứng loading */
+    .loading-indicator {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(230, 57, 70, 0.3);
+        border-radius: 50%;
+        border-top-color: #e63946;
+        animation: spin 1s ease-in-out infinite;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .loading .loading-indicator {
+        opacity: 1;
+    }
+
+    @keyframes spin {
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+/* Khung ảnh ghép ngang - chiếm 2 cột */
+        .photo-frame-wide {
+            grid-column: span 2;
+        }
+
+        .photo-frame-wide img {
+            height: 400px;
+        }
+
+        /* Khung ảnh ghép dọc */
+        .photo-frame-tall img {
+            height: 500px;
+        }
+
+        /* Khung ảnh ghép 2 ảnh */
+        .photo-collage {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Khung ảnh ghép 2 ảnh ngang */
+        .photo-collage-horizontal {
+            grid-column: span 2;
+            display: flex;
+            gap: 15px;
+        }
+
+        .photo-collage-horizontal .collage-item {
+            flex: 1;
+            position: relative;
+        }
+
+        .photo-collage-horizontal img {
+            height: 350px;
+        }
+
+        /* Khung ảnh ghép 2 ảnh dọc */
+        .photo-collage-vertical {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .photo-collage-vertical .collage-item {
+            position: relative;
+        }
+
+        .photo-collage-vertical img {
+            height: 200px;
+        }
+        /* Kiểu khung Polaroid */
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            transform: rotate(var(--rotate, 0deg));
+        }
+
+        .polaroid::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Kiểu khung vintage */
+        .vintage {
+            border: 1px solid #e0e0e0;
+            background-color: #f8f8f8;
+        }
+
+        .vintage::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5V0zm1 5v1H5L6 5z'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        /* Kiểu khung với hoa văn */
+        .floral {
+            background-color: white;
+        }
+
+        .floral::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0C20 0 20 20 0 20C20 20 20 40 20 40C20 40 20 20 40 20C20 20 20 0 20 0Z' fill='%23e63946' fill-opacity='0.2'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+            background-position: -20px -20px, 20px 20px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        /* Kiểu khung với băng keo */
+        .tape {
+            position: absolute;
+            width: 80px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transform: rotate(var(--tape-rotate, 0deg));
+            z-index: 5;
+        }
+
+        .tape-top {
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-5deg);
+        }
+
+        .tape-bottom {
+            bottom: 30px;
+            right: -15px;
+            transform: rotate(30deg);
+        }
+
+        /* Kiểu khung với góc trang trí */
+        .corner-decoration {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0C20 0 20 20 0 20C20 20 20 40 20 40C20 40 20 20 40 20C20 20 20 0 20 0Z' fill='%23e63946' fill-opacity='0.2'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 2;
+        }
+
+        .corner-top-right {
+            top: -5px;
+            right: -5px;
+            transform: rotate(90deg);
+        }
+
+        .corner-bottom-left {
+            bottom: -5px;
+            left: -5px;
+            transform: rotate(270deg);
+        }
+
+        .corner-bottom-right {
+            bottom: -5px;
+            right: -5px;
+            transform: rotate(180deg);
+        }
+
+        /* Kiểu khung với ruy băng */
+        .ribbon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .ribbon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 10px;
+            background: #e63946;
+            transform: rotate(45deg) translateX(15px) translateY(-15px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Kiểu khung với đường viền đứt đoạn */
+        .dashed {
+            border: 2px dashed #e63946;
+            border-radius: 12px;
+        }
+
+        /* Kiểu khung với hình trái tim */
+        .heart-corner::before {
+            content: '❤';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-size: 24px;
+            color: #e63946;
+            opacity: 0.6;
+            z-index: 3;
+        }
+
+        .heart-corner::after {
+            content: '❤';
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            font-size: 24px;
+            color: #e63946;
+            opacity: 0.6;
+            z-index: 3;
+        }
+
+        /* Kiểu khung với đường viền lượn sóng */
+        .wavy {
+            border-radius: 15px;
+        }
+
+        .wavy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid transparent;
+            border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e63946' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E") 30;
+            border-radius: 15px;
+            z-index: 2;
+        }
+/* Khối Thank You */
+        .thank-you {
+            margin-top: 60px;
+            margin-bottom: 40px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .thank-you.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .thank-you-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #e63946;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+        }
+
+        .thank-you-text::before,
+        .thank-you-text::after {
+            content: '❤';
+            font-size: 1.5rem;
+            position: absolute;
+            color: #e63946;
+            opacity: 0.7;
+        }
+
+        .thank-you-text::before {
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .thank-you-text::after {
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .thank-you-decoration {
+            width: 100%;
+            height: 20px;
+            margin-top: 15px;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 25 20, 50 10 T 100 10' stroke='%23e63946' stroke-width='2' fill='none' stroke-opacity='0.5' /%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            background-size: 100px 20px;
+        }
+        /* Thêm media query cho màn hình rất nhỏ */
+        @media (max-width: 480px) {
+            /* Điều chỉnh kích thước tiêu đề trên màn hình rất nhỏ */
+            .fami-title {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+             
+        }
+
+        /* Thêm media query cho màn hình cao (điện thoại dọc) */
+        @media (max-height: 600px) {
+            .divider-container {
+                margin: 0.5rem auto; /* Giảm margin hơn nữa */
+            }
+             
+        }
+/* Responsive */
         @media (max-width: 768px) {
             .control-buttons {
                 top: 20px;
@@ -952,147 +1317,35 @@
             .control-button {
                 width: 35px;
                 height: 35px;
+            } 
+		.album-pic {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-frame img {
+                height: 250px;
             }
             
             .poem {
-                font-size: 1.5rem; /* Giảm kích thước chữ trên mobile nhưng vẫn lớn hơn kích thước cũ */
-                padding: 10px;
-            }
-            
-            /* Điều chỉnh kích thước tiêu đề trên mobile */
-            .fami-title {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-            
-            /* Điều chỉnh nhan trên mobile */
-            .nhan {
-                width: 20%;
-                padding-bottom: 20%;
-            }
-            
-            /* Điều chỉnh save_date trên mobile */
-            .save_date {
-                width: 90%;
-                padding-bottom: 40%;
-            }
-            
-            /* Điều chỉnh banner trên mobile */
-            .banner {
-                height: 40vh;
-            }
-            
-            .banner-content {
-                width: 250px; /* Giảm width trên mobile */
-                height: 70%;
-            }
-            
-            /* Điều chỉnh tên cô dâu chú rể trên mobile */
-            .couple-name {
-                font-size: 2rem;
-            }
-            
-            .couple-and {
-                font-size: 1.8rem;
-                margin: 0 10px;
-            }
-            
-            /* Điều chỉnh kích thước chữ TRÂN TRỌNG KÍNH MỜI trên mobile */
-            .banner-content h2 {
                 font-size: 1.5rem;
-                margin: 10px 0 20px;
+                padding: 15px;
             }
-            
-            /* Điều chỉnh khoảng cách lề trên cho couple-names-container trên mobile */
-            .couple-names-container {
-                margin: 1rem 0 0.5rem; /* Giảm margin-top trên mobile */
-            }
-            
-            /* Điều chỉnh album-pic trên mobile */
-            .album-pic {
-                grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
-            }
-            
-            .album-pic-left, .album-pic-right {
-                height: 250px; /* Giảm chiều cao trên mobile */
-            }
+.thank-you-text {
+            font-size: 2.5rem;
         }
-
-        /* Thêm media query cho màn hình rất nhỏ */
-        @media (max-width: 480px) {
-            /* Điều chỉnh kích thước tiêu đề trên màn hình rất nhỏ */
-            .fami-title {
-                font-size: 1.5rem;
-                margin-bottom: 15px;
-            }
-            
-            /* Điều chỉnh nhan trên màn hình rất nhỏ */
-            .nhan {
-                width: 25%;
-                padding-bottom: 25%;
-            }
-            
-            /* Điều chỉnh save_date trên màn hình rất nhỏ */
-            .save_date {
-                width: 95%;
-                padding-bottom: 45%;
-            }
-            
-            /* Điều chỉnh banner trên màn hình rất nhỏ */
-            .banner-content {
-                width: 220px; /* Giảm width hơn nữa trên màn hình rất nhỏ */
-                height: 70%;
-            }
-            
-            /* Điều chỉnh tên cô dâu chú rể trên màn hình rất nhỏ */
-            .couple-name {
-                font-size: 1.5rem;
-            }
-            
-            .couple-and {
-                font-size: 1.3rem;
-                margin: 0 5px;
-            }
-            
-            /* Điều chỉnh kích thước chữ TRÂN TRỌNG KÍNH MỜI trên màn hình rất nhỏ */
-            .banner-content h2 {
-                font-size: 1.2rem;
-                margin: 8px 0 15px;
-            }
-            
-            /* Điều chỉnh khoảng cách lề trên cho couple-names-container trên màn hình rất nhỏ */
-            .couple-names-container {
-                margin: 0.8rem 0 0.3rem; /* Giảm margin-top hơn nữa trên màn hình rất nhỏ */
-            }
-            
-            /* Điều chỉnh album-pic trên màn hình rất nhỏ */
-            .album-pic-left, .album-pic-right {
-                height: 200px; /* Giảm chiều cao hơn nữa trên màn hình rất nhỏ */
-            }
+        
+        .photo-frame-wide {
+            grid-column: span 1;
         }
-
-        /* Thêm media query cho màn hình cao (điện thoại dọc) */
-        @media (max-height: 600px) {
-            .divider-container {
-                margin: 0.5rem auto; /* Giảm margin hơn nữa */
-            }
-            
-            /* Điều chỉnh nhan trên màn hình thấp */
-            .nhan {
-                width: 12%;
-                padding-bottom: 12%;
-            }
-            
-            /* Điều chỉnh save_date trên màn hình thấp */
-            .save_date {
-                width: 70%;
-                padding-bottom: 25%;
-            }
-            
-            /* Điều chỉnh banner trên màn hình thấp */
-            .banner {
-                height: 50vh;
-            }
+        
+        .photo-collage-horizontal {
+            grid-column: span 1;
+            flex-direction: column;
+        }
+        
+        .photo-collage-horizontal img {
+            height: 250px;
+        }
         }
     </style>
 </head>
@@ -1286,14 +1539,90 @@
                         
                         <!-- Thêm khối album-pic mới -->
                         <div class="album-pic" id="album-pic">
-                            <div class="album-pic-left">
-                                <!-- Phần này có ảnh nền từ CSS -->
-                            </div>
-                            <div class="album-pic-right">
-                                <h4 class="card-title">Album Cưới</h4>
-                                <p>Những khoảnh khắc đẹp nhất của chúng tôi</p>
-                            </div>
-                        </div>
+						<!-- Khung ảnh ghép ngang lớn - chiếm 2 cột -->
+						<div class="photo-frame photo-frame-wide vintage loading" id="frame-1">
+							<div class="loading-indicator"></div>
+							<div class="ribbon"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới panorama">
+						</div>
+						
+						<!-- Khung ảnh 1: Polaroid với băng keo -->
+						<div class="photo-frame polaroid loading" style="--rotate: -3deg;" data-caption="Mạnh Tín & Hồng Nhung" id="frame-2">
+							<div class="loading-indicator"></div>
+							<div class="tape tape-top"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới 1">
+						</div>
+						
+						<!-- Khung ảnh 2: Với góc trang trí -->
+						<div class="photo-frame loading" id="frame-3">
+							<div class="loading-indicator"></div>
+							<div class="corner-decoration corner-top-right"></div>
+							<div class="corner-decoration corner-bottom-left"></div>
+							<div class="corner-decoration corner-bottom-right"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới 2">
+						</div>
+						
+						<!-- Khung ảnh ghép 2 ảnh ngang - chiếm 2 cột -->
+						<div class="photo-frame photo-collage-horizontal" id="frame-4">
+							<div class="collage-item loading" id="frame-4-1">
+								<div class="loading-indicator"></div>
+								<img class="lazy-load loading" alt="Ảnh cưới collage 1">
+							</div>
+							<div class="collage-item loading" id="frame-4-2">
+								<div class="loading-indicator"></div>
+								<img class="lazy-load loading" alt="Ảnh cưới collage 2">
+							</div>
+						</div>
+						
+						<!-- Khung ảnh 3: Với hoa văn -->
+						<div class="photo-frame floral loading" id="frame-5">
+							<div class="loading-indicator"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới 3">
+						</div>
+						
+						<!-- Khung ảnh ghép 2 ảnh dọc -->
+						<div class="photo-frame photo-collage-vertical" id="frame-6">
+							<div class="collage-item loading" id="frame-6-1">
+								<div class="loading-indicator"></div>
+								<img class="lazy-load loading" alt="Ảnh cưới collage dọc 1">
+							</div>
+							<div class="collage-item loading" id="frame-6-2">
+								<div class="loading-indicator"></div>
+								<img class="lazy-load loading" alt="Ảnh cưới collage dọc 2">
+							</div>
+						</div>
+						
+						<!-- Khung ảnh 4: Polaroid với góc nghiêng khác -->
+						<div class="photo-frame polaroid loading" style="--rotate: 2deg;" data-caption="14.07.2025" id="frame-7">
+							<div class="loading-indicator"></div>
+							<div class="tape tape-bottom"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới 4">
+						</div>
+						
+						<!-- Khung ảnh 5: Với đường viền đứt đoạn -->
+						<div class="photo-frame dashed loading" id="frame-8">
+							<div class="loading-indicator"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới 5">
+						</div>
+						
+						<!-- Khung ảnh dọc cao - chiếm 1 cột nhưng cao hơn -->
+						<div class="photo-frame photo-frame-tall heart-corner loading" id="frame-9">
+							<div class="loading-indicator"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới cao">
+						</div>
+						
+						<!-- Khung ảnh 6: Với đường viền lượn sóng -->
+						<div class="photo-frame wavy loading" id="frame-10">
+							<div class="loading-indicator"></div>
+							<img class="lazy-load loading" alt="Ảnh cưới 6">
+						</div>
+					</div>
+						
+						<!-- Khối Thank You -->
+						<div class="thank-you" id="thank-you">
+							<div class="thank-you-text">Thank you!</div>
+							<div class="thank-you-decoration"></div>
+						</div>
                     </div>
                 </div>
             </div>
@@ -1303,8 +1632,72 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Script để xử lý nút phát nhạc và các popup
+        
         document.addEventListener('DOMContentLoaded', function() {
+// Hiệu ứng cho đoạn thơ và các phần tử khác
+            const poemElement = document.getElementById('wedding-poem');
+            const albumPic = document.getElementById('album-pic');
+            const thankYou = document.getElementById('thank-you');
+            
+            // Hiển thị ngay lập tức để tránh lỗi
+            setTimeout(() => {
+                poemElement.classList.add('animate-in');
+                
+                setTimeout(() => {
+                    albumPic.classList.add('animate-in');
+                    
+                    setTimeout(() => {
+                        thankYou.classList.add('animate-in');
+                    }, 800);
+                }, 800);
+            }, 500);
+            
+            // Danh sách URL ảnh - Khai báo tập trung ở đây
+            const imageUrls = [
+                'https://nhungcute.github.io/img/MIN_9229.JPG',
+                'https://nhungcute.github.io/img/MIN_9382.JPG',
+                'https://nhungcute.github.io/img/MIN_9540.JPG',
+                'https://nhungcute.github.io/img/MIN_9547.JPG',
+                'https://nhungcute.github.io/img/MIN_9650.JPG',
+                'https://nhungcute.github.io/img/MIN_9267.JPG',
+                'https://nhungcute.github.io/img/MIN_9529.JPG',
+                'https://nhungcute.github.io/img/MIN_9542.JPG',
+                'https://nhungcute.github.io/img/MIN_9567.JPG'
+            ];
+            
+            // Cấu hình ánh xạ giữa ID khung ảnh và URL ảnh
+            const frameImageMap = {
+                'frame-1': imageUrls[0],
+                'frame-2': imageUrls[1],
+                'frame-3': imageUrls[2],
+                'frame-4-1': imageUrls[3],
+                'frame-4-2': imageUrls[4],
+                'frame-5': imageUrls[5],
+                'frame-6-1': imageUrls[6],
+                'frame-6-2': imageUrls[7],
+                'frame-7': imageUrls[8],
+                'frame-8': imageUrls[0], // Sử dụng lại ảnh đầu tiên
+                'frame-9': imageUrls[1], // Sử dụng lại ảnh thứ hai
+                'frame-10': imageUrls[2] // Sử dụng lại ảnh thứ ba
+            };
+            
+            // Danh sách các LQIP dạng base64 (đây là các ảnh rất nhỏ, mờ)
+            const lqips = [
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
+                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z'
+            ];
+            
+            // Tạo ảnh placeholder để hiển thị khi ảnh chính không tải được
+            function createPlaceholder(index) {
+                return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"%3E%3Crect width="300" height="300" fill="%23f8f8f8"/%3E%3Ctext x="50%25" y="50%25" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="%23888"%3EẢnh cưới ${index + 1}%3C/text%3E%3C/svg%3E`;
+            }
             // Xử lý nút phát nhạc
             const audioButton = document.querySelector('.toggleAudio');
             const audioIcon = audioButton.querySelector('i');
@@ -1387,9 +1780,7 @@
             const invitationFami = document.getElementById('invitation-fami');
             let famiAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation chưa
 
-            // Xử lý hiệu ứng cho đoạn thơ
-            const poemElement = document.getElementById('wedding-poem');
-            const albumPic = document.getElementById('album-pic');
+            // Xử lý hiệu ứng cho đoạn thơ 
             const invitationAlbum = document.getElementById('invitation-album');
             let poemAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation cho đoạn thơ chưa
             let albumPicAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation cho album-pic chưa
@@ -1401,8 +1792,8 @@
                 
                 // Phần tử được coi là trong viewport khi phần lớn của nó hiển thị
                 return (
-                    rect.top <= windowHeight * 0.8 && 
-                    rect.bottom >= windowHeight * 0.2
+                    rect.top <= windowHeight * 1.2 && 
+                    rect.bottom >= 0
                 );
             }
 
@@ -1418,6 +1809,54 @@
                 }
             }
 
+            // Xử lý lazy loading cho ảnh
+            const lazyLoadImages = document.querySelectorAll('.lazy-load');
+            
+            // Thiết lập ảnh LQIP trước
+            lazyLoadImages.forEach((img, index) => {
+                img.src = lqips[index % lqips.length];
+                
+                // Tìm ID của khung chứa ảnh
+                const frameId = img.closest('.photo-frame, .collage-item').id;
+                
+                // Lưu URL ảnh chất lượng cao vào thuộc tính data-high-res
+                if (frameId && frameImageMap[frameId]) {
+                    img.setAttribute('data-high-res', frameImageMap[frameId]);
+                } else {
+                    // Nếu không tìm thấy trong map, sử dụng ảnh mặc định theo index
+                    img.setAttribute('data-high-res', imageUrls[index % imageUrls.length]);
+                }
+            });
+			// Hàm tải ảnh khi cuộn đến
+            function lazyLoad() {
+                lazyLoadImages.forEach((img) => {
+                    if (isElementInViewport(img) && img.classList.contains('loading')) {
+                        const parent = img.closest('.loading');
+                        const highResUrl = img.getAttribute('data-high-res');
+                        
+                        // Tạo một đối tượng Image để kiểm tra xem ảnh có tải được không
+                        const imgLoader = new Image();
+                        imgLoader.onload = function() {
+                            // Khi ảnh đã tải xong, cập nhật src và xóa class loading
+                            img.src = this.src;
+                            img.classList.remove('loading');
+                            if (parent) {
+                                parent.classList.remove('loading');
+                            }
+                        };
+                        imgLoader.onerror = function() {
+                            console.log('Không thể tải ảnh: ' + highResUrl);
+                            // Nếu không tải được, sử dụng placeholder
+                            img.src = createPlaceholder(Array.from(lazyLoadImages).indexOf(img));
+                            img.classList.remove('loading');
+                            if (parent) {
+                                parent.classList.remove('loading');
+                            }
+                        };
+                        imgLoader.src = highResUrl;
+                    }
+                });
+            }
             // Hàm kích hoạt animation cho đoạn thơ
             function animatePoem() {
                 if (!poemAnimationTriggered) {
@@ -1457,11 +1896,49 @@
             // Thêm sự kiện cuộn
             window.addEventListener('scroll', handleScroll);
             
-            // Kích hoạt kiểm tra ban đầu (trong trường hợp các phần tử đã hiển thị khi tải trang)
-            setTimeout(handleScroll, 500);
+            window.addEventListener('scroll', lazyLoad);
+            window.addEventListener('resize', lazyLoad);
+            setTimeout(handleScroll, 1000);
+             
             
-            // Sửa URL ảnh cho album-pic-left
-            document.querySelector('.album-pic-left').style.backgroundImage = 'url("https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/White-Warm-Tone.png")';
+            lazyLoadImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    // Tạo overlay xem ảnh phóng to
+                    const overlay = document.createElement('div');
+                    overlay.style.position = 'fixed';
+                    overlay.style.top = '0';
+                    overlay.style.left = '0';
+                    overlay.style.width = '100%';
+                    overlay.style.height = '100%';
+                    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                    overlay.style.display = 'flex';
+                    overlay.style.alignItems = 'center';
+                    overlay.style.justifyContent = 'center';
+                    overlay.style.zIndex = '1000';
+                    overlay.style.cursor = 'pointer';
+                    
+                    // Tạo ảnh phóng to
+                    const enlargedImg = document.createElement('img');
+                    enlargedImg.src = this.getAttribute('data-high-res') || this.src;
+                    enlargedImg.style.maxWidth = '90%';
+                    enlargedImg.style.maxHeight = '90%';
+                    enlargedImg.style.objectFit = 'contain';
+                    enlargedImg.style.border = '5px solid white';
+                    enlargedImg.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.5)';
+                    
+                    // Thêm vào overlay
+                    overlay.appendChild(enlargedImg);
+                    document.body.appendChild(overlay);
+                    
+                    // Đóng overlay khi click
+                    overlay.addEventListener('click', function() {
+                        document.body.removeChild(overlay);
+                    });
+                });
+                
+                // Thêm cursor pointer để biết là có thể click
+                img.style.cursor = 'pointer';
+            });
         });
     </script>
 </body>
