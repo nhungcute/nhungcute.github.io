@@ -16,6 +16,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        /* Font chữ cũ */
         @font-face {
             font-family: 'Kyokm3';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/kyokm3.otf') format('opentype');
@@ -32,6 +33,95 @@
             font-display: swap;
         }
 
+        @font-face {
+            font-family: 'SFUEdwardian';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/SFUEdwardianScriptRegular.TTF') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'WonderfulScript';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/WonderfulScript.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Lobster';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/Lobster-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'MTD-Hillstown';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/MTD-Hillstown-Clean.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'VLWOLFSBANE';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/VLWOLFSBANE.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Font chữ mới */
+        @font-face {
+            font-family: "VVRNIFZpYVyblKRidGY";
+            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/utm-viceroyjf-wbcvj.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "VVZOTWpSGuZyUVEY";
+            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/uvnmoihong-ouaqa.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "VVZORGluaEhvbiUVEY";
+            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/uvndinhhon-gov6r.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "VVZOQmVuWHVhblCLlRURg";
+            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/uvnbenxuan_bzg9j.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "VkJLUxvdmUudHRm";
+            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/vni-love-x0bjf.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "VVRNIEEmUyBIZWFydGJlYXQudHRm";
+            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/utm-as-heartbeat-mxzse.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --bg: #f9f7f7;
             --text-white: #ffffff;
@@ -41,16 +131,17 @@
             --gap: 20px;
             --title-fs: 2rem;
             --title-font: 'Dancing Script', cursive;
-            --poem-font: 'Kyokm3', cursive;
+            --poem-font: 'VVZORGluaEhvbiUVEY', cursive; /* Thay đổi font cho đoạn thơ */
             --biger-size: 1.5rem;
         }
 
+        /* Hiệu ứng scale ±20% cho background */
         @keyframes zoomEffect {
             0% {
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.2);
+                transform: scale(1.2); /* +20% */
             }
             100% {
                 transform: scale(1);
@@ -103,109 +194,117 @@
             }
         }
 
-        .banner-background {
+        /* Banner mới - đã sửa height thành 60vh */
+        .banner {
+            height: 60vh;
+            width: 100%;
             background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.JPG');
             background-size: cover;
-            background-position: center center; /* Đảm bảo ảnh nền nằm ở giữa */
-            animation: zoomEffect 10s infinite ease-in-out;
-        }
-
-        .banner-container {
-            height: 60vh; /* Chiều cao 60vh */
-            width: 100%; /* Chiều rộng bằng toàn bộ màn hình */
-            margin: 0;
-            overflow: hidden;
+            background-position: center;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
         }
 
         .banner-content {
-            width: calc(1.7/3 * 100%);
-            max-width: 600px; /* Giới hạn chiều rộng tối đa cho màn hình lớn */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
+            width: 350px;
+            height: 70%;
+            background-color: rgb(0 0 0 / 50%);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 15px;
+            overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
+            position: relative; /* Thêm position relative để có thể định vị các phần tử con */
         }
 
-        /* Khối chứa tên cô dâu chú rể */
+        /* Cấu trúc tên cô dâu chú rể mới - đã thêm margin-top để tạo khoảng cách với lề trên */
         .couple-names-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 0.5rem 0;
+            margin: 1.5rem 0 0.5rem; /* Thêm margin-top 1.5rem để tạo khoảng cách với lề trên */
         }
 
-        /* Style cho từng dòng tên */
         .couple-name {
-            font-family: 'Kyokm3', cursive;
-            font-size: 4vw;
+            font-family: var(--title-font);
+            color: var(--primary-color);
+            font-size: 3rem;
             font-weight: 700;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.33), 0 2px 8px #fae1dd;
             line-height: 1.2;
-            white-space: nowrap; /* Đảm bảo tên không bị ngắt dòng */
+            margin: 10px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
-        /* Style cho dấu & */
         .couple-and {
-            font-family: 'Kyokm3', cursive;
-            font-size: 3vw;
-            font-weight: 700;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.33), 0 2px 8px #fae1dd;
-            line-height: 1.2;
-            margin: 0.2rem 0;
+            font-family: var(--title-font);
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin: 10px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
-        .divider {
+        /* Sửa divider thành 3 phần */
+        .divider-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 75%;
+            margin: 1rem auto;
+        }
+
+        .divider-part {
             height: 1px;
             background-color: white;
-            margin: 2rem auto;
+            flex: 1;
         }
 
-        .group-date {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: repeat(3, 1fr);
-            justify-content: center;
-            align-items: center;
-            text-transform: uppercase;
-            margin-top: 15px;
-            font-weight: normal;
-            font-family: sans-serif;
+        .divider-space {
+            width: 20%; /* Khoảng trống ở giữa */
         }
 
-        .day_name, .banner_time {
-            font-size: 1.1vw; /* Điều chỉnh kích thước font chữ thành 1.1vw */
-            font-weight: normal;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.33), 0 2px 8px #fae1dd;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
-            padding: 0.3rem 0;
+        /* Hiển thị save_date */
+        .save_date {
+            width: 80%;
+            height: 0;
+            padding-bottom: 30%; /* Tạo tỷ lệ khung hình */
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/save-the-date.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 10px auto 5px;
+            max-width: 90%; /* Đảm bảo không tràn ra ngoài */
         }
 
-        .banner_date {
-            font-size: 2.5vw; /* Giữ nguyên kích thước chữ "14" là 2.5vw */
-            font-weight: bold;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.33), 0 2px 8px #fae1dd;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* Thêm khối chữ TRÂN TRỌNG KÍNH MỜI - đã xóa class="invitation-heading" nhưng giữ lại styling */
+        .banner-content h2 {
+            font-family: var(--title-font);
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 5px 0 10px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            max-width: 90%; /* Đảm bảo không tràn ra ngoài */
         }
 
-        .banner_date::after {
-            content: "07.2025";
-            font-size: 1.1vw; /* Điều chỉnh kích thước font chữ thành 1.1vw */
-            margin-top: 0.2rem;
-            font-weight: normal;
+        /* Sửa kích thước khối nhan */
+        .nhan {
+            width: 15%;
+            height: 0;
+            padding-bottom: 15%; /* Tạo tỷ lệ khung hình vuông */
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/nhan2.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 10px auto;
+            border-radius: 50%; /* Bo viền hình tròn */
         }
 
         /* Styles cho mid-container */
@@ -230,6 +329,7 @@
             gap: var(--gap);
         }
 
+        /* Sửa lại invitation-card theo yêu cầu */
         .invitation-card {
             display: flex;
             flex-direction: column;
@@ -237,23 +337,35 @@
             padding: 20px;
             gap: 12px;
             background-color: var(--text-white);
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
-            background-size: cover;
-            background-position: center;
+            position: relative;
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            font-family: inherit; /* Sử dụng font chữ mặc định */
-            color: inherit; /* Sử dụng màu chữ mặc định */
-            position: relative;
+            color: inherit;
+            z-index: 1;
         }
 
-        /* Thêm text-shadow để văn bản dễ đọc hơn */
+        /* Thêm lớp giả để làm nền mờ */
+        .invitation-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom;
+            opacity: 0.2; /* Làm mờ 80% (0.2 = 20% hiển thị) */
+            border-radius: 12px;
+            z-index: -1;
+        }
+
+        /* Đảm bảo nội dung hiển thị rõ */
         .invitation-card > * {
             position: relative;
-            z-index: 1;
-            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.9);
-            font-weight: 600;
+            z-index: 2;
         }
 
         .invitation-card .social-link a {
@@ -278,7 +390,18 @@
 
         .card-title {
             font-size: var(--title-fs);
-            font-family: var(--title-font); /* Giữ nguyên font cho tiêu đề */
+            font-family: var(--title-font);
+        }
+
+        .invitation-subtitle {
+            font-weight: bold;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+
+        .venue-address {
+            margin-top: 10px;
+            font-style: italic;
         }
 
         .invi_time {
@@ -288,7 +411,6 @@
             text-align: center;
             gap: 8px;
             margin-bottom: 12px;
-            font-family: inherit; /* Sử dụng font chữ mặc định */
             color: inherit; /* Sử dụng màu chữ mặc định */
         }
 
@@ -305,7 +427,6 @@
             font-weight: 700;
             color: var(--date-color); /* Màu #6d3e28 cho 14/07 */
             font-size: var(--biger-size);
-            font-family: inherit; /* Sử dụng font chữ mặc định */
         }
 
         .invi_date_text,
@@ -313,14 +434,12 @@
             border-top: 1px solid var(--primary-color);
             border-bottom: 1px solid var(--primary-color);
             padding: 4px 0;
-            font-family: inherit; /* Sử dụng font chữ mặc định */
             color: inherit; /* Sử dụng màu chữ mặc định */
         }
 
         .invi_amlich {
             font-style: italic;
             font-size: 14px;
-            font-family: inherit; /* Sử dụng font chữ mặc định */
             color: inherit; /* Sử dụng màu chữ mặc định */
         }
 
@@ -357,14 +476,14 @@
         /* Định dạng cho gift menu */
         .gift-grid {
             display: flex;
-            grid-template-columns: repeat(2, 1fr);
             flex-direction: row;
             gap: 20px;
             margin-top: 15px;
+            width: 100%;
         }
 
         .gift-column {
-			flex: 1;
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -412,7 +531,6 @@
             border-radius: 12px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            font-family: inherit;
             color: inherit;
             margin-top: 20px;
         }
@@ -423,7 +541,6 @@
             grid-template-rows: repeat(2, 1fr);
             gap: 15px;
             height: auto; /* Thay đổi từ fixed height sang auto */
-            min-height: 400px; /* Đảm bảo chiều cao tối thiểu */
         }
 
         /* Đánh số thứ tự cho các phần để sắp xếp trên desktop */
@@ -441,12 +558,12 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            min-height: 200px; /* Đảm bảo chiều cao tối thiểu */
+            height: 450px; /* Đã sửa chiều cao cố định thành 450px */
             opacity: 0; /* Bắt đầu với opacity 0 */
             transition: transform 1s ease, opacity 1s ease; /* Transition cho transform và opacity */
         }
 
-        /* Hiệu ứng cho từng section */
+        /* Hiệu ứng cho từng section - Sửa lại theo yêu cầu */
         .fami-section-1 {
             transform: translateX(-30%); /* Mặc định ẩn bên trái 30% */
         }
@@ -455,17 +572,72 @@
             transform: translateX(-30%); /* Mặc định ẩn bên trái 30% */
         }
 
+        /* Sửa lại section-2 theo yêu cầu */
         .fami-section-2 {
             transform: translateX(30%); /* Mặc định ẩn bên phải 30% */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Thêm lớp giả để làm nền mờ cho section-2 */
+        .fami-section-2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom;
+            opacity: 0.2; /* Làm mờ 80% (0.2 = 20% hiển thị) */
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        /* Đảm bảo nội dung hiển thị rõ */
+        .fami-section-2 > * {
+            position: relative;
+            z-index: 2;
         }
 
         .fami-section-4 {
             transform: translateX(30%); /* Mặc định ẩn bên phải 30% */
         }
 
+        /* Sửa lại section-3 theo yêu cầu */
+        .fami-section-3 {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Thêm lớp giả để làm nền mờ cho section-3 */
+        .fami-section-3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom;
+            opacity: 0.2; /* Làm mờ 80% (0.2 = 20% hiển thị) */
+            border-radius: 8px;
+            z-index: -1;
+        }
+
+        /* Đảm bảo nội dung hiển thị rõ */
+        .fami-section-3 > * {
+            position: relative;
+            z-index: 2;
+        }
+
         /* Khi được kích hoạt animation */
         .fami-section.animate-in {
-            opacity: 1;
+            opacity: 1; /* Hiển thị đầy đủ khi hiển thị */
             transform: translateX(0);
         }
 
@@ -494,11 +666,11 @@
             background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.JPG');
         }
 
+        /* Sửa lại font và kích thước cho tiêu đề theo yêu cầu */
         .fami-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--primary-color);
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-family: var(--title-font);
         }
 
         .fami-content {
@@ -540,7 +712,7 @@
         .poem {
             font-family: var(--poem-font);
             color: var(--poem-color);
-            font-size: 1.5rem;
+            font-size: 2rem; /* Tăng kích thước chữ lên 2rem theo yêu cầu */
             line-height: 1.6;
             margin: 20px 0;
             padding: 15px;
@@ -557,44 +729,41 @@
             transform: translateY(0);
         }
 
-        /* Định dạng cho album ảnh */
-        .photo-gallery {
+        /* Định dạng cho album-pic */
+        .album-pic {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .photo-column {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .gallery-item {
-            width: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            gap: 20px;
+            margin-top: 30px;
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 1s ease, transform 1s ease;
         }
 
-        .gallery-item.animate-in {
+        .album-pic.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
+        .album-pic-left {
+            height: 300px;
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/blob/main/img/White-Warm-Tone.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.03);
+        .album-pic-right {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
         }
 
         /* Định dạng cho nút điều khiển */
@@ -775,36 +944,6 @@
         }
 
         @media (max-width: 768px) {
-            .banner-content {
-                width: 80%;
-                padding: 1.5rem;
-            }
-            
-            .couple-name {
-                font-size: 7vw;
-            }
-            
-            .couple-and {
-                font-size: 5vw;
-                margin: 0.1rem 0;
-            }
-            
-            .day_name, .banner_time {
-                font-size: 2.2vw; /* Tăng kích thước font chữ trên màn hình nhỏ */
-            }
-            
-            .banner_date {
-                font-size: 4vw;
-            }
-            
-            .banner_date::after {
-                font-size: 2.2vw; /* Tăng kích thước font chữ trên màn hình nhỏ */
-            }
-            
-            .divider {
-                margin: 1.5rem auto;
-            }
-
             .control-buttons {
                 top: 20px;
                 right: 20px;
@@ -814,25 +953,145 @@
                 width: 35px;
                 height: 35px;
             }
-
-            /* Điều chỉnh gift menu trên mobile */
-            .gift-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .gift-column:first-child {
-                margin-bottom: 20px;
-            }
             
             .poem {
-                font-size: 1.2rem;
+                font-size: 1.5rem; /* Giảm kích thước chữ trên mobile nhưng vẫn lớn hơn kích thước cũ */
                 padding: 10px;
             }
             
-            /* Điều chỉnh gallery trên mobile */
-            .photo-gallery {
-                grid-template-columns: 1fr;
+            /* Điều chỉnh kích thước tiêu đề trên mobile */
+            .fami-title {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            
+            /* Điều chỉnh nhan trên mobile */
+            .nhan {
+                width: 20%;
+                padding-bottom: 20%;
+            }
+            
+            /* Điều chỉnh save_date trên mobile */
+            .save_date {
+                width: 90%;
+                padding-bottom: 40%;
+            }
+            
+            /* Điều chỉnh banner trên mobile */
+            .banner {
+                height: 40vh;
+            }
+            
+            .banner-content {
+                width: 250px; /* Giảm width trên mobile */
+                height: 70%;
+            }
+            
+            /* Điều chỉnh tên cô dâu chú rể trên mobile */
+            .couple-name {
+                font-size: 2rem;
+            }
+            
+            .couple-and {
+                font-size: 1.8rem;
+                margin: 0 10px;
+            }
+            
+            /* Điều chỉnh kích thước chữ TRÂN TRỌNG KÍNH MỜI trên mobile */
+            .banner-content h2 {
+                font-size: 1.5rem;
+                margin: 10px 0 20px;
+            }
+            
+            /* Điều chỉnh khoảng cách lề trên cho couple-names-container trên mobile */
+            .couple-names-container {
+                margin: 1rem 0 0.5rem; /* Giảm margin-top trên mobile */
+            }
+            
+            /* Điều chỉnh album-pic trên mobile */
+            .album-pic {
+                grid-template-columns: 1fr; /* Chuyển thành 1 cột trên mobile */
+            }
+            
+            .album-pic-left, .album-pic-right {
+                height: 250px; /* Giảm chiều cao trên mobile */
+            }
+        }
+
+        /* Thêm media query cho màn hình rất nhỏ */
+        @media (max-width: 480px) {
+            /* Điều chỉnh kích thước tiêu đề trên màn hình rất nhỏ */
+            .fami-title {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            /* Điều chỉnh nhan trên màn hình rất nhỏ */
+            .nhan {
+                width: 25%;
+                padding-bottom: 25%;
+            }
+            
+            /* Điều chỉnh save_date trên màn hình rất nhỏ */
+            .save_date {
+                width: 95%;
+                padding-bottom: 45%;
+            }
+            
+            /* Điều chỉnh banner trên màn hình rất nhỏ */
+            .banner-content {
+                width: 220px; /* Giảm width hơn nữa trên màn hình rất nhỏ */
+                height: 70%;
+            }
+            
+            /* Điều chỉnh tên cô dâu chú rể trên màn hình rất nhỏ */
+            .couple-name {
+                font-size: 1.5rem;
+            }
+            
+            .couple-and {
+                font-size: 1.3rem;
+                margin: 0 5px;
+            }
+            
+            /* Điều chỉnh kích thước chữ TRÂN TRỌNG KÍNH MỜI trên màn hình rất nhỏ */
+            .banner-content h2 {
+                font-size: 1.2rem;
+                margin: 8px 0 15px;
+            }
+            
+            /* Điều chỉnh khoảng cách lề trên cho couple-names-container trên màn hình rất nhỏ */
+            .couple-names-container {
+                margin: 0.8rem 0 0.3rem; /* Giảm margin-top hơn nữa trên màn hình rất nhỏ */
+            }
+            
+            /* Điều chỉnh album-pic trên màn hình rất nhỏ */
+            .album-pic-left, .album-pic-right {
+                height: 200px; /* Giảm chiều cao hơn nữa trên màn hình rất nhỏ */
+            }
+        }
+
+        /* Thêm media query cho màn hình cao (điện thoại dọc) */
+        @media (max-height: 600px) {
+            .divider-container {
+                margin: 0.5rem auto; /* Giảm margin hơn nữa */
+            }
+            
+            /* Điều chỉnh nhan trên màn hình thấp */
+            .nhan {
+                width: 12%;
+                padding-bottom: 12%;
+            }
+            
+            /* Điều chỉnh save_date trên màn hình thấp */
+            .save_date {
+                width: 70%;
+                padding-bottom: 25%;
+            }
+            
+            /* Điều chỉnh banner trên màn hình thấp */
+            .banner {
+                height: 50vh;
             }
         }
     </style>
@@ -919,37 +1178,33 @@
         </div>
     </div>
 
-    <div class="banner-container">
-        <div class="banner-background absolute inset-0"></div>
-        <div class="banner-content">
-            <!-- Tách tên cô dâu chú rể thành 3 khối riêng biệt -->
-            <div class="couple-names-container">
-                <div class="couple-name">Mạnh Tín</div>
-                <div class="couple-and">&</div>
-                <div class="couple-name">Hồng Nhung</div>
-            </div>
-            
-            <div class="divider"></div>
-            
-            <div class="group-date">
-                <span class="day_name">Thứ Hai</span>
-                <span class="banner_date">14</span>
-                <span class="banner_time">09h00</span>
-            </div>
-            
-            <div class="divider" style="margin-top: 1.5rem;"></div>
-        </div>
-    </div>
-
     <section id="countdown-section">
         <div class="container">
             <div class="invitation">
                 <div class="invitation-container">
+                    <!-- Banner với nội dung đã được cập nhật -->
+                    <div class="banner">
+                        <div class="banner-content">
+                            <!-- Khối tên cô dâu chú rể với cấu trúc mới và margin-top đã được điều chỉnh -->
+                            <div class="couple-names-container">
+                                <div class="couple-name">Mạnh Tín</div>
+                                <div class="couple-and">&amp;</div>
+                                <div class="couple-name">Hồng Nhung</div>
+                            </div>
+                            
+                            <!-- Đã chuyển khối save_date vào bên trong banner-content -->
+                            <div class="save_date"></div>
+                            
+                            <!-- Đã chuyển khối chữ TRÂN TRỌNG KÍNH MỜI vào bên trong banner-content - đã xóa class="invitation-heading" -->
+                            <h2>TRÂN TRỌNG KÍNH MỜI</h2>
+                        </div>
+                    </div>
+                    
                     <div class="invitation-card">
                         <h3 class="card-title">Lễ Thành Hôn</h3>
-                        <address>
-                            <p>Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
-                        </address>
+                        <!-- Thêm dòng chữ mới theo yêu cầu -->
+                        <div class="invitation-subtitle">TRÂN TRỌNG KÍNH MỜI ĐẾN THAM DỰ BUỔI LỄ</div>
+                        
                         <div class="invitation-body">
                             <div class="invi_time">
                                 <p class="fw-bold">Vào lúc 
@@ -971,6 +1226,8 @@
                                     </span> 
                                 </div>
                                 <p class="invi_amlich">Tức ngày 20 tháng 06 năm Ất Tỵ</p>
+                                <!-- Chuyển địa chỉ xuống dưới theo yêu cầu -->
+                                <p class="venue-address">Tại tư gia nhà trai: Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
                             </div>
                         </div>
                         <div class="social-link"> 
@@ -984,36 +1241,31 @@
                         </div>
                     </div>
 
-                    <!-- Khối invitation-fami -->
+                    <!-- Khối invitation-fami - Đã sửa theo yêu cầu -->
                     <div class="invitation-fami" id="invitation-fami">
-                        <h3 class="card-title">Thông Tin Gia Đình</h3>
                         <div class="fami-grid">
                             <!-- Phần 1: Trên bên trái - có ảnh nền -->
                             <div class="fami-section image-section image-section-1 fami-section-1">
                                 <!-- Phần này có ảnh nền từ CSS -->
                             </div>
                             
-                            <!-- Phần 2: Trên bên phải - Nhà Trai -->
+                            <!-- Phần 2: Trên bên phải - Chú rể -->
                             <div class="fami-section fami-section-2">
-                                <h4 class="fami-title">NHÀ TRAI</h4>
+                                <h4 class="fami-title">Chú rể<br>Hà Mạnh Tín</h4>
                                 <div class="fami-content">
                                     <p>Bố: HÀ VĂN THÚ</p>
                                     <p>Mẹ: NGUYỄN THỊ THẾT</p>
-                                    <p class="address">Đ/c: Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
-                                    <p class="person">Chú rể</p>
-                                    <p>Hà Mạnh Tín</p>
+                                    <p class="address">Tư gia tại: Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
                                 </div>
                             </div>
                             
-                            <!-- Phần 3: Dưới bên trái - Nhà Gái -->
+                            <!-- Phần 3: Dưới bên trái - Cô dâu -->
                             <div class="fami-section fami-section-3">
-                                <h4 class="fami-title">NHÀ GÁI</h4>
+                                <h4 class="fami-title">Cô dâu<br>Nguyễn Thị Hồng Nhung</h4>
                                 <div class="fami-content">
                                     <p>Bố: NGUYỄN VĂN PHƯƠNG</p>
                                     <p>Mẹ: PHẠM THỊ MIỆN</p>
-                                    <p class="address">Đ/c: Số 46,48 Xóm Đồng, Xã Tứ Hiệp, Huyện Thanh Trì, TP Hà Nội.</p>
-                                    <p class="person">Cô dâu</p>
-                                    <p>Nguyễn Thị Hồng Nhung</p>
+                                    <p class="address">Tư gia tại: Xã Tứ Hiệp, Huyện Thanh Trì, TP Hà Nội.</p>
                                 </div>
                             </div>
                             
@@ -1024,7 +1276,7 @@
                         </div>
                     </div>
                     
-                    <!-- Khối invitation-album mới -->
+                    <!-- Khối invitation-album mới - chỉ giữ lại đoạn thơ, xóa phần gallery ảnh -->
                     <div class="invitation-album" id="invitation-album">
                         <!-- Đoạn thơ với font chữ đặc biệt -->
                         <div class="poem" id="wedding-poem">
@@ -1032,9 +1284,15 @@
                             Yêu người vừa ý, cưới người mình thương...
                         </div>
                         
-                        <!-- Phần gallery ảnh 2 cột -->
-                        <div class="photo-gallery" id="photo-gallery">
-                            <!-- Cột 1 và Cột 2 sẽ được tạo bằng JavaScript -->
+                        <!-- Thêm khối album-pic mới -->
+                        <div class="album-pic" id="album-pic">
+                            <div class="album-pic-left">
+                                <!-- Phần này có ảnh nền từ CSS -->
+                            </div>
+                            <div class="album-pic-right">
+                                <h4 class="card-title">Album Cưới</h4>
+                                <p>Những khoảnh khắc đẹp nhất của chúng tôi</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1128,12 +1386,13 @@
             const famiSections = document.querySelectorAll('.fami-section');
             const invitationFami = document.getElementById('invitation-fami');
             let famiAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation chưa
-            let lastScrollTop = 0; // Biến để theo dõi vị trí cuộn trước đó
 
             // Xử lý hiệu ứng cho đoạn thơ
             const poemElement = document.getElementById('wedding-poem');
+            const albumPic = document.getElementById('album-pic');
             const invitationAlbum = document.getElementById('invitation-album');
             let poemAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation cho đoạn thơ chưa
+            let albumPicAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation cho album-pic chưa
 
             // Hàm kiểm tra phần tử có trong viewport không
             function isElementInViewport(el) {
@@ -1145,21 +1404,6 @@
                     rect.top <= windowHeight * 0.8 && 
                     rect.bottom >= windowHeight * 0.2
                 );
-            }
-
-            // Hàm reset animation cho các section trong invitation-fami
-            function resetFamiSections() {
-                famiSections.forEach((section) => {
-                    section.classList.remove('animate-in');
-                    // Đặt lại trạng thái ban đầu
-                    if (section.classList.contains('fami-section-1') || section.classList.contains('fami-section-3')) {
-                        section.style.transform = 'translateX(-30%)';
-                    } else {
-                        section.style.transform = 'translateX(30%)';
-                    }
-                    section.style.opacity = '0';
-                });
-                famiAnimationTriggered = false;
             }
 
             // Hàm kích hoạt animation cho các section trong invitation-fami
@@ -1183,20 +1427,19 @@
                     poemAnimationTriggered = true;
                 }
             }
+            
+            // Hàm kích hoạt animation cho album-pic
+            function animateAlbumPic() {
+                if (!albumPicAnimationTriggered && poemAnimationTriggered) {
+                    setTimeout(() => {
+                        albumPic.classList.add('animate-in');
+                    }, 600); // Delay lớn hơn để hiển thị sau khi đoạn thơ đã hiển thị
+                    albumPicAnimationTriggered = true;
+                }
+            }
 
             // Hàm xử lý sự kiện cuộn
             function handleScroll() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                // Kiểm tra nếu đã cuộn lên đầu trang và sau đó cuộn xuống lại
-                if (scrollTop < 10 && lastScrollTop > scrollTop) {
-                    // Đã cuộn lên đầu trang, reset animation
-                    resetFamiSections();
-                }
-                
-                // Cập nhật vị trí cuộn trước đó
-                lastScrollTop = scrollTop;
-                
                 // Kích hoạt animation khi phần tử vào viewport
                 if (isElementInViewport(invitationFami)) {
                     animateFamiSections();
@@ -1204,7 +1447,10 @@
                 
                 if (isElementInViewport(invitationAlbum)) {
                     animatePoem();
-                    animateGalleryItems();
+                    // Chỉ kích hoạt animation cho album-pic sau khi đoạn thơ đã hiển thị
+                    setTimeout(() => {
+                        animateAlbumPic();
+                    }, 800);
                 }
             }
 
@@ -1214,58 +1460,8 @@
             // Kích hoạt kiểm tra ban đầu (trong trường hợp các phần tử đã hiển thị khi tải trang)
             setTimeout(handleScroll, 500);
             
-            // Tạo gallery ảnh
-            const images = [
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.JPG',
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.JPG',
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.JPG',
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.JPG',
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.JPG',
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_95422.JPG',
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.JPG',
-                'https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9567.JPG'
-            ];
-            
-            // Tạo hai cột cho gallery
-            const photoGallery = document.getElementById('photo-gallery');
-            const column1 = document.createElement('div');
-            column1.className = 'photo-column';
-            const column2 = document.createElement('div');
-            column2.className = 'photo-column';
-            
-            photoGallery.appendChild(column1);
-            photoGallery.appendChild(column2);
-            
-            // Phân phối ảnh vào hai cột
-            images.forEach((imageUrl, index) => {
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.id = `gallery-item-${index}`;
-                
-                const img = document.createElement('img');
-                img.src = imageUrl;
-                img.alt = `Ảnh cưới ${index + 1}`;
-                img.loading = 'lazy'; // Lazy loading để tối ưu hiệu suất
-                
-                galleryItem.appendChild(img);
-                
-                // Phân phối ảnh vào hai cột, cột nào ngắn hơn thì thêm vào
-                if (index % 2 === 0) {
-                    column1.appendChild(galleryItem);
-                } else {
-                    column2.appendChild(galleryItem);
-                }
-            });
-            
-            // Hàm kích hoạt animation cho các ảnh trong gallery
-            function animateGalleryItems() {
-                const galleryItems = document.querySelectorAll('.gallery-item');
-                galleryItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add('animate-in');
-                    }, 300 + index * 150); // Delay tăng dần cho mỗi ảnh
-                });
-            }
+            // Sửa URL ảnh cho album-pic-left
+            document.querySelector('.album-pic-left').style.backgroundImage = 'url("https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/White-Warm-Tone.png")';
         });
     </script>
 </body>
