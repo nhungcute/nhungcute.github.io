@@ -9,128 +9,799 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        :root {
-            --bg: #f9f7f5;
-            --text-white: #ffffff;
-            --primary-color: #6d3e28;
-            --title-fs: 2.5rem;
-            --title-font: 'UTM Viceroy', sans-serif;
-            --biger-size: 1.5rem;
-            --gap: 2rem;
-            --border-color: #F8F6F4;
-        }
-        
         @font-face {
             font-family: 'Kyokm3';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/kyokm3.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'Light';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/Light.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'Lobster';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/Lobster-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'MTD Hillstown';
+            font-family: 'MTD-Hillstown';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/MTD-Hillstown-Clean.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'SFU Edwardian';
+            font-family: 'SFUEdwardian';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/SFUEdwardianScriptRegular.TTF') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'UTM As Heartbeat';
+            font-family: 'UTM-Heartbeat';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/utm-as-heartbeat-mxzse.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'UTM Viceroy';
+            font-family: 'UTM-Viceroy';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/utm-viceroyjf-wbcvj.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'UVN Ben Xuan';
+            font-family: 'UVN-BenXuan';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvnbenxuan_bzg9j.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'UVN Dinh Hon';
+            font-family: 'UVN-DinhHon';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvndinhhon-gov6r.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'UVN Moi Hong';
+            font-family: 'UVN-MoiHong';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvnmoihong-ouaqa.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'VL Wolfsbane';
+            font-family: 'Wolfsbane';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/VLWOLFSBANE.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'VNI Love';
+            font-family: 'VNI-Love';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/vni-love-x0bjf.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
         @font-face {
-            font-family: 'Wonderful Script';
+            font-family: 'WonderfulScript';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/WonderfulScript.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+            font-display: swap;
         }
-        
+
+        :root {
+            <!-- --bg: #f8f4e6;
+            --text-primary: #333;
+            --accent: #d4a373;
+            --accent-light: #e9d8c4;
+            --accent-dark: #a67c52;
+            --primary-color: #6d3e28;
+            --text-white: #ffffff;
+            --title-fs: 2rem;
+            --title-font: 'SFUEdwardian', serif;
+            --biger-size: 1.5rem; -->
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'UTM Viceroy', sans-serif;
-            background-color: var(--bg);
+            <!-- font-family: 'Light', sans-serif; -->
+            background-color: #f5f5f5;
+            color: var(--text-primary);
+            line-height: 1.6;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            color: #333;
         }
-        
+
+        .invitation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .invitation-container {
+            padding: 0;
+            display: grid;
+            gap: 10px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Image top section */
+        .img-top {
+            width: 100%;
+            height: 50vh;
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp');
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .img-top-bg {
+            width: 100%;
+            height: 60%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .names-container {
+            width: 80%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .name-row {
+            display: flex;
+            width: 100%;
+        }
+
+        .name-left {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 5rem;
+            color: white;
+            text-align: left;
+            margin-right: auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .name-center {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 3rem;
+            color: white;
+            text-align: center;
+            margin: 0 auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .name-right {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 5rem;
+            color: white;
+            text-align: right;
+            margin-left: auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Wedding ceremony section */
+        .ceremony-section {
+            <!-- padding: 0 20px 20px 20px; /* Adjusted padding to reduce space at top */ -->
+            width: 100%;
+        }
+
+        .invitation-card {
+		background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-LG.jpg');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+			
+			background-color: rgba(255, 255, 255, 0.75);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 12px;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08); /* Updated box-shadow */
+            width: 100%;
+        }
+		.invitation-card::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-LGjpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.3;
+			border-radius: 12px;
+			z-index: -1;
+		}
+
+		.invitation-card img {
+			max-width: 100%;
+			width: 320px;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			padding: 8px;
+			background-color: var(--text-white);
+			border-radius: 999px 999px 0 0;
+		}
+        .card-title {
+            font-size: 3rem;
+            font-family: var(--title-font);
+            color: var(--primary-color);
+			font-weight: bold;
+        }
+		.invitation-subtitle{
+			font-family: initial;
+		}
+        .invitation-body {
+            width: 100%;
+        }
+
+        .invi_time {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            color: inherit;
+        }
+
+        .invi_hours {
+            color: inherit;
+        }
+
+        .invi_group_time {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .invi_date_number {
+            display: flex;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .invi_date_text,
+        .invi_year_text {
+            border-top: 1px solid var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding: 4px 0;
+            color: inherit;
+        }
+
+        .invi_amlich {
+            font-style: italic;
+            font-size: 14px;
+            color: inherit;
+        }
+
+        .social-link {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+            width: 100%;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .social-link a {
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            transition: 0.3s;
+        }
+
+        .social-link a i {
+            font-size: 16px;
+            transition: 0.3s;
+            color: var(--primary-color);
+        }
+
+        .social-link a:hover i {
+            transform: translateY(-2px);
+        }
+
+        address {
+            font-style: normal;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: inherit;
+            line-height: 1.5;
+        }
+
+        /* Family information section */
+        .invitation-fami {
+            <!-- padding: 0 20px 20px 20px; -->
+            width: 100%;
+        }
+
+        .family-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08); /* Updated box-shadow */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInContainer 0.8s ease forwards;
+        }
+
+        .family-title {
+            font-size: 3rem;
+			font-family: var(--title-font);
+			color: var(--primary-color);
+			font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        .family-members {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .family-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+			width: 100%;
+        }
+
+        .family-member:nth-child(1) {
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .family-member:nth-child(2) {
+            animation: fadeInUp 0.8s ease forwards 0.9s;
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top; /* Set background-position to top */
+            border: 3px solid var(--accent-light);
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .family-member:nth-child(1) .member-image {
+            animation: zoomIn 0.8s ease forwards 0.8s;
+        }
+
+        .family-member:nth-child(2) .member-image {
+            animation: zoomIn 0.8s ease forwards 1.1s;
+        }
+		.member-info {
+				width: 100%;
+			}
+        .member-name {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            opacity: 0;
+			min-height: 2.5rem;
+        }
+
+        .family-member:nth-child(1) .member-name {
+            animation: fadeIn 0.8s ease forwards 1s;
+        }
+
+        .family-member:nth-child(2) .member-name {
+            animation: fadeIn 0.8s ease forwards 1.3s;
+        }
+
+        .member-parents {
+            margin-bottom: 5px;
+			opacity: 0;
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+        }
+
+        .family-member:nth-child(1) .member-parents {
+            animation: fadeIn 0.8s ease forwards 1.2s;
+        }
+
+        .family-member:nth-child(2) .member-parents {
+            animation: fadeIn 0.8s ease forwards 1.5s;
+        }
+ 
+		.parent-row {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			min-height: 24px; /* Ensure consistent height */
+		}
+
+        .member-address {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0;
+        }
+
+        .family-member:nth-child(1) .member-address {
+            animation: fadeIn 0.8s ease forwards 1.4s;
+        }
+
+        .family-member:nth-child(2) .member-address {
+            animation: fadeIn 0.8s ease forwards 1.7s;
+        }
+
+        /* Caption section */
+        .invitation-cap {
+            <!-- padding: 0 20px 20px 20px; -->
+            width: 100%;
+            <!-- margin-top: 10px; /* Added space of 1 line */ -->
+        }
+
+        .caption-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
+			position: relative;
+			overflow: hidden;
+        }
+
+        .poem {
+            font-family: 'UVN-MoiHong', cursive;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            text-align: center;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+		position: relative;
+        z-index: 2;
+        }
+/* Poem animation styles */
+    .poem-line {
+        display: block;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .poem-line.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .poem-decoration {
+        position: absolute;
+        opacity: 0;
+        transition: all 1.5s ease;
+    }
+
+    .poem-decoration.visible {
+        opacity: 0.15;
+    }
+
+    .flower-left {
+        top: 10px;
+        left: 10px;
+        transform: rotate(-15deg) scale(0.8);
+        color: var(--primary-color);
+        font-size: 2rem;
+    }
+
+    .flower-right {
+        bottom: 10px;
+        right: 10px;
+        transform: rotate(15deg) scale(0.8);
+        color: var(--primary-color);
+        font-size: 2rem;
+    }
+
+    .heart-float {
+        position: absolute;
+        color: var(--accent-dark);
+        font-size: 1.2rem;
+        opacity: 0;
+        animation: floatHeart 8s linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes floatHeart {
+        0% {
+            transform: translateY(0) translateX(0) scale(0.8);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.3;
+        }
+        80% {
+            opacity: 0.3;
+        }
+        100% {
+            transform: translateY(-100px) translateX(20px) scale(1.2);
+            opacity: 0;
+        }
+    }
+        /* Album section */
+        .invitation-album {
+            <!-- padding: 0 20px 20px 20px; -->
+            width: 100%;
+        }
+
+        .album-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .album-title {
+            font-size: var(--title-fs);
+            font-family: var(--title-font);
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .album-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .album-group {
+            position: relative;
+            height: auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .album-group:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Two images group */
+        .album-group-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--accent-light);
+            border-radius: 12px;
+        }
+
+        /* Three images group */
+        .album-group-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--accent-light);
+            border-radius: 12px;
+        }
+
+        .album-group-3 .album-img:first-child {
+            grid-column: 1 / 3;
+            height: 200px;
+        }
+
+        /* Overlapping images */
+        .album-overlap {
+            position: relative;
+            height: 300px;
+            padding: 15px;
+            background-color: var(--accent-light);
+            border-radius: 12px;
+        }
+
+        .album-overlap .album-img {
+            position: absolute;
+            width: 70%;
+            height: auto;
+            max-height: 80%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .album-overlap .album-img:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-5deg);
+            z-index: 1;
+        }
+
+        .album-overlap .album-img:nth-child(2) {
+            top: 20%;
+            right: 5%;
+            transform: rotate(5deg);
+            z-index: 2;
+        }
+
+        .album-overlap .album-img:hover {
+            transform: scale(1.05) rotate(0);
+            z-index: 3;
+        }
+
+        .album-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 4px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .album-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Polaroid style */
+        .album-polaroid {
+            background-color: white;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .album-polaroid:hover {
+            transform: rotate(0) scale(1.02);
+        }
+
+        .album-polaroid .album-img {
+            border: none;
+            box-shadow: none;
+            margin-bottom: 5px;
+        }
+
+        /* Thank You section */
+        .thank-you-section {
+            <!-- padding: 0 20px 20px 20px; -->
+            width: 100%;
+            <!-- margin-top: 10px; -->
+        }
+
+        .thank-you-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            padding: 40px 20px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thank-you-text {
+            font-family: 'SFUEdwardian', serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .thank-you-subtext {
+            font-family: 'UVN-MoiHong', cursive;
+            font-size: 1.2rem;
+            color: var(--accent-dark);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart-decoration {
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(214, 158, 158, 0.1);
+            z-index: 1;
+        }
+
+        .heart-1 {
+            top: -20px;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+
+        .heart-2 {
+            bottom: -30px;
+            right: 10%;
+            transform: rotate(15deg);
+        }
+
         /* Animation keyframes */
-        @keyframes fadeIn {
+        @keyframes fadeInContainer {
             from {
                 opacity: 0;
                 transform: translateY(20px);
@@ -140,40 +811,38 @@
                 transform: translateY(0);
             }
         }
-        
-        @keyframes scaleIn {
+
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: scale(0.9);
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
             }
             to {
                 opacity: 1;
                 transform: scale(1);
             }
         }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
+
         @keyframes heartBeat {
             0% {
                 transform: scale(1);
@@ -191,775 +860,177 @@
                 transform: scale(1);
             }
         }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes rotateIn {
-            from {
-                opacity: 0;
-                transform: rotate(-10deg) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: rotate(0) scale(1);
-            }
-        }
-        
-        .banner-wrapper {
-            padding: 1rem;
-            background-color: var(--border-color);
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        .banner-header {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .img-top {
-            position: relative;
-            width: 100%;
-            height: 50vh;
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp');
-            background-position: top;
-            background-size: cover;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: scaleIn 1.2s ease-out;
-        }
-        
-        .img-top-bg {
-            width: 100%;
-            height: 60%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .names-container {
-            width: 80%;
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .name-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .name-left {
-            font-family: 'UTM Viceroy', sans-serif;
-            font-size: 5rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-right: auto;
-            animation: slideInLeft 1.5s ease-out;
-        }
-        
-        .name-center {
-            font-family: 'UTM Viceroy', sans-serif;
-            font-size: 3rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: heartBeat 1.5s infinite;
-        }
-        
-        .name-right {
-            font-family: 'UTM Viceroy', sans-serif;
-            font-size: 5rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-left: auto;
-            animation: slideInRight 1.5s ease-out;
-        }
-        
-        /* Control Buttons */
+
+        /* Control buttons */
         .control-button {
             position: fixed;
             width: 40px;
             height: 40px;
-            background: var(--primary-color);
+            background: #ba0202;
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            border: none;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border: none;
             transition: all 0.3s ease;
         }
-        
+
         .control-button:hover {
             transform: scale(1.1);
         }
-        
-        .control-button i,
-        .control-button svg {
-            color: #fff;
-            font-size: 20px;
-            width: 24px;
-            height: 24px;
-            /* Center the icon within the button */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
+
         .toggleAudio {
             top: 40px;
             right: 20px;
-            /* Center the icon within the button */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.8s ease-out 0.5s backwards;
         }
-        
+
+        .toggleAudio i {
+            color: #fff;
+            font-size: 20px;
+        }
+
         .toggleGift {
             top: 90px;
             right: 20px;
-            animation: fadeIn 0.8s ease-out 0.8s backwards;
         }
-        
-        /* Invitation Card Styles */
-        .invitation-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            gap: 12px;
-            background-color: var(--text-white);
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
-            color: inherit;
-            width: 100%;
-            margin-top: 20px; /* Add space between the image and the card */
-            animation: fadeIn 1s ease-out 0.3s backwards;
+
+        .toggleGift svg {
+            width: 24px;
+            height: 24px;
         }
-        
-        .invitation-card .social-link a {
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-        }
-        
-        .invitation-card .social-link a i {
-            color: var(--primary-color);
-        }
-        
-        .invitation-card img {
-            max-width: 100%;
-            width: 320px;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            padding: 8px;
-            background-color: var(--text-white);
-            border-radius: 999px 999px 0 0;
-        }
-        
-        /* Family Information Styles */
-        .invitation-fami {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            background-color: var(--text-white);
-            border-radius: 12px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 1s ease-out 0.6s backwards;
-        }
-        
-        /* Caption/Poem Section Styles */
-        .invitation-cap {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            background-color: var(--text-white);
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 20px;
-            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 1s ease-out 0.9s backwards;
-            text-align: center;
-        }
-        
-        .poem-text {
-            font-family: 'UVN Moi Hong', sans-serif;
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--primary-color);
-            font-style: italic;
-            position: relative;
-            padding: 10px 20px;
-        }
-        
-        .poem-text::before,
-        .poem-text::after {
-            content: '"';
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            opacity: 0.5;
-            position: absolute;
-        }
-        
-        .poem-text::before {
-            top: -10px;
-            left: 0;
-        }
-        
-        .poem-text::after {
-            bottom: -30px;
-            right: 0;
-        }
-        
-        .fami-title {
-            font-size: 2rem;
-            font-family: var(--title-font);
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 20px;
-            animation: scaleIn 1.2s ease-out 0.8s backwards;
-        }
-        
-        .fami-content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        @media (min-width: 768px) {
-            .fami-content {
-                flex-direction: row;
-            }
-        }
-        
-        .fami-person {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .fami-person:hover {
-            transform: translateY(-5px);
-        }
-        
-        .fami-person:first-child {
-            animation: slideInLeft 1.2s ease-out 1s backwards;
-        }
-        
-        .fami-person:last-child {
-            animation: slideInRight 1.2s ease-out 1s backwards;
-        }
-        
-        .fami-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top;
-            margin-bottom: 15px;
-            border: 3px solid var(--primary-color);
-            padding: 3px;
-            transition: transform 0.5s ease;
-            opacity: 0;
-            animation: rotateIn 0.8s ease-out 1.2s forwards;
-        }
-        
-        .fami-person:hover .fami-img {
-            transform: scale(1.05);
-        }
-        
-        .fami-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out 1.4s forwards;
-        }
-        
-        .fami-parents {
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out 1.6s forwards;
-        }
-        
-        .fami-parent {
-            font-weight: bold;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out 1.8s forwards;
-        }
-        
-        .fami-parent:first-child {
-            animation-delay: 1.8s;
-        }
-        
-        .fami-parent:last-child {
-            animation-delay: 2s;
-        }
-        
-        .fami-address {
-            font-style: italic;
-            font-size: 0.9rem;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out 2.2s forwards;
-        }
-        
-        .card-title {
-            font-size: var(--title-fs);
-            font-family: var(--title-font);
-            color: inherit;
-            margin-bottom: 10px;
-            animation: scaleIn 1s ease-out 0.5s backwards;
-        }
-        
-        .invitation-subtitle {
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            animation: fadeIn 1s ease-out 0.7s backwards;
-        }
-        
-        address {
-            font-style: normal;
-            color: inherit;
-            margin: 15px 0;
-            line-height: 1.5;
-            animation: fadeIn 1s ease-out 0.9s backwards;
-        }
-        
-        .invitation-body {
-            width: 100%;
-            animation: fadeIn 1s ease-out 0.8s backwards;
-        }
-        
-        .invi_time {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 8px;
-            margin-bottom: 12px;
-            color: inherit;
-        }
-        
-        .fw-bold {
-            font-weight: bold;
-            color: inherit;
-        }
-        
-        .invi_hours {
-            color: inherit;
-        }
-        
-        .invi_group_time {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-        }
-        
-        .invi_date_number {
-            display: flex;
-            justify-content: center;
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: var(--biger-size);
-            font-family: var(--title-font);
-        }
-        
-        .invi_date_text,
-        .invi_year_text {
-            position: relative;
-            padding: 4px 0;
-            color: inherit;
-        }
-        
-        /* Shortened divider lines */
-        .invi_date_text::before,
-        .invi_date_text::after,
-        .invi_year_text::before,
-        .invi_year_text::after {
-            content: '';
-            position: absolute;
-            left: 25%;
-            right: 25%;
-            height: 1px;
-            background-color: var(--primary-color);
-        }
-        
-        .invi_date_text::before,
-        .invi_year_text::before {
-            top: 0;
-        }
-        
-        .invi_date_text::after,
-        .invi_year_text::after {
-            bottom: 0;
-        }
-        
-        .invi_amlich {
-            font-style: italic;
-            font-size: 14px;
-            color: inherit;
-            margin-bottom: 10px;
-        }
-        
-        .social-link {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            justify-items: center;
-            width: 100%;
-            gap: 8px;
-            margin-top: 8px;
-            animation: fadeIn 1s ease-out 1s backwards;
-        }
-        
-        .social-link a {
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid var(--text-white);
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        
-        .social-link a i {
-            font-size: 16px;
-            transition: 0.3s;
-            color: var(--text-white);
-        }
-        
-        .social-link a:hover i {
-            transform: translateY(-2px);
-        }
-        
-        /* Gift Modal Styles */
+
+        /* Gift modal styling */
         .modal-content {
             border-radius: 15px;
             border: none;
             overflow: hidden;
         }
-        
+
         .modal-header {
             background-color: var(--primary-color);
             color: white;
             border-bottom: none;
-            padding: 15px 20px;
         }
-        
+
         .modal-title {
             font-family: var(--title-font);
             font-size: 1.5rem;
             width: 100%;
             text-align: center;
         }
-        
+
         .modal-body {
             padding: 20px;
         }
-        
+
         .gift-images {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-        
-        .gift-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            animation: scaleIn 0.8s ease-out;
-        }
-        
-        .gift-card h5 {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px;
-            margin: 0;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-        
-        .gift-card img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-        
-        /* Photo Album Styles */
-        .invitation-album {
+
+        .gift-image-container {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            background-color: var(--text-white);
-            border-radius: 12px;
-            padding: 30px;
-            margin-top: 20px;
-            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 1s ease-out 1.2s backwards;
+            align-items: center;
+            gap: 10px;
         }
-        
-        .album-title {
-            font-size: 2rem;
+
+        .gift-image-container h5 {
             font-family: var(--title-font);
             color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 30px;
-            animation: scaleIn 1.2s ease-out;
+            margin-bottom: 0;
         }
-        
-        .album-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        @media (min-width: 768px) {
-            .album-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .album-group {
-            position: relative;
+
+        .gift-image {
+            width: 100%;
+            max-width: 300px;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            animation: fadeIn 0.8s ease-out forwards;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        
-        .album-group:hover {
-            transform: translateY(-5px);
+
+        /* Font demonstration section */
+        .font-demo {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin: 20px;
         }
-        
-        /* Single image style */
-        .album-single {
-            position: relative;
+
+        .font-title {
+            font-family: 'Lobster', cursive;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .font-sample {
             padding: 10px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #eee;
         }
-        
-        .album-single img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
+
+        .font-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666;
         }
-        
-        .album-single:hover img {
-            transform: scale(1.02);
-        }
-        
-        /* Double images style */
-        .album-double {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 10px;
-        }
-        
-        .album-double img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .album-double img:hover {
-            transform: scale(1.05);
-            z-index: 2;
-        }
-        
-        /* Triple images style */
-        .album-triple {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 10px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 10px;
-        }
-        
-        .album-triple img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .album-triple img:first-child {
-            grid-column: 1 / 3;
-            grid-row: 1 / 2;
-        }
-        
-        .album-triple img:hover {
-            transform: scale(1.05);
-            z-index: 2;
-        }
-        
-        /* Overlapping style */
-        .album-overlap {
-            position: relative;
-            height: 300px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 10px;
-        }
-        
-        .album-overlap img {
-            position: absolute;
-            width: 70%;
-            height: auto;
-            object-fit: cover;
-            border: 8px solid white;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .album-overlap img:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            z-index: 1;
-            transform: rotate(-5deg);
-        }
-        
-        .album-overlap img:nth-child(2) {
-            top: 20%;
-            right: 5%;
-            z-index: 2;
-            transform: rotate(5deg);
-        }
-        
-        .album-overlap img:hover {
-            transform: scale(1.1) rotate(0);
-            z-index: 3;
-        }
-        
-        /* Polaroid style */
-        .album-polaroid {
-            padding: 15px;
-            background-color: white;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .polaroid {
-            background: white;
-            padding: 10px 10px 30px 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-        
-        .polaroid img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .polaroid::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-family: 'UVN Moi Hong', sans-serif;
-            font-size: 0.9rem;
-            color: var(--primary-color);
-        }
-        
-        .polaroid:nth-child(odd) {
-            transform: rotate(-3deg);
-        }
-        
-        .polaroid:nth-child(even) {
-            transform: rotate(3deg);
-        }
-        
-        .polaroid:hover {
-            transform: scale(1.05) rotate(0);
-            z-index: 2;
-        }
-        
-        /* Responsive styles */
+
+        /* Responsive design */
         @media (min-width: 768px) {
-            .banner-wrapper {
+            .invitation-container {
                 width: 70%;
+            }
+            
+            .names-container {
+                width: 70%;
+            }
+            
+            .family-members {
+                flex-direction: row;
+                justify-content: space-around;
             }
             
             .gift-images {
                 flex-direction: row;
+                justify-content: center;
             }
             
-            .gift-card {
-                flex: 1;
+            .album-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .thank-you-text {
+                font-size: 4rem;
             }
         }
-        
+
         @media (min-width: 1024px) {
-            .banner-wrapper {
+            .invitation-container {
                 width: 60%;
             }
+            
+            .names-container {
+                width: 60%;
+            }
+            
+            .album-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .thank-you-text {
+                font-size: 5rem;
+            }
         }
-        
+
         @media (max-width: 767px) {
+            .invitation-container {
+                width: 100%;
+            }
+            
             .name-left, .name-right {
                 font-size: 3.5rem;
             }
@@ -969,93 +1040,57 @@
             }
             
             .names-container {
-                width: 95%;
-            }
-            
-            .poem-text {
-                font-size: 1.1rem;
-                line-height: 1.6;
-            }
-            
-            .album-overlap {
-                height: 250px;
-            }
-            
-            .album-overlap img {
-                width: 80%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .name-left, .name-right {
-                font-size: 2.5rem;
-            }
-            
-            .name-center {
-                font-size: 2rem;
-            }
-            
-            .names-container {
+                width: 90%;
                 gap: 1rem;
             }
             
             .card-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
-            .toggleAudio {
-                top: 20px;
-                right: 20px;
-                width: 35px;
-                height: 35px;
+            .invi_group_time {
+                gap: 4px;
             }
             
-            .toggleGift {
-                top: 65px;
-                right: 20px;
-                width: 35px;
-                height: 35px;
+            .poem {
+                font-size: 1.1rem;
             }
             
-            .banner-wrapper {
-                padding: 0.75rem;
+            .album-overlap .album-img {
+                width: 80%;
             }
             
-            .poem-text {
-                font-size: 1rem;
-                padding: 5px 15px;
-            }
-            
-            .poem-text::before {
-                top: -5px;
-                left: 0;
-                font-size: 2rem;
-            }
-            
-            .poem-text::after {
-                bottom: -20px;
-                right: 0;
-                font-size: 2rem;
-            }
-            
-            .album-overlap {
-                height: 200px;
-            }
-            
-            .album-overlap img {
-                width: 85%;
+            .thank-you-text {
+                font-size: 2.5rem;
             }
         }
+		/* Extra small devices */
+    @media (max-width: 375px) {
+        .img-top-bg {
+            height: 80%;
+            padding: 10px;
+        }
+        
+        .names-container {
+            gap: 0.5rem;
+        }
+    }
     </style>
 </head>
 <body>
-    <!-- Audio Button -->
-    <button class="control-button toggleAudio" id="audioToggle">
-        <i class="ri-volume-mute-fill" id="audioIcon"></i>
+    <!-- Audio element -->
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/music/ido.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Audio button -->
+    <button class="control-button toggleAudio">
+        <i class="ri-volume-mute-fill"></i>
     </button>
     
-    <!-- Gift Button -->
-    <button class="control-button toggleGift" id="giftToggle" data-bs-toggle="modal" data-bs-target="#giftModal">
+    <!-- Gift button -->
+    <button class="control-button toggleGift" data-bs-toggle="modal" data-bs-target="#giftModal">
         <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
             <g fill="#fff">
                 <path d="M208 128v72a8 8 0 0 1-8 8H56a8 8 0 0 1-8-8v-72Z" opacity=".2"></path>
@@ -1064,14 +1099,33 @@
         </svg>
     </button>
     
-    <!-- Audio Element -->
-    <audio id="bgMusic" loop>
-        <source src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/music/ido.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Gift Modal -->
+    <div class="modal fade" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="giftModalLabel">Chú rể và Cô dâu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="gift-images">
+                        <div class="gift-image-container">
+                            <h5>Chú rể</h5>
+                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/ckbid.jpg" alt="Chú rể" class="gift-image">
+                        </div>
+                        <div class="gift-image-container">
+                            <h5>Cô dâu</h5>
+                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/vkbid.jpg" alt="Cô dâu" class="gift-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <div class="banner-wrapper">
-        <div class="banner-header">
+    <div class="invitation">
+        <div class="invitation-container">
+            <!-- Image top section -->
             <div class="img-top">
                 <div class="img-top-bg">
                     <div class="names-container">
@@ -1088,437 +1142,515 @@
                 </div>
             </div>
             
-            <div class="invitation-card">
-                <h3 class="card-title">Lễ Thành Hôn</h3>
-                <p class="invitation-subtitle">TRÂN TRỌNG KÍNH MỜI ĐẾN THAM DỰ BUỔI LỄ</p>
-                <div class="invitation-body">
-                    <div class="invi_time">
-                        <p class="fw-bold">Vào lúc 
-                            <span class="invi_hours">
+            <!-- Lễ Thành Hôn section -->
+            <div class="ceremony-section">
+                <div class="invitation-card">
+                    <h3 class="card-title">Lễ Thành Hôn</h3>
+                    <div class="invitation-subtitle">TRÂN TRỌNG KÍNH MỜI ĐẾN THAM DỰ BUỔI LỄ</div>
+                    <div class="invitation-body">
+                        <div class="invi_time">
+                            <p class="fw-bold">Vào lúc 
+                                <span class="invi_hours">
                                 09:00
-                            </span>
-                        </p>
-                        <div class="invi_group_time">
-                            <span class="invi_date_text">
+                                </span>
+                            </p>
+                            <div class="invi_group_time">
+                                <span class="invi_date_text">
                                 Thứ Hai
-                            </span> 
-                            <span class="invi_date_number">
-                                <p class="invi_date">14</p>
-                                / 
-                                <p class="invi_month">07</p>
-                            </span>
-                            <span class="invi_year_text">
+                                </span> 
+                                <span class="invi_date_number">
+                                    <p class="invi_date">14</p>
+                                    / 
+                                    <p class="invi_month">07</p>
+                                </span>
+                                <span class="invi_year_text">
                                 2025
-                            </span> 
+                                </span> 
+                            </div>
+                            <p class="invi_amlich">Tức ngày 20 tháng 06 năm Ất Tỵ</p>
                         </div>
-                        <p class="invi_amlich">Tức ngày 20 tháng 06 năm Ất Tỵ</p>
                     </div>
-                </div>
-                <address>
-                    <p>Tại tư gia nhà trai: Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
-                </address>
-                <div class="social-link"> 
-                    <a href="tel:0868920090" class="phone_number"> 
+					<address>
+                        <p>Tư gia nhà trai Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
+                    </address>
+                    <div class="social-link"> 
+                        <a href="tel:0868920090" class="phone_number"> 
                         <i class="ri-phone-fill"></i> 
-                    </a>
-                    <a href="https://maps.app.goo.gl/pkcjYMMP472dM2bA9" class="invi_map" target="_blank"> 
+                        </a>
+                        <a href="https://maps.app.goo.gl/pkcjYMMP472dM2bA9" class="invi_map" target="_blank"> 
                         <i class="ri-map-2-fill"></i>
-                    </a> 
+                        </a> 
+                    </div>
                 </div>
             </div>
             
             <!-- Family Information Section -->
             <div class="invitation-fami">
-                <h3 class="fami-title">Thông Tin Gia Đình</h3>
-                <div class="fami-content">
-                    <div class="fami-person">
-                        <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9398.webp" alt="Chú rể" class="fami-img">
-                        <div class="fami-name">Hà Mạnh Tín</div>
-                        <div class="fami-parents">
-                            <div class="fami-parent">Bố: HÀ VĂN THÚ</div>
-                            <div class="fami-parent">Mẹ: NGUYỄN THỊ THẾT</div>
-                        </div>
-                        <div class="fami-address">
-                            Tư gia tại: Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.
+                <div class="family-container">
+                     <h3 class="family-title">Wedding Invitation</h3> 
+                    <div class="family-members">
+                        <div class="family-member">
+                        <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9398.webp" alt="Chú rể" class="member-image">
+                        <div class="member-info">
+                            <h4 class="member-name">Hà Mạnh Tín</h4>
+                            <div class="member-parents">
+                                <div class="parent-row father-row">
+                                    <p>Bố HÀ VĂN THÚ</p>
+                                </div>
+                                <div class="parent-row mother-row">
+                                    <p>Mẹ NGUYỄN THỊ THẾT</p>
+                                </div>
+                            </div>
+                            <div class="member-address">
+                                <p>Tư gia tại: Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="fami-person">
-                        <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.webp" alt="Cô dâu" class="fami-img">
-                        <div class="fami-name">Nguyễn Thị Hồng Nhung</div>
-                        <div class="fami-parents">
-                            <div class="fami-parent">Bố: NGUYỄN VĂN PHƯƠNG</div>
-                            <div class="fami-parent">Mẹ: PHẠM THỊ MIỆN</div>
+                    <div class="family-member">
+                        <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.webp" alt="Cô dâu" class="member-image">
+                        <div class="member-info">
+                            <h4 class="member-name">Nguyễn Thị Hồng Nhung</h4>
+                            <div class="member-parents">
+                                <div class="parent-row father-row">
+                                    <p>Bố NGUYỄN VĂN PHƯƠNG</p>
+                                </div>
+                                <div class="parent-row mother-row">
+                                    <p>Mẹ PHẠM THỊ MIỆN</p>
+                                </div>
+                            </div>
+                            <div class="member-address">
+                                <p>Tư gia tại: Xã Tứ Hiệp, Huyện Thanh Trì, TP Hà Nội.</p>
+                            </div>
                         </div>
-                        <div class="fami-address">
-                            Tư gia tại: Xã Tứ Hiệp, Huyện Thanh Trì, TP Hà Nội.
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Poem/Caption Section -->
+            <!-- Caption/Poem Section -->
             <div class="invitation-cap">
-                <div class="poem-text">
-                    Giây phút ấy thật tuyệt vời, khoảnh khắc ta có nhau trong đời.<br>
-                    Điều anh ước muốn bây giờ ngay đây rồi..
-                </div>
-            </div>
-            
-            <!-- Photo Album Section -->
-            <div class="invitation-album">
-                <h3 class="album-title">Khoảnh Khắc Hạnh Phúc</h3>
-                <div class="album-container" id="photoAlbum">
-                    <!-- Album content will be dynamically generated -->
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Gift Modal -->
-    <div class="modal fade" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="giftModalLabel">Mừng Cưới</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="gift-images">
-                        <div class="gift-card">
-                            <h5>Chú rể</h5>
-                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/ckbid.jpg" alt="Chú rể QR code" class="img-fluid">
-                        </div>
-                        <div class="gift-card">
-                            <h5>Cô dâu</h5>
-                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/vkbid.jpg" alt="Cô dâu QR code" class="img-fluid">
-                        </div>
+                <div class="caption-container">
+				<!-- Poem decorations -->
+                <div class="poem-decoration flower-left">✿</div>
+                <div class="poem-decoration flower-right">✿</div>
+                
+                <!-- Floating hearts -->
+                <div class="heart-float" style="left: 15%; animation-delay: 0s;">❤</div>
+                <div class="heart-float" style="left: 35%; animation-delay: 2s;">❤</div>
+                <div class="heart-float" style="left: 65%; animation-delay: 4s;">❤</div>
+                <div class="heart-float" style="left: 85%; animation-delay: 6s;">❤</div>
+                    <div class="poem">
+					<span class="poem-line">"Giây phút ấy thật tuyệt vời, khoảnh khắc ta có nhau trong đời.</span>
+                    <span class="poem-line">Điều anh ước muốn bây giờ ngay đây rồi.."</span>
                     </div>
                 </div>
             </div>
+            
+            <!-- Album Section -->
+            <div class="invitation-album">
+                <div class="album-container">
+                    <h3 class="album-title">Khoảnh Khắc Ngọt Ngào</h3>
+                    <div id="albumGrid" class="album-grid">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thank You Section -->
+            <div class="thank-you-section">
+                <div class="thank-you-container">
+                    <div class="heart-decoration heart-1">❤</div>
+                    <div class="heart-decoration heart-2">❤</div>
+                    <h2 class="thank-you-text">Thank You!</h2>
+                    <p class="thank-you-subtext">Rất hân hạnh được đón tiếp. <3</p>
+                </div>
+            </div>
+            
+            <!-- Font demonstration section -->
+            <div class="font-demo">
+                <h2 class="font-title">Font Collection</h2>
+                
+                <div class="font-sample">
+                    <div class="font-name">Kyokm3</div>
+                    <div style="font-family: 'Kyokm3';">Đây là font Kyokm3 - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">Light</div>
+                    <div style="font-family: 'Light';">Đây là font Light - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">Lobster</div>
+                    <div style="font-family: 'Lobster';">Đây là font Lobster - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">MTD-Hillstown</div>
+                    <div style="font-family: 'MTD-Hillstown';">Đây là font MTD-Hillstown - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">SFUEdwardian</div>
+                    <div style="font-family: 'SFUEdwardian';">Đây là font SFUEdwardian - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UTM-Heartbeat</div>
+                    <div style="font-family: 'UTM-Heartbeat';">Đây là font UTM-Heartbeat - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UTM-Viceroy</div>
+                    <div style="font-family: 'UTM-Viceroy';">Đây là font UTM-Viceroy - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UVN-BenXuan</div>
+                    <div style="font-family: 'UVN-BenXuan';">Đây là font UVN-BenXuan - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UVN-DinhHon</div>
+                    <div style="font-family: 'UVN-DinhHon';">Đây là font UVN-DinhHon - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UVN-MoiHong</div>
+                    <div style="font-family: 'UVN-MoiHong';">Đây là font UVN-MoiHong - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">Wolfsbane</div>
+                    <div style="font-family: 'Wolfsbane';">Đây là font Wolfsbane - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">VNI-Love</div>
+                    <div style="font-family: 'VNI-Love';">Đây là font VNI-Love - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">WonderfulScript</div>
+                    <div style="font-family: 'WonderfulScript';">Đây là font WonderfulScript - Mẫu chữ đẹp</div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        // Audio toggle functionality
+        // Xử lý nút phát nhạc
         document.addEventListener('DOMContentLoaded', function() {
-            const audioToggle = document.getElementById('audioToggle');
-            const audioIcon = document.getElementById('audioIcon');
-            const bgMusic = document.getElementById('bgMusic');
+            const audioButton = document.querySelector('.toggleAudio');
+            const audioIcon = audioButton.querySelector('i');
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            
+            // Mặc định là tắt nhạc
             let isPlaying = false;
             
-            // Center the icon inside the audio toggle button
-            const centerAudioIcon = () => {
-                const iconElement = document.getElementById('audioIcon');
-                if (iconElement) {
-                    iconElement.style.display = 'flex';
-                    iconElement.style.justifyContent = 'center';
-                    iconElement.style.alignItems = 'center';
-                    iconElement.style.width = '100%';
-                    iconElement.style.height = '100%';
-                }
-            };
+            // Đảm bảo nhạc không tự động phát khi tải trang
+            backgroundMusic.pause();
             
-            centerAudioIcon();
-            
-            // Try to load the audio
-            bgMusic.load();
-            
-            // Add event listener for audio button
-            audioToggle.addEventListener('click', function() {
+            // Xử lý sự kiện khi nhấn nút phát nhạc
+            audioButton.addEventListener('click', function() {
                 if (isPlaying) {
-                    bgMusic.pause();
+                    // Dừng phát nhạc
+                    backgroundMusic.pause();
                     audioIcon.className = 'ri-volume-mute-fill';
                     isPlaying = false;
                 } else {
-                    // Play the music with a promise to handle autoplay restrictions
-                    const playPromise = bgMusic.play();
+                    // Bắt đầu phát nhạc
+                    // Đảm bảo nhạc được tải lại từ đầu nếu đã kết thúc
+                    if (backgroundMusic.ended) {
+                        backgroundMusic.currentTime = 0;
+                    }
                     
+                    // Phát nhạc
+                    const playPromise = backgroundMusic.play();
+                    
+                    // Xử lý lỗi phát nhạc (thường xảy ra trên các trình duyệt mobile)
                     if (playPromise !== undefined) {
                         playPromise.then(_ => {
-                            // Playback started successfully
+                            // Phát nhạc thành công
                             audioIcon.className = 'ri-volume-up-fill';
                             isPlaying = true;
                         })
                         .catch(error => {
-                            // Auto-play was prevented
-                            console.log("Autoplay prevented:", error);
-                            // We can show a notification to the user here if needed
-                            audioIcon.className = 'ri-volume-mute-fill';
-                            isPlaying = false;
+                            // Không thể phát nhạc (thường do chính sách của trình duyệt)
+                            console.error('Không thể phát nhạc:', error);
+                            alert('Không thể phát nhạc tự động. Vui lòng tương tác với trang web trước.');
                         });
                     }
                 }
-                // Re-center the icon after changing it
-                centerAudioIcon();
             });
             
-            // Photo album functionality
-            const album = [
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9234.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9253.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9257.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9284.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9303.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9317.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9324.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9346.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9365.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9377.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9586.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9598.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9633.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9637.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9650.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9667.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9672.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9675.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9690.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9701.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9740.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9758.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9770.webp",
-                "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9788.webp"
-            ];
-            
-            // Fix image URLs by replacing 'blob' with 'raw'
-            const fixedAlbum = album.map(url => url.replace('/blob/', '/'));
-            
-            // Generate album layout
-            const generateAlbum = () => {
-                const albumContainer = document.getElementById('photoAlbum');
-                if (!albumContainer) return;
-                
-                // Clear existing content
-                albumContainer.innerHTML = '';
-                
-                // Create different layout patterns
-                const createLayouts = () => {
-                    // Double image layout
-                    const createDoubleLayout = (img1, img2) => {
-                        const doubleDiv = document.createElement('div');
-                        doubleDiv.className = 'album-double';
-                        doubleDiv.innerHTML = `
-                            <img src="${img1}" alt="Wedding photo" loading="lazy">
-                            <img src="${img2}" alt="Wedding photo" loading="lazy">
-                        `;
-                        return doubleDiv;
-                    };
-                    
-                    // Triple image layout
-                    const createTripleLayout = (img1, img2, img3) => {
-                        const tripleDiv = document.createElement('div');
-                        tripleDiv.className = 'album-triple';
-                        tripleDiv.innerHTML = `
-                            <img src="${img1}" alt="Wedding photo" loading="lazy">
-                            <img src="${img2}" alt="Wedding photo" loading="lazy">
-                            <img src="${img3}" alt="Wedding photo" loading="lazy">
-                        `;
-                        return tripleDiv;
-                    };
-                    
-                    // Overlapping images layout
-                    const createOverlapLayout = (img1, img2) => {
-                        const overlapDiv = document.createElement('div');
-                        overlapDiv.className = 'album-overlap';
-                        overlapDiv.innerHTML = `
-                            <img src="${img1}" alt="Wedding photo" loading="lazy">
-                            <img src="${img2}" alt="Wedding photo" loading="lazy">
-                        `;
-                        return overlapDiv;
-                    };
-                    
-                    // Polaroid style layout
-                    const createPolaroidLayout = (img1, img2) => {
-                        const polaroidDiv = document.createElement('div');
-                        polaroidDiv.className = 'album-polaroid';
-                        polaroidDiv.innerHTML = `
-                            <div class="polaroid">
-                                <img src="${img1}" alt="Wedding photo" loading="lazy">
-                            </div>
-                            <div class="polaroid">
-                                <img src="${img2}" alt="Wedding photo" loading="lazy">
-                            </div>
-                        `;
-                        return polaroidDiv;
-                    };
-                    
-                    // Single image with border
-                    const createSingleLayout = (img) => {
-                        const singleDiv = document.createElement('div');
-                        singleDiv.className = 'album-single';
-                        singleDiv.innerHTML = `
-                            <img src="${img}" alt="Wedding photo" loading="lazy">
-                        `;
-                        return singleDiv;
-                    };
-                    
-                    // Create layout patterns with the images
-                    const layouts = [];
-                    
-                    // Create a double layout
-                    layouts.push(createDoubleLayout(fixedAlbum[0], fixedAlbum[1]));
-                    
-                    // Create a triple layout
-                    layouts.push(createTripleLayout(fixedAlbum[2], fixedAlbum[3], fixedAlbum[4]));
-                    
-                    // Create an overlap layout
-                    layouts.push(createOverlapLayout(fixedAlbum[5], fixedAlbum[6]));
-                    
-                    // Create a polaroid layout
-                    layouts.push(createPolaroidLayout(fixedAlbum[7], fixedAlbum[8]));
-                    
-                    // Create a single layout
-                    layouts.push(createSingleLayout(fixedAlbum[9]));
-                    
-                    // Create another double layout
-                    layouts.push(createDoubleLayout(fixedAlbum[10], fixedAlbum[11]));
-                    
-                    // Create another triple layout
-                    layouts.push(createTripleLayout(fixedAlbum[12], fixedAlbum[13], fixedAlbum[14]));
-                    
-                    // Create another overlap layout
-                    layouts.push(createOverlapLayout(fixedAlbum[15], fixedAlbum[16]));
-                    
-                    // Create another polaroid layout
-                    layouts.push(createPolaroidLayout(fixedAlbum[17], fixedAlbum[18]));
-                    
-                    // Create another single layout
-                    layouts.push(createSingleLayout(fixedAlbum[19]));
-                    
-                    // Create another double layout
-                    layouts.push(createDoubleLayout(fixedAlbum[20], fixedAlbum[21]));
-                    
-                    // Create another triple layout
-                    layouts.push(createTripleLayout(fixedAlbum[22], fixedAlbum[23], fixedAlbum[24]));
-                    
-                    return layouts;
-                };
-                
-                // Add layouts to the album container with animation delays
-                const layouts = createLayouts();
-                layouts.forEach((layout, index) => {
-                    layout.style.animationDelay = `${index * 0.2}s`;
-                    albumContainer.appendChild(layout);
-                });
-            };
-            
-            // Generate the album
-            generateAlbum();
-            
-            // Enhanced scroll reveal effect for family information section
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
+            // Xử lý sự kiện khi nhạc kết thúc
+            backgroundMusic.addEventListener('ended', function() {
+                // Phát lại từ đầu (nếu không có thuộc tính loop)
+                backgroundMusic.currentTime = 0;
+                backgroundMusic.play();
+            });
+        
+            // Trigger animations when the family section comes into view
+            const familyObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // When the family section comes into view, trigger animations
-                        if (entry.target.classList.contains('invitation-fami')) {
-                            // Reset animations by removing and adding animation classes
-                            const famiPersons = document.querySelectorAll('.fami-person');
-                            famiPersons.forEach((person, index) => {
-                                // Reset person container animation
-                                person.style.animation = 'none';
-                                person.offsetHeight; // Trigger reflow
-                                person.style.animation = index === 0 ? 
-                                    'slideInLeft 1.2s ease-out forwards' : 
-                                    'slideInRight 1.2s ease-out forwards';
-                                
-                                // Reset and animate each child element with staggered delays
-                                const elements = person.querySelectorAll('.fami-img, .fami-name, .fami-parents, .fami-parent, .fami-address');
-                                elements.forEach((el, i) => {
-                                    el.style.opacity = '0';
-                                    el.style.animation = 'none';
-                                    el.offsetHeight; // Trigger reflow
-                                    
-                                    // Different animation for different elements
-                                    if (el.classList.contains('fami-img')) {
-                                        setTimeout(() => {
-                                            el.style.animation = 'rotateIn 0.8s ease-out forwards';
-                                        }, 300);
-                                    } else {
-                                        setTimeout(() => {
-                                            el.style.animation = 'fadeInUp 0.6s ease-out forwards';
-                                        }, 300 + (i * 200)); // Staggered delay
-                                    }
-                                });
-                            });
-                        }
+                        // Reset animations by forcing reflow
+                        const familyContainer = entry.target;
                         
-                        // When the poem section comes into view, trigger animation
-                        if (entry.target.classList.contains('invitation-cap')) {
-                            const poemText = entry.target.querySelector('.poem-text');
-                            if (poemText) {
-                                poemText.style.animation = 'none';
-                                poemText.offsetHeight; // Trigger reflow
-                                poemText.style.animation = 'fadeInUp 1s ease-out forwards';
-                            }
-                        }
+                        // Remove and re-add the animation classes to restart animations
+                        familyContainer.style.animation = 'none';
+                        void familyContainer.offsetWidth; // Force reflow
+                        familyContainer.style.animation = 'fadeInContainer 0.8s ease forwards';
                         
-                        // When the album section comes into view, trigger animations
-                        if (entry.target.classList.contains('invitation-album')) {
-                            const albumGroups = entry.target.querySelectorAll('.album-double, .album-triple, .album-overlap, .album-polaroid, .album-single');
-                            albumGroups.forEach((group, index) => {
-                                group.style.opacity = '0';
-                                group.style.animation = 'none';
-                                group.offsetHeight; // Trigger reflow
-                                setTimeout(() => {
-                                    group.style.animation = 'fadeIn 0.8s ease-out forwards';
-                                }, 200 * index); // Staggered delay
-                            });
-                        }
+                        // Reset title animation
+                        const familyTitle = familyContainer.querySelector('.family-title');
+                        familyTitle.style.animation = 'none';
+                        void familyTitle.offsetWidth;
+                        familyTitle.style.animation = 'fadeInUp 0.8s ease forwards 0.3s';
                         
-                        observer.unobserve(entry.target);
+                        // Reset member animations
+                        const familyMembers = familyContainer.querySelectorAll('.family-member');
+                        familyMembers.forEach((member, index) => {
+                            // Reset member container animation
+                            member.style.animation = 'none';
+                            void member.offsetWidth;
+                            member.style.animation = `fadeInUp 0.8s ease forwards ${0.6 + index * 0.3}s`;
+                            
+                            // Reset member image animation
+                            const memberImage = member.querySelector('.member-image');
+                            memberImage.style.animation = 'none';
+                            void memberImage.offsetWidth;
+                            memberImage.style.animation = `zoomIn 0.8s ease forwards ${0.8 + index * 0.3}s`;
+                            
+                            // Reset member name animation
+                            const memberName = member.querySelector('.member-name');
+                            memberName.style.animation = 'none';
+                            void memberName.offsetWidth;
+                            memberName.style.animation = `fadeIn 0.8s ease forwards ${1.0 + index * 0.3}s`;
+                            
+                            // Reset member parents animation
+                            const memberParents = member.querySelector('.member-parents');
+                            memberParents.style.animation = 'none';
+                            void memberParents.offsetWidth;
+                            memberParents.style.animation = `fadeIn 0.8s ease forwards ${1.2 + index * 0.3}s`;
+                            
+                            // Reset member address animation
+                            const memberAddress = member.querySelector('.member-address');
+                            memberAddress.style.animation = 'none';
+                            void memberAddress.offsetWidth;
+                            memberAddress.style.animation = `fadeIn 0.8s ease forwards ${1.4 + index * 0.3}s`;
+                        });
                     }
                 });
-            }, observerOptions);
-            
-            // Observe the family information section
-            const famiSection = document.querySelector('.invitation-fami');
-            if (famiSection) {
-                observer.observe(famiSection);
-            }
-            
-            // Observe the poem section
-            const poemSection = document.querySelector('.invitation-cap');
-            if (poemSection) {
-                observer.observe(poemSection);
-            }
-            
-            // Observe the album section
-            const albumSection = document.querySelector('.invitation-album');
-            if (albumSection) {
-                observer.observe(albumSection);
-            }
-            
-            // Add scroll trigger for re-animation when scrolling back to elements
-            window.addEventListener('scroll', function() {
-                const sections = document.querySelectorAll('.invitation-fami, .invitation-cap, .invitation-album');
-                sections.forEach(section => {
-                    const rect = section.getBoundingClientRect();
-                    const isVisible = (
-                        rect.top >= 0 &&
-                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-                    );
-                    
-                    if (isVisible) {
-                        // Re-observe to trigger animations again
-                        observer.observe(section);
-                    }
-                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '-50px 0px'
             });
+            // Poem animation observer
+        const poemObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const captionContainer = entry.target;
+                    
+                    // Animate poem lines
+                    const poemLines = captionContainer.querySelectorAll('.poem-line');
+                    poemLines.forEach((line, index) => {
+                        setTimeout(() => {
+                            line.classList.add('visible');
+                        }, 300 * (index + 1));
+                    });
+                    
+                    // Animate decorations
+                    const decorations = captionContainer.querySelectorAll('.poem-decoration');
+                    decorations.forEach((decoration, index) => {
+                        setTimeout(() => {
+                            decoration.classList.add('visible');
+                        }, 1000 + 200 * index);
+                    });
+                    
+                    // Start floating hearts animation
+                    const hearts = captionContainer.querySelectorAll('.heart-float');
+                    hearts.forEach(heart => {
+                        heart.style.opacity = '0.3';
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5,
+            rootMargin: '-10px 0px'
         });
+            const familyContainer = document.querySelector('.family-container');
+            if (familyContainer) {
+                familyObserver.observe(familyContainer);
+            }
+
+
+			// animation cho đoạn thơ
+			const captionContainer = document.querySelector('.caption-container');
+			// Hàm kích hoạt animation cho đoạn thơ
+            if (captionContainer) {
+            poemObserver.observe(captionContainer);
+			}
+
+
+
+            // Add heartbeat animation to the Thank You section
+            const thankYouText = document.querySelector('.thank-you-text');
+            if (thankYouText) {
+                thankYouText.addEventListener('mouseover', function() {
+                    this.style.animation = 'heartBeat 1.5s ease';
+                });
+                
+                thankYouText.addEventListener('animationend', function() {
+                    this.style.animation = '';
+                });
+            }
+        });
+        
+        // Album image array
+        const album = [
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9234.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9253.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9257.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9284.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9303.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9317.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9324.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9346.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9365.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9377.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9586.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9598.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9633.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9637.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9650.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9667.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9672.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9675.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9690.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9701.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9740.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9758.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9770.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9788.webp"
+        ];
+        
+        // Note: The album array is defined but not used dynamically in this version
+        // The images are already placed in the HTML structure
+// Function to create album layout
+            function createAlbumLayout() {
+                const albumGrid = document.getElementById('albumGrid');
+                
+                // Clear any existing content
+                albumGrid.innerHTML = '';
+                
+                // Create different layout types
+                const layouts = [
+                    'overlap',    // Overlapping images
+                    'group2',     // Two images group
+                    'polaroid',   // Polaroid style
+                    'group3',     // Three images group
+                    'group2',     // Two images group
+                    'polaroid',   // Polaroid style
+                    'overlap',    // Overlapping images
+                    'group3',     // Three images group
+                    'group2'      // Two images group
+                ];
+                
+                let imageIndex = 0;
+                
+                // Create each layout type with images from the album array
+                layouts.forEach((layoutType, index) => {
+                    const layoutDiv = document.createElement('div');
+                    
+                    switch(layoutType) {
+                        case 'overlap':
+                            layoutDiv.className = 'album-overlap';
+                            // Add two overlapping images
+                            for (let i = 0; i < 2; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                            
+                        case 'group2':
+                            layoutDiv.className = 'album-group-2';
+                            // Add two images side by side
+                            for (let i = 0; i < 2; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                            
+                        case 'polaroid':
+                            layoutDiv.className = 'album-polaroid';
+                            // Add single polaroid style image
+                            if (imageIndex < album.length) {
+                                const img = document.createElement('img');
+                                img.src = album[imageIndex];
+                                img.alt = 'Wedding photo';
+                                img.className = 'album-img';
+                                layoutDiv.appendChild(img);
+                                imageIndex++;
+                            }
+                            break;
+                            
+                        case 'group3':
+                            layoutDiv.className = 'album-group-3';
+                            // Add three images (one large on top, two smaller below)
+                            for (let i = 0; i < 3; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                    }
+                    
+                    // Add the layout to the album grid
+                    albumGrid.appendChild(layoutDiv);
+                });
+                
+                // Add fade-in animation to album items
+                const albumItems = document.querySelectorAll('.album-overlap, .album-group-2, .album-polaroid, .album-group-3');
+                albumItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    // Create a staggered animation effect
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 200 * index);
+                });
+            }
+            
+            // Initialize the album layout
+            createAlbumLayout();
     </script>
 </body>
 </html>
