@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,10 @@
     <!-- Thêm favicon -->
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/Logo.svg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Thêm Dancing Script font từ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Thêm Pacifico font từ Google Fonts cho đoạn thơ -->
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <!-- Thêm Remixicon cho các biểu tượng -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        /* Font chữ cũ */
         @font-face {
             font-family: 'Kyokm3';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/kyokm3.otf') format('opentype');
@@ -28,22 +22,6 @@
         @font-face {
             font-family: 'Light';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/Light.ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'SFUEdwardian';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/SFUEdwardianScriptRegular.TTF') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'WonderfulScript';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/WonderfulScript.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -66,268 +44,194 @@
         }
 
         @font-face {
-            font-family: 'VLWOLFSBANE';
+            font-family: 'SFUEdwardian';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/SFUEdwardianScriptRegular.TTF') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'UTM-Heartbeat';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/utm-as-heartbeat-mxzse.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'UTM-Viceroy';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/utm-viceroyjf-wbcvj.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'UVN-BenXuan';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvnbenxuan_bzg9j.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'UVN-DinhHon';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvndinhhon-gov6r.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'UVN-MoiHong';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvnmoihong-ouaqa.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Wolfsbane';
             src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/VLWOLFSBANE.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
 
-        /* Font chữ mới */
         @font-face {
-            font-family: "VVRNIFZpYVyblKRidGY";
-            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/utm-viceroyjf-wbcvj.ttf") format("truetype");
+            font-family: 'VNI-Love';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/vni-love-x0bjf.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: "VVZOTWpSGuZyUVEY";
-            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/uvnmoihong-ouaqa.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "VVZORGluaEhvbiUVEY";
-            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/uvndinhhon-gov6r.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "VVZOQmVuWHVhblCLlRURg";
-            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/uvnbenxuan_bzg9j.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "VkJLUxvdmUudHRm";
-            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/vni-love-x0bjf.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "VVRNIEEmUyBIZWFydGJlYXQudHRm";
-            src: url("https://github.com/nhungcute/nhungcute.github.io/tree/main/font/utm-as-heartbeat-mxzse.ttf") format("truetype");
+            font-family: 'WonderfulScript';
+            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/WonderfulScript.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
 
         :root {
-            --bg: #f9f7f7;
+            --bg: #f8f4e6;
+            --text-primary: #333;
+            --accent: #d4a373;
+            --accent-light: #e9d8c4;
+            --accent-dark: #a67c52;
+            --primary-color: #6d3e28;
             --text-white: #ffffff;
-            --primary-color: #e63946;
-            --date-color: #6d3e28; /* Màu cho 14/07 */
-            --poem-color: #6d3e28; /* Màu cho đoạn thơ */
-            --gap: 20px;
             --title-fs: 2rem;
-            --title-font: 'Dancing Script', cursive;
-            --poem-font: 'VVZORGluaEhvbiUVEY', cursive; /* Thay đổi font cho đoạn thơ */
+            --title-font: 'SFUEdwardian', serif;
             --biger-size: 1.5rem;
         }
 
-        /* Hiệu ứng scale ±20% cho background */
-        @keyframes zoomEffect {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2); /* +20% */
-            }
-            100% {
-                transform: scale(1);
-            }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Hiệu ứng chạy từ trái vào - chỉ lệch 30% */
-        @keyframes slideInFromLeft {
-            0% {
-                transform: translateX(-30%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* Hiệu ứng chạy từ phải vào - chỉ lệch 30% */
-        @keyframes slideInFromRight {
-            0% {
-                transform: translateX(30%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        /* Hiệu ứng fade in từ dưới lên */
-        @keyframes fadeInUp {
-            0% {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Hiệu ứng fade in cho overlay */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Banner mới - đã sửa height thành 60vh */
-        .banner {
-            height: 60vh;
-            width: 100%;
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.JPG');
-            background-size: cover;
-            background-position: center;
-            position: relative;
+        body {
+            font-family: 'Light', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--text-primary);
+            line-height: 1.6;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 12px;
-            margin-bottom: 20px;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .banner-content {
-            width: 350px;
-            height: 70%;
-            background-color: rgb(0 0 0 / 50%);
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 15px;
-            overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
-            position: relative; /* Thêm position relative để có thể định vị các phần tử con */
-        }
-
-        /* Cấu trúc tên cô dâu chú rể mới - đã thêm margin-top để tạo khoảng cách với lề trên */
-        .couple-names-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 1.5rem 0 0.5rem; /* Thêm margin-top 1.5rem để tạo khoảng cách với lề trên */
-        }
-
-        .couple-name {
-            font-family: var(--title-font);
-            color: var(--primary-color);
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 10px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .couple-and {
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            margin: 10px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Sửa divider thành 3 phần */
-        .divider-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 75%;
-            margin: 1rem auto;
-        }
-
-        .divider-part {
-            height: 1px;
-            background-color: white;
-            flex: 1;
-        }
-
-        .divider-space {
-            width: 20%; /* Khoảng trống ở giữa */
-        }
-
-        /* Hiển thị save_date */
-        .save_date {
-            width: 80%;
-            height: 0;
-            padding-bottom: 30%; /* Tạo tỷ lệ khung hình */
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/save-the-date.png');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 10px auto 5px;
-            max-width: 90%; /* Đảm bảo không tràn ra ngoài */
-        }
-
-        /* Thêm khối chữ TRÂN TRỌNG KÍNH MỜI - đã xóa class="invitation-heading" nhưng giữ lại styling */
-        .banner-content h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            text-align: center;
-            margin: 5px 0 10px;
-            font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-            max-width: 90%; /* Đảm bảo không tràn ra ngoài */
-        }
-
-        /* Sửa kích thước khối nhan */
-        .nhan {
-            width: 15%;
-            height: 0;
-            padding-bottom: 15%; /* Tạo tỷ lệ khung hình vuông */
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/nhan2.png');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 10px auto;
-            border-radius: 50%; 
-        }
-
-        /* Styles cho mid-container */
-        #countdown-section {
-            padding: 4rem 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Định dạng mới cho invitation */
         .invitation {
-            background-color: var(--bg);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
         }
 
         .invitation-container {
-            padding: 20px;
+            padding: 0;
             display: grid;
-            gap: var(--gap);
+            gap: 10px;
+            width: 100%;
+            border-radius: 10px;
         }
 
-        /* Sửa lại invitation-card theo yêu cầu */
+        /* Image top section */
+        .img-top {
+            width: 100%;
+            height: 50vh;
+            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp');
+            background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .img-top-bg {
+            width: 100%;
+            height: 60%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .names-container {
+            width: 80%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .name-row {
+            display: flex;
+            width: 100%;
+        }
+
+        .name-left {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 5rem;
+            color: white;
+            text-align: left;
+            margin-right: auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .name-center {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 3rem;
+            color: white;
+            text-align: center;
+            margin: 0 auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .name-right {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 5rem;
+            color: white;
+            text-align: right;
+            margin-left: auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Wedding ceremony section */
+        .ceremony-section {
+            padding: 0 20px 20px 20px; /* Adjusted padding to reduce space at top */
+            width: 100%;
+        }
+
         .invitation-card {
             display: flex;
             flex-direction: column;
@@ -335,48 +239,14 @@
             padding: 20px;
             gap: 12px;
             background-color: var(--text-white);
-            position: relative;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            color: inherit;
-            z-index: 1;
-        }
-
-        /* Thêm lớp giả để làm nền mờ */
-        .invitation-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: bottom;
-            opacity: 0.2; /* Làm mờ 80% (0.2 = 20% hiển thị) */
-            border-radius: 12px;
-            z-index: -1;
-        }
-
-        /* Đảm bảo nội dung hiển thị rõ */
-        .invitation-card > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .invitation-card .social-link a {
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-            background-color: rgba(255, 255, 255, 0.7); /* Thêm background cho nút để dễ nhìn */
-        }
-
-        .invitation-card .social-link a i {
-            color: var(--primary-color);
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08); /* Updated box-shadow */
+            width: 100%;
         }
 
         .invitation-card img {
+			background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
             max-width: 100%;
             width: 320px;
             aspect-ratio: 1/1;
@@ -388,17 +258,12 @@
 
         .card-title {
             font-size: var(--title-fs);
+            font-family: var(--title-font);
+            color: inherit;
         }
 
-        .invitation-subtitle {
-            font-weight: bold;
-            margin-top: -5px;
-            margin-bottom: 10px;
-        }
-
-        .venue-address {
-            margin-top: 10px;
-            font-style: italic;
+        .invitation-body {
+            width: 100%;
         }
 
         .invi_time {
@@ -408,7 +273,11 @@
             text-align: center;
             gap: 8px;
             margin-bottom: 12px;
-            color: inherit; /* Sử dụng màu chữ mặc định */
+            color: inherit;
+        }
+
+        .invi_hours {
+            color: inherit;
         }
 
         .invi_group_time {
@@ -416,14 +285,17 @@
             grid-template-columns: repeat(3, 1fr);
             align-items: center;
             gap: 8px;
+            width: 100%;
+            max-width: 400px;
         }
 
         .invi_date_number {
             display: flex;
             justify-content: center;
             font-weight: 700;
-            color: var(--date-color); /* Màu #6d3e28 cho 14/07 */
+            color: var(--primary-color);
             font-size: var(--biger-size);
+            font-family: var(--title-font);
         }
 
         .invi_date_text,
@@ -431,13 +303,13 @@
             border-top: 1px solid var(--primary-color);
             border-bottom: 1px solid var(--primary-color);
             padding: 4px 0;
-            color: inherit; /* Sử dụng màu chữ mặc định */
+            color: inherit;
         }
 
         .invi_amlich {
             font-style: italic;
             font-size: 14px;
-            color: inherit; /* Sử dụng màu chữ mặc định */
+            color: inherit;
         }
 
         .social-link {
@@ -457,332 +329,519 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid var(--text-white);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            transition: 0.3s;
         }
 
         .social-link a i {
             font-size: 16px;
             transition: 0.3s;
-            color: var(--text-white);
+            color: var(--primary-color);
         }
 
         .social-link a:hover i {
             transform: translateY(-2px);
         }
 
-        /* Định dạng cho gift menu */
-        .gift-grid {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            margin-top: 15px;
-            width: 100%;
-        }
-
-        .gift-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        address {
+            font-style: normal;
             text-align: center;
-        }
-
-        .gift-title {
-            font-weight: bold;
-            font-size: 18px;
             margin-bottom: 10px;
-            color: var(--primary-color);
+            font-size: 1rem;
+            color: inherit;
+            line-height: 1.5;
         }
 
-        .gift-image {
-            width: 100%;
-            max-width: 250px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .account-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            background-color: #f8f8f8;
-            padding: 8px 12px;
-            border-radius: 6px;
-            width: 100%;
-        }
-
-        .account-number span {
-            text-align: center; /* Căn giữa chữ STK */
-            font-size: 14px;
-            color: #000;
-        }
-
-        /* Định dạng cho invitation-fami */
+        /* Family information section */
         .invitation-fami {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            gap: 12px;
-            background-color: var(--text-white);
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            color: inherit;
-            margin-top: 20px;
-        }
-
-        .fami-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 15px;
-            height: auto; /* Thay đổi từ fixed height sang auto */
-        }
-
-        /* Đánh số thứ tự cho các phần để sắp xếp trên desktop */
-        .fami-section-1 { order: 1; }
-        .fami-section-2 { order: 2; }
-        .fami-section-3 { order: 3; }
-        .fami-section-4 { order: 4; }
-
-        .fami-section {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            height: 450px; /* Đã sửa chiều cao cố định thành 450px */
-            opacity: 0; /* Bắt đầu với opacity 0 */
-            transition: transform 1s ease, opacity 1s ease; /* Transition cho transform và opacity */
-        }
-
-        /* Hiệu ứng cho từng section - Sửa lại theo yêu cầu */
-        .fami-section-1 {
-            transform: translateX(-30%); /* Mặc định ẩn bên trái 30% */
-        }
-
-        .fami-section-3 {
-            transform: translateX(-30%); /* Mặc định ẩn bên trái 30% */
-        }
-
-        /* Sửa lại section-2 theo yêu cầu */
-        .fami-section-2 {
-            transform: translateX(30%); /* Mặc định ẩn bên phải 30% */
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Thêm lớp giả để làm nền mờ cho section-2 */
-        .fami-section-2::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: bottom;
-            opacity: 0.2; /* Làm mờ 80% (0.2 = 20% hiển thị) */
-            border-radius: 8px;
-            z-index: -1;
-        }
-
-        /* Đảm bảo nội dung hiển thị rõ */
-        .fami-section-2 > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .fami-section-4 {
-            transform: translateX(30%); /* Mặc định ẩn bên phải 30% */
-        }
-
-        /* Sửa lại section-3 theo yêu cầu */
-        .fami-section-3 {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Thêm lớp giả để làm nền mờ cho section-3 */
-        .fami-section-3::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-25.jpg');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: bottom;
-            opacity: 0.2; /* Làm mờ 80% (0.2 = 20% hiển thị) */
-            border-radius: 8px;
-            z-index: -1;
-        }
-
-        /* Đảm bảo nội dung hiển thị rõ */
-        .fami-section-3 > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Khi được kích hoạt animation */
-        .fami-section.animate-in {
-            opacity: 1; /* Hiển thị đầy đủ khi hiển thị */
-            transform: translateX(0);
-        }
-
-        .fami-section.image-section {
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .fami-section.image-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.2); /* Lớp overlay để làm tối ảnh một chút */
-            border-radius: 8px;
-        }
-
-        .fami-section.image-section-1 {
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.JPG');
-        }
-
-        .fami-section.image-section-4 {
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.JPG');
-        }
-
-        /* Sửa lại font và kích thước cho tiêu đề theo yêu cầu */
-        .fami-title {
-            font-size: 3rem;
-            margin-bottom: 30px;
-        }
-
-        .fami-content {
-            font-size: 0.9rem;
-            text-align: center; /* Thay đổi từ left sang center */
+            padding: 0 20px 20px 20px;
             width: 100%;
         }
 
-        .fami-content p {
-            margin-bottom: 5px;
-        }
-
-        .fami-content .address {
-            font-style: italic;
-            font-size: 0.85rem;
-            margin-top: 5px;
-            margin-bottom: 10px;
-        }
-
-        .fami-content .person {
-            margin-top: 10px;
-        }
-
-        /* Định dạng cho invitation-album */
-        .invitation-album {
+        .family-container {
             display: flex;
             flex-direction: column;
-            padding: 20px;
-            gap: 12px;
+            gap: 20px;
             background-color: var(--text-white);
             border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08); /* Updated box-shadow */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInContainer 0.8s ease forwards;
+        }
+
+        .family-title {
+            font-size: var(--title-fs);
+            font-family: var(--title-font);
+            color: var(--primary-color);
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            color: inherit;
-            margin-top: 20px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        .family-members {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .family-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .family-member:nth-child(1) {
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .family-member:nth-child(2) {
+            animation: fadeInUp 0.8s ease forwards 0.9s;
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top; /* Set background-position to top */
+            border: 3px solid var(--accent-light);
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .family-member:nth-child(1) .member-image {
+            animation: zoomIn 0.8s ease forwards 0.8s;
+        }
+
+        .family-member:nth-child(2) .member-image {
+            animation: zoomIn 0.8s ease forwards 1.1s;
+        }
+
+        .member-name {
+            font-family: 'UTM-Viceroy', cursive;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            opacity: 0;
+        }
+
+        .family-member:nth-child(1) .member-name {
+            animation: fadeIn 0.8s ease forwards 1s;
+        }
+
+        .family-member:nth-child(2) .member-name {
+            animation: fadeIn 0.8s ease forwards 1.3s;
+        }
+
+        .member-parents {
+            margin-bottom: 5px;
+            opacity: 0;
+        }
+
+        .family-member:nth-child(1) .member-parents {
+            animation: fadeIn 0.8s ease forwards 1.2s;
+        }
+
+        .family-member:nth-child(2) .member-parents {
+            animation: fadeIn 0.8s ease forwards 1.5s;
+        }
+
+        .member-parents p {
+            margin: 0;
+        }
+
+        .member-address {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0;
+        }
+
+        .family-member:nth-child(1) .member-address {
+            animation: fadeIn 0.8s ease forwards 1.4s;
+        }
+
+        .family-member:nth-child(2) .member-address {
+            animation: fadeIn 0.8s ease forwards 1.7s;
+        }
+
+        /* Caption section */
+        .invitation-cap {
+            padding: 0 20px 20px 20px;
+            width: 100%;
+            margin-top: 10px; /* Added space of 1 line */
+        }
+
+        .caption-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
+			position: relative;
+			overflow: hidden;
         }
 
         .poem {
-            color: var(--poem-color);
-            font-size: 2rem;
-            line-height: 1.6;
-            margin: 20px 0;
-            padding: 15px;
-            background-color: rgba(249, 247, 247, 0.7);
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            font-family: 'UVN-MoiHong', cursive;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            text-align: center;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+		position: relative;
+        z-index: 2;
+        }
+/* Poem animation styles */
+    .poem-line {
+        display: block;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .poem-line.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .poem-decoration {
+        position: absolute;
+        opacity: 0;
+        transition: all 1.5s ease;
+    }
+
+    .poem-decoration.visible {
+        opacity: 0.15;
+    }
+
+    .flower-left {
+        top: 10px;
+        left: 10px;
+        transform: rotate(-15deg) scale(0.8);
+        color: var(--primary-color);
+        font-size: 2rem;
+    }
+
+    .flower-right {
+        bottom: 10px;
+        right: 10px;
+        transform: rotate(15deg) scale(0.8);
+        color: var(--primary-color);
+        font-size: 2rem;
+    }
+
+    .heart-float {
+        position: absolute;
+        color: var(--accent-dark);
+        font-size: 1.2rem;
+        opacity: 0;
+        animation: floatHeart 8s linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes floatHeart {
+        0% {
+            transform: translateY(0) translateX(0) scale(0.8);
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
+        }
+        20% {
+            opacity: 0.3;
+        }
+        80% {
+            opacity: 0.3;
+        }
+        100% {
+            transform: translateY(-100px) translateX(20px) scale(1.2);
+            opacity: 0;
+        }
+    }
+        /* Album section */
+        .invitation-album {
+            padding: 0 20px 20px 20px;
+            width: 100%;
         }
 
-        .poem.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Định dạng cho album-pic */
-        .album-pic {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .album-container {
+            display: flex;
+            flex-direction: column;
             gap: 20px;
-            margin-top: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
         }
 
-        .album-pic.animate-in {
-            opacity: 1;
-            transform: translateY(0);
+        .album-title {
+            font-size: var(--title-fs);
+            font-family: var(--title-font);
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
         }
 
-        .album-pic-left {
-            height: 300px;
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/blob/main/img/White-Warm-Tone.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        .album-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .album-group {
+            position: relative;
+            height: auto;
+            overflow: hidden;
             border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .album-group:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Two images group */
+        .album-group-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--accent-light);
+            border-radius: 12px;
+        }
+
+        /* Three images group */
+        .album-group-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--accent-light);
+            border-radius: 12px;
+        }
+
+        .album-group-3 .album-img:first-child {
+            grid-column: 1 / 3;
+            height: 200px;
+        }
+
+        /* Overlapping images */
+        .album-overlap {
+            position: relative;
+            height: 300px;
+            padding: 15px;
+            background-color: var(--accent-light);
+            border-radius: 12px;
+        }
+
+        .album-overlap .album-img {
+            position: absolute;
+            width: 70%;
+            height: auto;
+            max-height: 80%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .album-overlap .album-img:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-5deg);
+            z-index: 1;
+        }
+
+        .album-overlap .album-img:nth-child(2) {
+            top: 20%;
+            right: 5%;
+            transform: rotate(5deg);
+            z-index: 2;
+        }
+
+        .album-overlap .album-img:hover {
+            transform: scale(1.05) rotate(0);
+            z-index: 3;
+        }
+
+        .album-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 4px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .album-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Polaroid style */
+        .album-polaroid {
+            background-color: white;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .album-polaroid:hover {
+            transform: rotate(0) scale(1.02);
+        }
+
+        .album-polaroid .album-img {
+            border: none;
+            box-shadow: none;
+            margin-bottom: 5px;
+        }
+
+        /* Thank You section */
+        .thank-you-section {
+            padding: 0 20px 20px 20px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .thank-you-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--text-white);
+            border-radius: 12px;
+            padding: 40px 20px;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.08);
+            position: relative;
             overflow: hidden;
         }
 
-        .album-pic-right {
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
+        .thank-you-text {
+            font-family: 'SFUEdwardian', serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Định dạng cho nút điều khiển */
-        .control-buttons {
-            position: fixed;
-            top: 40px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
+        .thank-you-subtext {
+            font-family: 'UVN-MoiHong', cursive;
+            font-size: 1.2rem;
+            color: var(--accent-dark);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
+        .heart-decoration {
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(214, 158, 158, 0.1);
+            z-index: 1;
+        }
+
+        .heart-1 {
+            top: -20px;
+            left: 10%;
+            transform: rotate(-15deg);
+        }
+
+        .heart-2 {
+            bottom: -30px;
+            right: 10%;
+            transform: rotate(15deg);
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes heartBeat {
+            0% {
+                transform: scale(1);
+            }
+            14% {
+                transform: scale(1.1);
+            }
+            28% {
+                transform: scale(1);
+            }
+            42% {
+                transform: scale(1.1);
+            }
+            70% {
+                transform: scale(1);
+            }
+        }
+
+        /* Control buttons */
         .control-button {
+            position: fixed;
             width: 40px;
             height: 40px;
-            background: var(--primary-color);
+            background: #ba0202;
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            z-index: 1000;
             border: none;
-            outline: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
 
@@ -790,915 +849,446 @@
             transform: scale(1.1);
         }
 
-        .control-button i {
+        .toggleAudio {
+            top: 40px;
+            right: 20px;
+        }
+
+        .toggleAudio i {
             color: #fff;
             font-size: 20px;
         }
 
-        /* Định dạng cho SVG trong nút quà */
-        .control-button svg {
+        .toggleGift {
+            top: 90px;
+            right: 20px;
+        }
+
+        .toggleGift svg {
             width: 24px;
             height: 24px;
         }
 
-        /* Icon nam nữ kiểu WC */
-        .gender-icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 12px;
-        }
-
-        /* Định dạng cho icon quà */
-        .gift-icon {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* Tùy chỉnh Bootstrap Modal */
+        /* Gift modal styling */
         .modal-content {
-            border-radius: 12px;
+            border-radius: 15px;
             border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
         }
 
         .modal-header {
+            background-color: var(--primary-color);
+            color: white;
             border-bottom: none;
-            padding: 1.5rem 1.5rem 0.5rem;
         }
 
         .modal-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-family: var(--title-font);
+            font-size: 1.5rem;
             width: 100%;
             text-align: center;
         }
 
         .modal-body {
-            padding: 1rem 1.5rem 1.5rem;
+            padding: 20px;
         }
 
-        .modal-footer {
-            border-top: none;
-        }
-
-        .btn-close {
-            position: absolute;
-            right: 15px;
-            top: 15px;
-            z-index: 1;
-        }
-
-        /* Tùy chỉnh cho phone menu items */
-        .phone-menu-item {
+        .gift-images {
             display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            border-radius: 8px;
-            color: #333;
-            text-decoration: none;
-            transition: background-color 0.2s;
-            margin-bottom: 10px;
-            background-color: #f8f8f8;
-            justify-content: center; /* Căn giữa nội dung */
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .phone-menu-item:last-child {
+        .gift-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .gift-image-container h5 {
+            font-family: var(--title-font);
+            color: var(--primary-color);
             margin-bottom: 0;
         }
 
-        .phone-menu-item:hover {
-            background-color: #f0f0f0;
-        }
-
-        .phone-menu-item-content {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Căn giữa nội dung */
-        }
-
-        .phone-menu-item .role {
-            font-weight: bold;
-            margin-right: 5px;
-            white-space: nowrap;
-        }
-
-        .phone-menu-item .number {
-            font-weight: 500;
-        }
-
-        /* Popup menu styles */
-        .popup-menu {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            z-index: 1100;
-            max-width: 90%;
-            width: 600px;
-            display: none;
-        }
-
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1050;
-            display: none;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #999;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .popup-close:hover {
-            background-color: #f0f0f0;
-            color: #333;
-        }
- 
-.album-pic {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .album-pic.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Các kiểu khung ảnh */
-        .photo-frame {
-            position: relative;
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
+        .gift-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            margin-bottom: 25px;
         }
 
-        .photo-frame:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .photo-frame img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 8px solid white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-			z-index: 1;
-            transition: filter 0.5s ease, opacity 0.5s ease;
-    }
-
-    .photo-frame img.loading {
-        filter: blur(10px);
-        opacity: 0.7;
-    }
-
-    /* Hiệu ứng loading */
-    .loading-indicator {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 40px;
-        height: 40px;
-        border: 3px solid rgba(230, 57, 70, 0.3);
-        border-radius: 50%;
-        border-top-color: #e63946;
-        animation: spin 1s ease-in-out infinite;
-        z-index: 2;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .loading .loading-indicator {
-        opacity: 1;
-    }
-
-    @keyframes spin {
-        to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-/* Khung ảnh ghép ngang - chiếm 2 cột */
-        .photo-frame-wide {
-            grid-column: span 2;
-        }
-
-        .photo-frame-wide img {
-            height: 400px;
-        }
-
-        /* Khung ảnh ghép dọc */
-        .photo-frame-tall img {
-            height: 500px;
-        }
-
-        /* Khung ảnh ghép 2 ảnh */
-        .photo-collage {
-            display: flex;
-            gap: 15px;
-        }
-
-        /* Khung ảnh ghép 2 ảnh ngang */
-        .photo-collage-horizontal {
-            grid-column: span 2;
-            display: flex;
-            gap: 15px;
-        }
-
-        .photo-collage-horizontal .collage-item {
-            flex: 1;
-            position: relative;
-        }
-
-        .photo-collage-horizontal img {
-            height: 350px;
-        }
-
-        /* Khung ảnh ghép 2 ảnh dọc */
-        .photo-collage-vertical {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .photo-collage-vertical .collage-item {
-            position: relative;
-        }
-
-        .photo-collage-vertical img {
-            height: 200px;
-        }
-        /* Kiểu khung Polaroid */
-        .polaroid {
-            background: white;
-            padding: 15px 15px 40px 15px;
-            transform: rotate(var(--rotate, 0deg));
-        }
-
-        .polaroid::after {
-            content: attr(data-caption);
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-family: 'Dancing Script', cursive;
-            color: #666;
-            font-size: 16px;
-        }
-
-        /* Kiểu khung vintage */
-        .vintage {
-            border: 1px solid #e0e0e0;
-            background-color: #f8f8f8;
-        }
-
-        .vintage::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5V0zm1 5v1H5L6 5z'/%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-        /* Kiểu khung với hoa văn */
-        .floral {
+        /* Font demonstration section */
+        .font-demo {
+            margin-bottom: 20px;
+            padding: 15px;
             background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin: 20px;
         }
 
-        .floral::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0C20 0 20 20 0 20C20 20 20 40 20 40C20 40 20 20 40 20C20 20 20 0 20 0Z' fill='%23e63946' fill-opacity='0.2'/%3E%3C/svg%3E");
-            background-size: 80px 80px;
-            background-position: -20px -20px, 20px 20px;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        /* Kiểu khung với băng keo */
-        .tape {
-            position: absolute;
-            width: 80px;
-            height: 20px;
-            background-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            transform: rotate(var(--tape-rotate, 0deg));
-            z-index: 5;
-        }
-
-        .tape-top {
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%) rotate(-5deg);
-        }
-
-        .tape-bottom {
-            bottom: 30px;
-            right: -15px;
-            transform: rotate(30deg);
-        }
-
-        /* Kiểu khung với góc trang trí */
-        .corner-decoration {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0C20 0 20 20 0 20C20 20 20 40 20 40C20 40 20 20 40 20C20 20 20 0 20 0Z' fill='%23e63946' fill-opacity='0.2'/%3E%3C/svg%3E");
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 2;
-        }
-
-        .corner-top-right {
-            top: -5px;
-            right: -5px;
-            transform: rotate(90deg);
-        }
-
-        .corner-bottom-left {
-            bottom: -5px;
-            left: -5px;
-            transform: rotate(270deg);
-        }
-
-        .corner-bottom-right {
-            bottom: -5px;
-            right: -5px;
-            transform: rotate(180deg);
-        }
-
-        /* Kiểu khung với ruy băng */
-        .ribbon {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80px;
-            height: 80px;
-            overflow: hidden;
-            z-index: 3;
-        }
-
-        .ribbon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40px;
-            height: 10px;
-            background: #e63946;
-            transform: rotate(45deg) translateX(15px) translateY(-15px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Kiểu khung với đường viền đứt đoạn */
-        .dashed {
-            border: 2px dashed #e63946;
-            border-radius: 12px;
-        }
-
-        /* Kiểu khung với hình trái tim */
-        .heart-corner::before {
-            content: '❤';
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            font-size: 24px;
-            color: #e63946;
-            opacity: 0.6;
-            z-index: 3;
-        }
-
-        .heart-corner::after {
-            content: '❤';
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            font-size: 24px;
-            color: #e63946;
-            opacity: 0.6;
-            z-index: 3;
-        }
-
-        /* Kiểu khung với đường viền lượn sóng */
-        .wavy {
-            border-radius: 15px;
-        }
-
-        .wavy::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 2px solid transparent;
-            border-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e63946' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E") 30;
-            border-radius: 15px;
-            z-index: 2;
-        }
-/* Khối Thank You */
-        .thank-you {
-            margin-top: 60px;
-            margin-bottom: 40px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-
-        .thank-you.animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .thank-you-text {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #e63946;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            display: inline-block;
-        }
-
-        .thank-you-text::before,
-        .thank-you-text::after {
-            content: '❤';
+        .font-title {
+            font-family: 'Lobster', cursive;
+            color: var(--accent);
+            margin-bottom: 10px;
             font-size: 1.5rem;
-            position: absolute;
-            color: #e63946;
-            opacity: 0.7;
         }
 
-        .thank-you-text::before {
-            left: -30px;
-            top: 50%;
-            transform: translateY(-50%);
+        .font-sample {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
         }
 
-        .thank-you-text::after {
-            right: -30px;
-            top: 50%;
-            transform: translateY(-50%);
+        .font-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #666;
         }
 
-        .thank-you-decoration {
-            width: 100%;
-            height: 20px;
-            margin-top: 15px;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 25 20, 50 10 T 100 10' stroke='%23e63946' stroke-width='2' fill='none' stroke-opacity='0.5' /%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-size: 100px 20px;
-        }
-        /* Thêm media query cho màn hình rất nhỏ */
-        @media (max-width: 480px) {
-            /* Điều chỉnh kích thước tiêu đề trên màn hình rất nhỏ */
-            .fami-title {
-                font-size: 1.5rem;
-                margin-bottom: 15px;
-            }
-             
-        }
-
-        /* Thêm media query cho màn hình cao (điện thoại dọc) */
-        @media (max-height: 600px) {
-            .divider-container {
-                margin: 0.5rem auto; /* Giảm margin hơn nữa */
-            }
-             
-        }
-/* Responsive */
-        @media (max-width: 768px) {
-            .control-buttons {
-                top: 20px;
-                right: 20px;
-            }
-
-            .control-button {
-                width: 35px;
-                height: 35px;
-            } 
-		.album-pic {
-                grid-template-columns: 1fr;
+        /* Responsive design */
+        @media (min-width: 768px) {
+            .invitation-container {
+                width: 70%;
             }
             
-            .photo-frame img {
-                height: 250px;
+            .names-container {
+                width: 70%;
+            }
+            
+            .family-members {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            
+            .gift-images {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .album-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .thank-you-text {
+                font-size: 4rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .invitation-container {
+                width: 60%;
+            }
+            
+            .names-container {
+                width: 60%;
+            }
+            
+            .album-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .thank-you-text {
+                font-size: 5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .invitation-container {
+                width: 100%;
+            }
+            
+            .name-left, .name-right {
+                font-size: 3.5rem;
+            }
+            
+            .name-center {
+                font-size: 2.5rem;
+            }
+            
+            .names-container {
+                width: 90%;
+                gap: 1rem;
+            }
+            
+            .card-title {
+                font-size: 1.8rem;
+            }
+            
+            .invi_group_time {
+                gap: 4px;
             }
             
             .poem {
-                font-size: 1.5rem;
-                padding: 15px;
+                font-size: 1.1rem;
             }
-.thank-you-text {
-            font-size: 2.5rem;
-        }
-        
-        .photo-frame-wide {
-            grid-column: span 1;
-        }
-        
-        .photo-collage-horizontal {
-            grid-column: span 1;
-            flex-direction: column;
-        }
-        
-        .photo-collage-horizontal img {
-            height: 250px;
-        }
+            
+            .album-overlap .album-img {
+                width: 80%;
+            }
+            
+            .thank-you-text {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
-<body class="m-0 p-0">
-    <!-- Nút điều khiển -->
-    <div class="control-buttons">
-        <button class="control-button toggleAudio">
-            <i class="ri-volume-mute-fill"></i>
-        </button>
-        <button class="control-button toggleGift">
-            <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                <g fill="#fff">
-                    <path d="M208 128v72a8 8 0 0 1-8 8H56a8 8 0 0 1-8-8v-72Z" opacity=".2"></path>
-                    <path d="M216 72h-35.08c.39-.33.79-.65 1.17-1A29.53 29.53 0 0 0 192 49.57A32.62 32.62 0 0 0 158.44 16A29.53 29.53 0 0 0 137 25.91a54.94 54.94 0 0 0-9 14.48a54.94 54.94 0 0 0-9-14.48A29.53 29.53 0 0 0 97.56 16A32.62 32.62 0 0 0 64 49.57A29.53 29.53 0 0 0 73.91 71c.38.33.78.65 1.17 1H40a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16v64a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16v-64a16 16 0 0 0 16-16V88a16 16 0 0 0-16-16m-67-35.49a13.69 13.69 0 0 1 10-4.5h.49A16.62 16.62 0 0 1 176 49.08a13.69 13.69 0 0 1-4.5 10c-9.49 8.4-25.24 11.36-35 12.4c1.2-10.59 4.5-25.98 12.5-34.97m-64.09.36A16.63 16.63 0 0 1 96.59 32h.49a13.69 13.69 0 0 1 10 4.5c8.39 9.48 11.35 25.2 12.39 34.92c-9.72-1-25.44-4-34.92-12.39a13.69 13.69 0 0 1-4.5-10a16.6 16.6 0 0 1 4.82-12.16ZM40 88h80v32H40Zm16 48h64v64H56Zm144 64h-64v-64h64Zm16-80h-80V88h80z"></path>
-                </g>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Audio element (ẩn) -->
+<body>
+    <!-- Audio element -->
     <audio id="backgroundMusic" loop preload="auto">
-        <source src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/music/betifulinwhite.mp3" type="audio/mpeg">
+        <source src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/music/ido.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
-    <!-- Phone Modal (Bootstrap) -->
-    <div class="modal fade" id="phoneModal" tabindex="-1" aria-labelledby="phoneModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    
+    <!-- Audio button -->
+    <button class="control-button toggleAudio">
+        <i class="ri-volume-mute-fill"></i>
+    </button>
+    
+    <!-- Gift button -->
+    <button class="control-button toggleGift" data-bs-toggle="modal" data-bs-target="#giftModal">
+        <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+            <g fill="#fff">
+                <path d="M208 128v72a8 8 0 0 1-8 8H56a8 8 0 0 1-8-8v-72Z" opacity=".2"></path>
+                <path d="M216 72h-35.08c.39-.33.79-.65 1.17-1A29.53 29.53 0 0 0 192 49.57A32.62 32.62 0 0 0 158.44 16A29.53 29.53 0 0 0 137 25.91a54.94 54.94 0 0 0-9 14.48a54.94 54.94 0 0 0-9-14.48A29.53 29.53 0 0 0 97.56 16A32.62 32.62 0 0 0 64 49.57A29.53 29.53 0 0 0 73.91 71c.38.33.78.65 1.17 1H40a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16v64a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16v-64a16 16 0 0 0 16-16V88a16 16 0 0 0-16-16m-67-35.49a13.69 13.69 0 0 1 10-4.5h.49A16.62 16.62 0 0 1 176 49.08a13.69 13.69 0 0 1-4.5 10c-9.49 8.4-25.24 11.36-35 12.4c1.2-10.59 4.5-25.98 12.5-34.97m-64.09.36A16.63 16.63 0 0 1 96.59 32h.49a13.69 13.69 0 0 1 10 4.5c8.39 9.48 11.35 25.2 12.39 34.92c-9.72-1-25.44-4-34.92-12.39a13.69 13.69 0 0 1-4.5-10a16.6 16.6 0 0 1 4.82-12.16ZM40 88h80v32H40Zm16 48h64v64H56Zm144 64h-64v-64h64Zm16-80h-80V88h80z"></path>
+            </g>
+        </svg>
+    </button>
+    
+    <!-- Gift Modal -->
+    <div class="modal fade" id="giftModal" tabindex="-1" aria-labelledby="giftModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="phoneModalLabel">Liên hệ</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="giftModalLabel">Chú rể và Cô dâu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <a href="tel:0868920090" class="phone-menu-item">
-                        <!-- Icon nữ kiểu WC (đổi ngược lại) -->
-                        <svg class="gender-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" fill="#e63946"/>
-                            <path d="M14 16V19H10V16H8V19C8 20.1046 8.89543 21 10 21H14C15.1046 21 16 20.1046 16 19V16H14Z" fill="#e63946"/>
-                            <path d="M14 12H10C7.79086 12 6 13.7909 6 16H8C8 14.8954 8.89543 14 10 14H14C15.1046 14 16 14.8954 16 16H18C18 13.7909 16.2091 12 14 12Z" fill="#e63946"/>
-                            <path d="M12 13L12 17" stroke="#e63946" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <div class="phone-menu-item-content">
-                            <span class="role">Chú rể:</span>
-                            <span class="number">0868920090</span>
+                    <div class="gift-images">
+                        <div class="gift-image-container">
+                            <h5>Chú rể</h5>
+                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/ckbid.jpg" alt="Chú rể" class="gift-image">
                         </div>
-                    </a>
-                    <a href="tel:0393697098" class="phone-menu-item">
-                        <!-- Icon nam kiểu WC (đổi ngược lại) -->
-                        <svg class="gender-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" fill="#e63946"/>
-                            <path d="M14 12H10C7.79086 12 6 13.7909 6 16V19H8V21H10V19H14V21H16V19H18V16C18 13.7909 16.2091 12 14 12Z" fill="#e63946"/>
-                        </svg>
-                        <div class="phone-menu-item-content">
-                            <span class="role">Cô dâu:</span>
-                            <span class="number">0393697098</span>
+                        <div class="gift-image-container">
+                            <h5>Cô dâu</h5>
+                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/vkbid.jpg" alt="Cô dâu" class="gift-image">
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Gift Popup Menu -->
-    <div class="popup-overlay" id="giftOverlay"></div>
-    <div class="popup-menu gift-menu" id="giftMenu">
-        <button class="popup-close" id="closeGiftMenu">&times;</button>
-        <div class="gift-grid">
-            <div class="gift-column">
-                <div class="gift-title">CHÚ RỂ</div>
-                <div class="account-number">
-                    <span>STK: 2223904506</span>
-                </div>
-                <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/ckbid.jpg" alt="QR Code Chú rể" class="gift-image">
-            </div>
-            <div class="gift-column">
-                <div class="gift-title">CÔ DÂU</div>
-                <div class="account-number">
-                    <span>STK: 2224404902</span>
-                </div>
-                <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/vkbid.jpg" alt="QR Code Cô dâu" class="gift-image">
-            </div>
-        </div>
-    </div>
-
-    <section id="countdown-section">
-        <div class="container">
-            <div class="invitation">
-                <div class="invitation-container">
-                    <!-- Banner với nội dung đã được cập nhật -->
-                    <div class="banner">
-                        <div class="banner-content">
-                            <!-- Khối tên cô dâu chú rể với cấu trúc mới và margin-top đã được điều chỉnh -->
-                            <div class="couple-names-container">
-                                <div class="couple-name">Mạnh Tín</div>
-                                <div class="couple-and">&amp;</div>
-                                <div class="couple-name">Hồng Nhung</div>
-                            </div>
-                            
-                            <!-- Đã chuyển khối save_date vào bên trong banner-content -->
-                            <div class="save_date"></div>
-                            
-                            <!-- Đã chuyển khối chữ TRÂN TRỌNG KÍNH MỜI vào bên trong banner-content - đã xóa class="invitation-heading" -->
-                            <h2>TRÂN TRỌNG KÍNH MỜI</h2>
+    
+    <div class="invitation">
+        <div class="invitation-container">
+            <!-- Image top section -->
+            <div class="img-top">
+                <div class="img-top-bg">
+                    <div class="names-container">
+                        <div class="name-row">
+                            <div class="name-left">Mạnh Tín</div>
                         </div>
-                    </div>
-                    
-                    <div class="invitation-card">
-                        <h3 class="card-title">Lễ Thành Hôn</h3>
-                        <!-- Thêm dòng chữ mới theo yêu cầu -->
-                        <div class="invitation-subtitle">TRÂN TRỌNG KÍNH MỜI ĐẾN THAM DỰ BUỔI LỄ</div>
-                        
-                        <div class="invitation-body">
-                            <div class="invi_time">
-                                <p class="fw-bold">Vào lúc 
-                                    <span class="invi_hours">
-                                        09:00
-                                    </span>
-                                </p>
-                                <div class="invi_group_time">
-                                    <span class="invi_date_text">
-                                        Thứ Hai
-                                    </span> 
-                                    <span class="invi_date_number">
-                                        <p class="invi_date">14</p>
-                                        / 
-                                        <p class="invi_month">07</p>
-                                    </span>
-                                    <span class="invi_year_text">
-                                        2025
-                                    </span> 
-                                </div>
-                                <p class="invi_amlich">Tức ngày 20 tháng 06 năm Ất Tỵ</p>
-                                <!-- Chuyển địa chỉ xuống dưới theo yêu cầu -->
-                                <p class="venue-address">Tại tư gia nhà trai: Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
-                            </div>
+                        <div class="name-row">
+                            <div class="name-center">&</div>
                         </div>
-                        <div class="social-link"> 
-                            <!-- Nút điện thoại -->
-                            <a href="javascript:void(0)" class="phone-button" data-bs-toggle="modal" data-bs-target="#phoneModal"> 
-                                <i class="ri-phone-fill"></i> 
-                            </a>
-                            <a href="https://maps.app.goo.gl/pkcjYMMP472dM2bA9" class="invi_map" target="_blank"> 
-                                <i class="ri-map-2-fill"></i>
-                            </a> 
+                        <div class="name-row">
+                            <div class="name-right">Hồng Nhung</div>
                         </div>
-                    </div>
-
-                    <!-- Khối invitation-fami - Đã sửa theo yêu cầu -->
-                    <div class="invitation-fami" id="invitation-fami">
-                        <div class="fami-grid">
-                            <!-- Phần 1: Trên bên trái - có ảnh nền -->
-                            <div class="fami-section image-section image-section-1 fami-section-1">
-                                <!-- Phần này có ảnh nền từ CSS -->
-                            </div>
-                            
-                            <!-- Phần 2: Trên bên phải - Chú rể -->
-                            <div class="fami-section fami-section-2">
-                                <h4 class="fami-title">Chú rể<br>Hà Mạnh Tín</h4>
-                                <div class="fami-content">
-                                    <p>Bố: HÀ VĂN THÚ</p>
-                                    <p>Mẹ: NGUYỄN THỊ THẾT</p>
-                                    <p class="address">Tư gia tại: Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Phần 3: Dưới bên trái - Cô dâu -->
-                            <div class="fami-section fami-section-3">
-                                <h4 class="fami-title">Cô dâu<br>Nguyễn Thị Hồng Nhung</h4>
-                                <div class="fami-content">
-                                    <p>Bố: NGUYỄN VĂN PHƯƠNG</p>
-                                    <p>Mẹ: PHẠM THỊ MIỆN</p>
-                                    <p class="address">Tư gia tại: Xã Tứ Hiệp, Huyện Thanh Trì, TP Hà Nội.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Phần 4: Dưới bên phải - có ảnh nền -->
-                            <div class="fami-section image-section image-section-4 fami-section-4">
-                                <!-- Phần này có ảnh nền từ CSS -->
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Khối invitation-album mới - chỉ giữ lại đoạn thơ, xóa phần gallery ảnh -->
-                    <div class="invitation-album" id="invitation-album">
-                        <!-- Đoạn thơ với font chữ đặc biệt -->
-                        <div class="poem" id="wedding-poem">
-                            Hôn nhân là chuyện cả đời,<br>
-                            Yêu người vừa ý, cưới người mình thương...
-                        </div>
-                        
-                        <!-- Thêm khối album-pic mới -->
-                        <div class="album-pic" id="album-pic">
-						<!-- Khung ảnh ghép ngang lớn - chiếm 2 cột -->
-						<div class="photo-frame photo-frame-wide vintage loading" id="frame-1">
-							<div class="loading-indicator"></div>
-							<div class="ribbon"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới panorama">
-						</div>
-						
-						<!-- Khung ảnh 1: Polaroid với băng keo -->
-						<div class="photo-frame polaroid loading" style="--rotate: -3deg;" data-caption="Mạnh Tín & Hồng Nhung" id="frame-2">
-							<div class="loading-indicator"></div>
-							<div class="tape tape-top"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới 1">
-						</div>
-						
-						<!-- Khung ảnh 2: Với góc trang trí -->
-						<div class="photo-frame loading" id="frame-3">
-							<div class="loading-indicator"></div>
-							<div class="corner-decoration corner-top-right"></div>
-							<div class="corner-decoration corner-bottom-left"></div>
-							<div class="corner-decoration corner-bottom-right"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới 2">
-						</div>
-						
-						<!-- Khung ảnh ghép 2 ảnh ngang - chiếm 2 cột -->
-						<div class="photo-frame photo-collage-horizontal" id="frame-4">
-							<div class="collage-item loading" id="frame-4-1">
-								<div class="loading-indicator"></div>
-								<img class="lazy-load loading" alt="Ảnh cưới collage 1">
-							</div>
-							<div class="collage-item loading" id="frame-4-2">
-								<div class="loading-indicator"></div>
-								<img class="lazy-load loading" alt="Ảnh cưới collage 2">
-							</div>
-						</div>
-						
-						<!-- Khung ảnh 3: Với hoa văn -->
-						<div class="photo-frame floral loading" id="frame-5">
-							<div class="loading-indicator"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới 3">
-						</div>
-						
-						<!-- Khung ảnh ghép 2 ảnh dọc -->
-						<div class="photo-frame photo-collage-vertical" id="frame-6">
-							<div class="collage-item loading" id="frame-6-1">
-								<div class="loading-indicator"></div>
-								<img class="lazy-load loading" alt="Ảnh cưới collage dọc 1">
-							</div>
-							<div class="collage-item loading" id="frame-6-2">
-								<div class="loading-indicator"></div>
-								<img class="lazy-load loading" alt="Ảnh cưới collage dọc 2">
-							</div>
-						</div>
-						
-						<!-- Khung ảnh 4: Polaroid với góc nghiêng khác -->
-						<div class="photo-frame polaroid loading" style="--rotate: 2deg;" data-caption="14.07.2025" id="frame-7">
-							<div class="loading-indicator"></div>
-							<div class="tape tape-bottom"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới 4">
-						</div>
-						
-						<!-- Khung ảnh 5: Với đường viền đứt đoạn -->
-						<div class="photo-frame dashed loading" id="frame-8">
-							<div class="loading-indicator"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới 5">
-						</div>
-						
-						<!-- Khung ảnh dọc cao - chiếm 1 cột nhưng cao hơn -->
-						<div class="photo-frame photo-frame-tall heart-corner loading" id="frame-9">
-							<div class="loading-indicator"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới cao">
-						</div>
-						
-						<!-- Khung ảnh 6: Với đường viền lượn sóng -->
-						<div class="photo-frame wavy loading" id="frame-10">
-							<div class="loading-indicator"></div>
-							<img class="lazy-load loading" alt="Ảnh cưới 6">
-						</div>
-					</div>
-						
-						<!-- Khối Thank You -->
-						<div class="thank-you" id="thank-you">
-							<div class="thank-you-text">Thank you!</div>
-							<div class="thank-you-decoration"></div>
-						</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        
-        document.addEventListener('DOMContentLoaded', function() {
-// Hiệu ứng cho đoạn thơ và các phần tử khác
-            const poemElement = document.getElementById('wedding-poem');
-            const albumPic = document.getElementById('album-pic');
-            const thankYou = document.getElementById('thank-you');
             
-            // Hiển thị ngay lập tức để tránh lỗi
-            setTimeout(() => {
-                poemElement.classList.add('animate-in');
+            <!-- Lễ Thành Hôn section -->
+            <div class="ceremony-section">
+                <div class="invitation-card">
+                    <h3 class="card-title">Lễ Thành Hôn</h3>
+                    <address>
+                        <p>Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
+                    </address>
+                    <div class="invitation-body">
+                        <div class="invi_time">
+                            <p class="fw-bold">Vào lúc 
+                                <span class="invi_hours">
+                                09:00
+                                </span>
+                            </p>
+                            <div class="invi_group_time">
+                                <span class="invi_date_text">
+                                Thứ Hai
+                                </span> 
+                                <span class="invi_date_number">
+                                    <p class="invi_date">14</p>
+                                    / 
+                                    <p class="invi_month">07</p>
+                                </span>
+                                <span class="invi_year_text">
+                                2025
+                                </span> 
+                            </div>
+                            <p class="invi_amlich">Tức ngày 20 tháng 06 năm Ất Tỵ</p>
+                        </div>
+                    </div>
+                    <div class="social-link"> 
+                        <a href="tel:0868920090" class="phone_number"> 
+                        <i class="ri-phone-fill"></i> 
+                        </a>
+                        <a href="https://maps.app.goo.gl/pkcjYMMP472dM2bA9" class="invi_map" target="_blank"> 
+                        <i class="ri-map-2-fill"></i>
+                        </a> 
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Family Information Section -->
+            <div class="invitation-fami">
+                <div class="family-container">
+                    <h3 class="family-title">Thông Tin Gia Đình</h3>
+                    <div class="family-members">
+                        <div class="family-member">
+                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9398.webp" alt="Chú rể" class="member-image">
+                            <div class="member-info">
+                                <h4 class="member-name">Hà Mạnh Tín</h4>
+                                <div class="member-parents">
+                                    <p><strong>Bố:</strong> HÀ VĂN THÚ</p>
+                                    <p><strong>Mẹ:</strong> NGUYỄN THỊ THẾT</p>
+                                </div>
+                                <div class="member-address">
+                                    <p>Tư gia tại: Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="family-member">
+                            <img src="https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.webp" alt="Cô dâu" class="member-image">
+                            <div class="member-info">
+                                <h4 class="member-name">Nguyễn Thị Hồng Nhung</h4>
+                                <div class="member-parents">
+                                    <p><strong>Bố:</strong> NGUYỄN VĂN PHƯƠNG</p>
+                                    <p><strong>Mẹ:</strong> PHẠM THỊ MIỆN</p>
+                                </div>
+                                <div class="member-address">
+                                    <p>Tư gia tại: Xã Tứ Hiệp, Huyện Thanh Trì, TP Hà Nội.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Caption/Poem Section -->
+            <div class="invitation-cap">
+                <div class="caption-container">
+				<!-- Poem decorations -->
+                <div class="poem-decoration flower-left">✿</div>
+                <div class="poem-decoration flower-right">✿</div>
                 
-                setTimeout(() => {
-                    albumPic.classList.add('animate-in');
-                    
-                    setTimeout(() => {
-                        thankYou.classList.add('animate-in');
-                    }, 800);
-                }, 800);
-            }, 500);
+                <!-- Floating hearts -->
+                <div class="heart-float" style="left: 15%; animation-delay: 0s;">❤</div>
+                <div class="heart-float" style="left: 35%; animation-delay: 2s;">❤</div>
+                <div class="heart-float" style="left: 65%; animation-delay: 4s;">❤</div>
+                <div class="heart-float" style="left: 85%; animation-delay: 6s;">❤</div>
+                    <div class="poem">
+					<span class="poem-line">"Giây phút ấy thật tuyệt vời, khoảnh khắc ta có nhau trong đời.</span>
+                    <span class="poem-line">Điều anh ước muốn bây giờ ngay đây rồi.."</span>
+                    </div>
+                </div>
+            </div>
             
-            // Danh sách URL ảnh - Khai báo tập trung ở đây
-            const imageUrls = [
-                'https://nhungcute.github.io/img/MIN_9229.JPG',
-                'https://nhungcute.github.io/img/MIN_9382.JPG',
-                'https://nhungcute.github.io/img/MIN_9540.JPG',
-                'https://nhungcute.github.io/img/MIN_9547.JPG',
-                'https://nhungcute.github.io/img/MIN_9650.JPG',
-                'https://nhungcute.github.io/img/MIN_9267.JPG',
-                'https://nhungcute.github.io/img/MIN_9529.JPG',
-                'https://nhungcute.github.io/img/MIN_9542.JPG',
-                'https://nhungcute.github.io/img/MIN_9567.JPG'
-            ];
+            <!-- Album Section -->
+            <div class="invitation-album">
+                <div class="album-container">
+                    <h3 class="album-title">Album Cưới</h3>
+                    <div id="albumGrid" class="album-grid">
+                    </div>
+                </div>
+            </div>
             
-            // Cấu hình ánh xạ giữa ID khung ảnh và URL ảnh
-            const frameImageMap = {
-                'frame-1': imageUrls[0],
-                'frame-2': imageUrls[1],
-                'frame-3': imageUrls[2],
-                'frame-4-1': imageUrls[3],
-                'frame-4-2': imageUrls[4],
-                'frame-5': imageUrls[5],
-                'frame-6-1': imageUrls[6],
-                'frame-6-2': imageUrls[7],
-                'frame-7': imageUrls[8],
-                'frame-8': imageUrls[0], // Sử dụng lại ảnh đầu tiên
-                'frame-9': imageUrls[1], // Sử dụng lại ảnh thứ hai
-                'frame-10': imageUrls[2] // Sử dụng lại ảnh thứ ba
-            };
+            <!-- Thank You Section -->
+            <div class="thank-you-section">
+                <div class="thank-you-container">
+                    <div class="heart-decoration heart-1">❤</div>
+                    <div class="heart-decoration heart-2">❤</div>
+                    <h2 class="thank-you-text">Thank You!</h2>
+                    <p class="thank-you-subtext">Cảm ơn bạn đã dành thời gian tham dự của hôn lễ của chúng tôi</p>
+                </div>
+            </div>
             
-            // Danh sách các LQIP dạng base64 (đây là các ảnh rất nhỏ, mờ)
-            const lqips = [
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z',
-                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAQDAwQDAwQEBAQFBQQFBwsHBwYGBw4KCggLEA4RERAOEA8SFBoWEhMYEw8QFh8XGBsbHR0dERYgIh8cIhocHRz/2wBDAQUFBQcGBw0HBw0cEhASHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBz/wAARCAAeADIDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAABgcABAUI/8QAKhAAAgEDAwMDAwUAAAAAAAAAAQIDBAURAAYhBxIxE0FRFCJhCBYjMnH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQFAP/EACARAAICAgICAwAAAAAAAAAAAAECAAMRIQQSEzEiQVH/2gAMAwEAAhEDEQA/AGDuLqVtTbFRJBdLnGtRIvdFTo3qSyY8hVHOPk4A+dRdNuqG3t2XKW3RQXKCrgQu8c8WFYDjKkMQfPnGqe7+mG2tyvJcY2ktdwbkyXCEKsjfmRfsk/PA/GgKHpJuXbMq3G1X5EuMGe2VJGjKsP6kgZBB5HBHjVFtdVYsXRkzXXkWOvVhkQ+1Fq3/AKgLZYLZdLlbLbNVVcVHK0KzSsqhiozwoPgE/wCaDrb1S3juC5QWuOzW+D1ZFiLmVpCgJwWwQOB8DWqtZMzMqnEzrWVGCnMPNKmvNKkxGZpbk6c7Z3NDJV1VKYLgQcV1K3pyg/n3Df5g6XMvQG8LKZbVuS4LGRlUqYwR/vqA6bXTDpZuG5XOsqLZWUFxpqh+6Wjq5GQk/wBu0EYOTkYI9/xrMrOm+/7UjSWvcxqYEGFWqpEkGPjuQqf9Gqq+Qy/F1yJLZxlb5IcGHGxOjW1tsVcdzqFe73SLlJqpAFiP+xr4H5OT+dMPWJt/cN2sNwgornVQXGCQYE8MnY6N/wCrAjkH/Dxo00jkVXXqRJmVWKdWMWmlTSppUuIzP//Z'
-            ];
-            
-            // Tạo ảnh placeholder để hiển thị khi ảnh chính không tải được
-            function createPlaceholder(index) {
-                return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"%3E%3Crect width="300" height="300" fill="%23f8f8f8"/%3E%3Ctext x="50%25" y="50%25" font-family="Arial" font-size="14" text-anchor="middle" dominant-baseline="middle" fill="%23888"%3EẢnh cưới ${index + 1}%3C/text%3E%3C/svg%3E`;
-            }
-            // Xử lý nút phát nhạc
+            <!-- Font demonstration section -->
+            <div class="font-demo">
+                <h2 class="font-title">Font Collection</h2>
+                
+                <div class="font-sample">
+                    <div class="font-name">Kyokm3</div>
+                    <div style="font-family: 'Kyokm3';">Đây là font Kyokm3 - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">Light</div>
+                    <div style="font-family: 'Light';">Đây là font Light - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">Lobster</div>
+                    <div style="font-family: 'Lobster';">Đây là font Lobster - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">MTD-Hillstown</div>
+                    <div style="font-family: 'MTD-Hillstown';">Đây là font MTD-Hillstown - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">SFUEdwardian</div>
+                    <div style="font-family: 'SFUEdwardian';">Đây là font SFUEdwardian - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UTM-Heartbeat</div>
+                    <div style="font-family: 'UTM-Heartbeat';">Đây là font UTM-Heartbeat - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UTM-Viceroy</div>
+                    <div style="font-family: 'UTM-Viceroy';">Đây là font UTM-Viceroy - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UVN-BenXuan</div>
+                    <div style="font-family: 'UVN-BenXuan';">Đây là font UVN-BenXuan - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UVN-DinhHon</div>
+                    <div style="font-family: 'UVN-DinhHon';">Đây là font UVN-DinhHon - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">UVN-MoiHong</div>
+                    <div style="font-family: 'UVN-MoiHong';">Đây là font UVN-MoiHong - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">Wolfsbane</div>
+                    <div style="font-family: 'Wolfsbane';">Đây là font Wolfsbane - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">VNI-Love</div>
+                    <div style="font-family: 'VNI-Love';">Đây là font VNI-Love - Mẫu chữ đẹp</div>
+                </div>
+                
+                <div class="font-sample">
+                    <div class="font-name">WonderfulScript</div>
+                    <div style="font-family: 'WonderfulScript';">Đây là font WonderfulScript - Mẫu chữ đẹp</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Xử lý nút phát nhạc
+        document.addEventListener('DOMContentLoaded', function() {
             const audioButton = document.querySelector('.toggleAudio');
             const audioIcon = audioButton.querySelector('i');
             const backgroundMusic = document.getElementById('backgroundMusic');
@@ -1748,198 +1338,267 @@
                 backgroundMusic.currentTime = 0;
                 backgroundMusic.play();
             });
-            
-            // Xử lý nút quà
-            const giftButton = document.querySelector('.toggleGift');
-            const giftMenu = document.getElementById('giftMenu');
-            const giftOverlay = document.getElementById('giftOverlay');
-            const closeGiftMenu = document.getElementById('closeGiftMenu');
-            
-            // Hiển thị menu quà khi nhấn nút quà
-            giftButton.addEventListener('click', function() {
-                giftMenu.style.display = 'block';
-                giftOverlay.style.display = 'block';
-                giftMenu.style.animation = 'fadeIn 0.3s ease forwards';
-                giftOverlay.style.animation = 'fadeIn 0.3s ease forwards';
-            });
-            
-            // Đóng menu quà khi nhấn nút đóng
-            closeGiftMenu.addEventListener('click', function() {
-                giftMenu.style.display = 'none';
-                giftOverlay.style.display = 'none';
-            });
-            
-            // Đóng menu quà khi nhấn vào overlay
-            giftOverlay.addEventListener('click', function() {
-                giftMenu.style.display = 'none';
-                giftOverlay.style.display = 'none';
-            });
-
-            // Xử lý hiệu ứng cho khối invitation-fami
-            const famiSections = document.querySelectorAll('.fami-section');
-            const invitationFami = document.getElementById('invitation-fami');
-            let famiAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation chưa
-
-            // Xử lý hiệu ứng cho đoạn thơ 
-            const invitationAlbum = document.getElementById('invitation-album');
-            let poemAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation cho đoạn thơ chưa
-            let albumPicAnimationTriggered = false; // Biến để kiểm tra đã kích hoạt animation cho album-pic chưa
-
-            // Hàm kiểm tra phần tử có trong viewport không
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                
-                // Phần tử được coi là trong viewport khi phần lớn của nó hiển thị
-                return (
-                    rect.top <= windowHeight * 1.2 && 
-                    rect.bottom >= 0
-                );
-            }
-
-            // Hàm kích hoạt animation cho các section trong invitation-fami
-            function animateFamiSections() {
-                if (!famiAnimationTriggered) {
-                    famiSections.forEach((section, index) => {
-                        setTimeout(() => {
-                            section.classList.add('animate-in');
-                        }, index * 200); // Thêm delay tăng dần cho mỗi section
-                    });
-                    famiAnimationTriggered = true;
-                }
-            }
-
-            // Xử lý lazy loading cho ảnh
-            const lazyLoadImages = document.querySelectorAll('.lazy-load');
-            
-            // Thiết lập ảnh LQIP trước
-            lazyLoadImages.forEach((img, index) => {
-                img.src = lqips[index % lqips.length];
-                
-                // Tìm ID của khung chứa ảnh
-                const frameId = img.closest('.photo-frame, .collage-item').id;
-                
-                // Lưu URL ảnh chất lượng cao vào thuộc tính data-high-res
-                if (frameId && frameImageMap[frameId]) {
-                    img.setAttribute('data-high-res', frameImageMap[frameId]);
-                } else {
-                    // Nếu không tìm thấy trong map, sử dụng ảnh mặc định theo index
-                    img.setAttribute('data-high-res', imageUrls[index % imageUrls.length]);
-                }
-            });
-			// Hàm tải ảnh khi cuộn đến
-            function lazyLoad() {
-                lazyLoadImages.forEach((img) => {
-                    if (isElementInViewport(img) && img.classList.contains('loading')) {
-                        const parent = img.closest('.loading');
-                        const highResUrl = img.getAttribute('data-high-res');
+        
+            // Trigger animations when the family section comes into view
+            const familyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Reset animations by forcing reflow
+                        const familyContainer = entry.target;
                         
-                        // Tạo một đối tượng Image để kiểm tra xem ảnh có tải được không
-                        const imgLoader = new Image();
-                        imgLoader.onload = function() {
-                            // Khi ảnh đã tải xong, cập nhật src và xóa class loading
-                            img.src = this.src;
-                            img.classList.remove('loading');
-                            if (parent) {
-                                parent.classList.remove('loading');
-                            }
-                        };
-                        imgLoader.onerror = function() {
-                            console.log('Không thể tải ảnh: ' + highResUrl);
-                            // Nếu không tải được, sử dụng placeholder
-                            img.src = createPlaceholder(Array.from(lazyLoadImages).indexOf(img));
-                            img.classList.remove('loading');
-                            if (parent) {
-                                parent.classList.remove('loading');
-                            }
-                        };
-                        imgLoader.src = highResUrl;
+                        // Remove and re-add the animation classes to restart animations
+                        familyContainer.style.animation = 'none';
+                        void familyContainer.offsetWidth; // Force reflow
+                        familyContainer.style.animation = 'fadeInContainer 0.8s ease forwards';
+                        
+                        // Reset title animation
+                        const familyTitle = familyContainer.querySelector('.family-title');
+                        familyTitle.style.animation = 'none';
+                        void familyTitle.offsetWidth;
+                        familyTitle.style.animation = 'fadeInUp 0.8s ease forwards 0.3s';
+                        
+                        // Reset member animations
+                        const familyMembers = familyContainer.querySelectorAll('.family-member');
+                        familyMembers.forEach((member, index) => {
+                            // Reset member container animation
+                            member.style.animation = 'none';
+                            void member.offsetWidth;
+                            member.style.animation = `fadeInUp 0.8s ease forwards ${0.6 + index * 0.3}s`;
+                            
+                            // Reset member image animation
+                            const memberImage = member.querySelector('.member-image');
+                            memberImage.style.animation = 'none';
+                            void memberImage.offsetWidth;
+                            memberImage.style.animation = `zoomIn 0.8s ease forwards ${0.8 + index * 0.3}s`;
+                            
+                            // Reset member name animation
+                            const memberName = member.querySelector('.member-name');
+                            memberName.style.animation = 'none';
+                            void memberName.offsetWidth;
+                            memberName.style.animation = `fadeIn 0.8s ease forwards ${1.0 + index * 0.3}s`;
+                            
+                            // Reset member parents animation
+                            const memberParents = member.querySelector('.member-parents');
+                            memberParents.style.animation = 'none';
+                            void memberParents.offsetWidth;
+                            memberParents.style.animation = `fadeIn 0.8s ease forwards ${1.2 + index * 0.3}s`;
+                            
+                            // Reset member address animation
+                            const memberAddress = member.querySelector('.member-address');
+                            memberAddress.style.animation = 'none';
+                            void memberAddress.offsetWidth;
+                            memberAddress.style.animation = `fadeIn 0.8s ease forwards ${1.4 + index * 0.3}s`;
+                        });
                     }
                 });
-            }
-            // Hàm kích hoạt animation cho đoạn thơ
-            function animatePoem() {
-                if (!poemAnimationTriggered) {
-                    setTimeout(() => {
-                        poemElement.classList.add('animate-in');
-                    }, 300); // Delay nhỏ để tạo hiệu ứng tự nhiên
-                    poemAnimationTriggered = true;
-                }
-            }
-            
-            // Hàm kích hoạt animation cho album-pic
-            function animateAlbumPic() {
-                if (!albumPicAnimationTriggered && poemAnimationTriggered) {
-                    setTimeout(() => {
-                        albumPic.classList.add('animate-in');
-                    }, 600); // Delay lớn hơn để hiển thị sau khi đoạn thơ đã hiển thị
-                    albumPicAnimationTriggered = true;
-                }
-            }
-
-            // Hàm xử lý sự kiện cuộn
-            function handleScroll() {
-                // Kích hoạt animation khi phần tử vào viewport
-                if (isElementInViewport(invitationFami)) {
-                    animateFamiSections();
-                }
-                
-                if (isElementInViewport(invitationAlbum)) {
-                    animatePoem();
-                    // Chỉ kích hoạt animation cho album-pic sau khi đoạn thơ đã hiển thị
-                    setTimeout(() => {
-                        animateAlbumPic();
-                    }, 800);
-                }
-            }
-
-            // Thêm sự kiện cuộn
-            window.addEventListener('scroll', handleScroll);
-            
-            window.addEventListener('scroll', lazyLoad);
-            window.addEventListener('resize', lazyLoad);
-            setTimeout(handleScroll, 1000);
-             
-            
-            lazyLoadImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    // Tạo overlay xem ảnh phóng to
-                    const overlay = document.createElement('div');
-                    overlay.style.position = 'fixed';
-                    overlay.style.top = '0';
-                    overlay.style.left = '0';
-                    overlay.style.width = '100%';
-                    overlay.style.height = '100%';
-                    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-                    overlay.style.display = 'flex';
-                    overlay.style.alignItems = 'center';
-                    overlay.style.justifyContent = 'center';
-                    overlay.style.zIndex = '1000';
-                    overlay.style.cursor = 'pointer';
+            }, {
+                threshold: 0.2,
+                rootMargin: '-50px 0px'
+            });
+            // Poem animation observer
+        const poemObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const captionContainer = entry.target;
                     
-                    // Tạo ảnh phóng to
-                    const enlargedImg = document.createElement('img');
-                    enlargedImg.src = this.getAttribute('data-high-res') || this.src;
-                    enlargedImg.style.maxWidth = '90%';
-                    enlargedImg.style.maxHeight = '90%';
-                    enlargedImg.style.objectFit = 'contain';
-                    enlargedImg.style.border = '5px solid white';
-                    enlargedImg.style.boxShadow = '0 0 20px rgba(0, 0, 0, 0.5)';
-                    
-                    // Thêm vào overlay
-                    overlay.appendChild(enlargedImg);
-                    document.body.appendChild(overlay);
-                    
-                    // Đóng overlay khi click
-                    overlay.addEventListener('click', function() {
-                        document.body.removeChild(overlay);
+                    // Animate poem lines
+                    const poemLines = captionContainer.querySelectorAll('.poem-line');
+                    poemLines.forEach((line, index) => {
+                        setTimeout(() => {
+                            line.classList.add('visible');
+                        }, 300 * (index + 1));
                     });
+                    
+                    // Animate decorations
+                    const decorations = captionContainer.querySelectorAll('.poem-decoration');
+                    decorations.forEach((decoration, index) => {
+                        setTimeout(() => {
+                            decoration.classList.add('visible');
+                        }, 1000 + 200 * index);
+                    });
+                    
+                    // Start floating hearts animation
+                    const hearts = captionContainer.querySelectorAll('.heart-float');
+                    hearts.forEach(heart => {
+                        heart.style.opacity = '0.3';
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5,
+            rootMargin: '-10px 0px'
+        });
+            const familyContainer = document.querySelector('.family-container');
+            if (familyContainer) {
+                familyObserver.observe(familyContainer);
+            }
+
+
+			// animation cho đoạn thơ
+			const captionContainer = document.querySelector('.caption-container');
+			// Hàm kích hoạt animation cho đoạn thơ
+            if (captionContainer) {
+            poemObserver.observe(captionContainer);
+			}
+
+
+
+            // Add heartbeat animation to the Thank You section
+            const thankYouText = document.querySelector('.thank-you-text');
+            if (thankYouText) {
+                thankYouText.addEventListener('mouseover', function() {
+                    this.style.animation = 'heartBeat 1.5s ease';
                 });
                 
-                // Thêm cursor pointer để biết là có thể click
-                img.style.cursor = 'pointer';
-            });
+                thankYouText.addEventListener('animationend', function() {
+                    this.style.animation = '';
+                });
+            }
         });
+        
+        // Album image array
+        const album = [
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9234.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9253.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9257.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9284.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9303.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9317.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9324.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9346.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9365.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9377.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9586.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9598.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9633.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9637.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9650.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9667.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9672.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9675.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9690.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9701.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9740.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9758.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9770.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9788.webp"
+        ];
+        
+        // Note: The album array is defined but not used dynamically in this version
+        // The images are already placed in the HTML structure
+// Function to create album layout
+            function createAlbumLayout() {
+                const albumGrid = document.getElementById('albumGrid');
+                
+                // Clear any existing content
+                albumGrid.innerHTML = '';
+                
+                // Create different layout types
+                const layouts = [
+                    'overlap',    // Overlapping images
+                    'group2',     // Two images group
+                    'polaroid',   // Polaroid style
+                    'group3',     // Three images group
+                    'group2',     // Two images group
+                    'polaroid',   // Polaroid style
+                    'overlap',    // Overlapping images
+                    'group3',     // Three images group
+                    'group2'      // Two images group
+                ];
+                
+                let imageIndex = 0;
+                
+                // Create each layout type with images from the album array
+                layouts.forEach((layoutType, index) => {
+                    const layoutDiv = document.createElement('div');
+                    
+                    switch(layoutType) {
+                        case 'overlap':
+                            layoutDiv.className = 'album-overlap';
+                            // Add two overlapping images
+                            for (let i = 0; i < 2; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                            
+                        case 'group2':
+                            layoutDiv.className = 'album-group-2';
+                            // Add two images side by side
+                            for (let i = 0; i < 2; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                            
+                        case 'polaroid':
+                            layoutDiv.className = 'album-polaroid';
+                            // Add single polaroid style image
+                            if (imageIndex < album.length) {
+                                const img = document.createElement('img');
+                                img.src = album[imageIndex];
+                                img.alt = 'Wedding photo';
+                                img.className = 'album-img';
+                                layoutDiv.appendChild(img);
+                                imageIndex++;
+                            }
+                            break;
+                            
+                        case 'group3':
+                            layoutDiv.className = 'album-group-3';
+                            // Add three images (one large on top, two smaller below)
+                            for (let i = 0; i < 3; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                    }
+                    
+                    // Add the layout to the album grid
+                    albumGrid.appendChild(layoutDiv);
+                });
+                
+                // Add fade-in animation to album items
+                const albumItems = document.querySelectorAll('.album-overlap, .album-group-2, .album-polaroid, .album-group-3');
+                albumItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    // Create a staggered animation effect
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 200 * index);
+                });
+            }
+            
+            // Initialize the album layout
+            createAlbumLayout();
     </script>
 </body>
 </html>
