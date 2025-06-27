@@ -406,9 +406,10 @@
         }
 
         .family-members {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+            display: grid;
+    grid-template-columns: 1fr 1fr; /* Always two columns */
+    gap: 20px;
+    width: 100%;
         }
 
         .family-member {
@@ -990,6 +991,15 @@
                 width: 70%;
             }
             
+			.member-image {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .member-name {
+            font-size: 1.8rem;
+        }
+		
             .family-members {
                 flex-direction: row;
                 justify-content: space-around;
@@ -1064,6 +1074,18 @@
             .thank-you-text {
                 font-size: 2.5rem;
             }
+			
+			.member-name {
+            font-size: 1.3rem;
+        }
+        
+        .parent-row p {
+            font-size: 0.9rem;
+        }
+        
+        .member-address p {
+            font-size: 0.8rem;
+        }
         }
 		/* Extra small devices */
     @media (max-width: 375px) {
@@ -1075,6 +1097,20 @@
         .names-container {
             gap: 0.5rem;
         }
+		
+		.member-image {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .member-name {
+            font-size: 1.1rem;
+        }
+        
+        .parent-row p {
+            font-size: 0.8rem;
+        }
+		
     }
     </style>
 </head>
@@ -1172,7 +1208,7 @@
                         </div>
                     </div>
 					<address>
-                        <p>Tư gia nhà trai Ngõ 1, Thôn Hạ Bì Trung, Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
+                        <p>Tư gia nhà trai Xã Xuân Lộc, Huyện Thanh Thủy, Tỉnh Phú Thọ.</p>
                     </address>
                     <div class="social-link"> 
                         <a href="tel:0868920090" class="phone_number"> 
@@ -1196,10 +1232,10 @@
                             <h4 class="member-name">Hà Mạnh Tín</h4>
                             <div class="member-parents">
                                 <div class="parent-row father-row">
-                                    <p>Bố HÀ VĂN THÚ</p>
+                                    <p>Bố Hà Văn Thú</p>
                                 </div>
                                 <div class="parent-row mother-row">
-                                    <p>Mẹ NGUYỄN THỊ THẾT</p>
+                                    <p>Mẹ Nguyễn Thị Thết</p>
                                 </div>
                             </div>
                             <div class="member-address">
@@ -1214,10 +1250,10 @@
                             <h4 class="member-name">Nguyễn Thị Hồng Nhung</h4>
                             <div class="member-parents">
                                 <div class="parent-row father-row">
-                                    <p>Bố NGUYỄN VĂN PHƯƠNG</p>
+                                    <p>Bố Nguyễn Văn Phương</p>
                                 </div>
                                 <div class="parent-row mother-row">
-                                    <p>Mẹ PHẠM THỊ MIỆN</p>
+                                    <p>Mẹ Phạm Thị Miện</p>
                                 </div>
                             </div>
                             <div class="member-address">
