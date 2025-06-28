@@ -479,17 +479,25 @@
             animation: fadeInUp 0.8s ease forwards 0.9s;
 			border-bottom: 2px solid var(--accent);
         }
+		.member-image-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 5px;
+            border-radius: 50%;
+            overflow: hidden; /* Ensure the image stays within the container */
+            background-color: var(--accent-light);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border: 3px solid var(--accent-light);
+        }
 
         .member-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            object-position: top; /* Set background-position to top */
-            border: 3px solid var(--accent-light);
+            object-position: top;
             opacity: 0;
             transform: scale(0.8);
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 		.image-decoration {
             position: absolute;
@@ -497,6 +505,7 @@
             font-size: 1.2rem;
             opacity: 0;
             transition: all 0.5s ease;
+			z-index: 2;
         }
 
         .dec-top-left {
@@ -638,7 +647,7 @@
 
         .poem {
             font-family: 'UVN-MoiHong', cursive;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             color: var(--primary-color);
             text-align: center;
             line-height: 1.8;
@@ -1391,10 +1400,10 @@
                                 <h4 class="member-name">Hà Mạnh Tín</h4>
                                 <div class="member-parents">
                                     <div class="parent-row father-row">
-                                        <p><strong>Bố:</strong> HÀ VĂN THÚ</p>
+                                        <p>Bố HÀ VĂN THÚ</p>
                                     </div>
                                     <div class="parent-row mother-row">
-                                        <p><strong>Mẹ:</strong> NGUYỄN THỊ THẾT</p>
+                                        <p>Mẹ NGUYỄN THỊ THẾT</p>
                                     </div>
                                 </div>
                                 <div class="member-address">
@@ -1415,10 +1424,10 @@
                                 <h4 class="member-name">Nguyễn Thị Hồng Nhung</h4>
                                 <div class="member-parents">
                                     <div class="parent-row father-row">
-                                        <p><strong>Bố:</strong> NGUYỄN VĂN PHƯƠNG</p>
+                                        <p>Bố NGUYỄN VĂN PHƯƠNG</p>
                                     </div>
                                     <div class="parent-row mother-row">
-                                        <p><strong>Mẹ:</strong> PHẠM THỊ MIỆN</p>
+                                        <p>Mẹ PHẠM THỊ MIỆN</p>
                                     </div>
                                 </div>
                                 <div class="member-address">
@@ -1443,7 +1452,8 @@
                 <div class="heart-float" style="left: 65%; animation-delay: 4s;">🤍</div>
                 <div class="heart-float" style="left: 85%; animation-delay: 6s;">❣️</div>
                     <div class="poem">
-					<span class="poem-line">"Giây phút ấy thật tuyệt vời, khoảnh khắc ta có nhau trong đời.</span>
+					<span class="poem-line">"Giây phút ấy thật tuyệt vời,</span>
+					<span class="poem-line"> khoảnh khắc ta có nhau trong đời.</span>
                     <span class="poem-line">Điều anh ước muốn bây giờ ngay đây rồi.."</span>
                     </div>
                 </div>
