@@ -1,6 +1,6 @@
 @font-face {
             font-family: 'Kyokm3';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/kyokm3.otf') format('opentype');
+            src: url('../font/kyokm3.OTF') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -8,7 +8,7 @@
 
         @font-face {
             font-family: 'Light';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/Light.ttf') format('truetype');
+            src: url('../font/Light.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -16,7 +16,7 @@
 
         @font-face {
             font-family: 'Lobster';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/Lobster-Regular.ttf') format('truetype');
+            src: url('../font/Lobster-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -24,7 +24,7 @@
 
         @font-face {
             font-family: 'MTD-Hillstown';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/MTD-Hillstown-Clean.otf') format('opentype');
+            src: url('../font/MTD-Hillstown-Clean.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -32,7 +32,7 @@
 
         @font-face {
             font-family: 'SFUEdwardian';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/SFUEdwardianScriptRegular.TTF') format('truetype');
+            src: url('../font/SFUEdwardianScriptRegular.TTF') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -40,7 +40,7 @@
 
         @font-face {
             font-family: 'UTM-Heartbeat';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/utm-as-heartbeat-mxzse.ttf') format('truetype');
+            src: url('../font/utm-as-heartbeat-mxzse.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -48,7 +48,7 @@
 
         @font-face {
             font-family: 'UTM-Viceroy';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/utm-viceroyjf-wbcvj.ttf') format('truetype');
+            src: url('../font/utm-viceroyjf-wbcvj.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -56,7 +56,7 @@
 
         @font-face {
             font-family: 'UVN-BenXuan';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvnbenxuan_bzg9j.ttf') format('truetype');
+            src: url('../font/uvnbenxuan_bzg9j.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -64,7 +64,7 @@
 
         @font-face {
             font-family: 'UVN-DinhHon';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvndinhhon-gov6r.ttf') format('truetype');
+            src: url('../font/uvndinhhon-gov6r.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -72,7 +72,7 @@
 
         @font-face {
             font-family: 'UVN-MoiHong';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/uvnmoihong-ouaqa.ttf') format('truetype');
+            src: url('../font/uvnmoihong-ouaqa.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -80,7 +80,7 @@
 
         @font-face {
             font-family: 'Wolfsbane';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/VLWOLFSBANE.otf') format('opentype');
+            src: url('../font/VLWOLFSBANE.otf') format('opentype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -88,7 +88,7 @@
 
         @font-face {
             font-family: 'VNI-Love';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/vni-love-x0bjf.ttf') format('truetype');
+            src: url('../font/vni-love-x0bjf.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -96,14 +96,14 @@
 
         @font-face {
             font-family: 'WonderfulScript';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/WonderfulScript.ttf') format('truetype');
+            src: url('../font/WonderfulScript.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
         }
 		@font-face {
             font-family: 'Imperialscript';
-            src: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/font/imperialscript-regular-1whb5.ttf') format('truetype');
+            src: url('../font/imperialscript-regular-1whb5.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -158,7 +158,7 @@
         .img-top {
             width: 100%;
             height: 50vh;
-            background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp');
+            background-image: url('../img/MIN_9542.WEBP');
             background-position: top;
             background-size: cover;
             background-repeat: no-repeat;
@@ -241,7 +241,7 @@
         }
 
         .invitation-card {
-		background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-LG.jpg');
+		background-image: url('../img/BIDV-LG.jpg');
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -267,7 +267,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-image: url('https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/BIDV-LGjpg');
+			background-image: url('../img/BIDV-LG.jpg');
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
