@@ -1177,17 +1177,25 @@
             margin-right: 8px;
         }
 		.rotating-logo {
-                width: 50%;
-                height: 50%;
+                width: 10%;
+                height: 10%;
             }
 		.rotating-logo {
-            width: 50%;
-            height: 50%;
+            width: 10%;
+            height: 10%;
             margin: 10px auto;
             animation: rotate 10s linear infinite;
             position: relative;
             z-index: 2;
         }
+		@keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 		
         /* Font demonstration section */
         .font-demo {
