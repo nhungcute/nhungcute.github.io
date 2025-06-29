@@ -1,0 +1,420 @@
+// Xử lý nút phát nhạc
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioButton = document.querySelector('.toggleAudio');
+            const audioIcon = audioButton.querySelector('i');
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            
+            // Mặc định là tắt nhạc
+            let isPlaying = false;
+            
+            // Đảm bảo nhạc không tự động phát khi tải trang
+            backgroundMusic.pause();
+            
+            // Xử lý sự kiện khi nhấn nút phát nhạc
+            audioButton.addEventListener('click', function() {
+                if (isPlaying) {
+                    // Dừng phát nhạc
+                    backgroundMusic.pause();
+                    audioIcon.className = 'ri-volume-mute-fill';
+                    isPlaying = false;
+                } else {
+                    // Bắt đầu phát nhạc
+                    // Đảm bảo nhạc được tải lại từ đầu nếu đã kết thúc
+                    if (backgroundMusic.ended) {
+                        backgroundMusic.currentTime = 0;
+                    }
+                    
+                    // Phát nhạc
+                    const playPromise = backgroundMusic.play();
+                    
+                    // Xử lý lỗi phát nhạc (thường xảy ra trên các trình duyệt mobile)
+                    if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                            // Phát nhạc thành công
+                            audioIcon.className = 'ri-volume-up-fill';
+                            isPlaying = true;
+                        })
+                        .catch(error => {
+                            // Không thể phát nhạc (thường do chính sách của trình duyệt)
+                            console.error('Không thể phát nhạc:', error);
+                            alert('Không thể phát nhạc tự động. Vui lòng tương tác với trang web trước.');
+                        });
+                    }
+                }
+            });
+            
+            // Xử lý sự kiện khi nhạc kết thúc
+            backgroundMusic.addEventListener('ended', function() {
+                // Phát lại từ đầu (nếu không có thuộc tính loop)
+                backgroundMusic.currentTime = 0;
+                backgroundMusic.play();
+            });
+        
+            // Trigger animations when the family section comes into view
+            const familyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Reset animations by forcing reflow
+                        const familyContainer = entry.target;
+                        
+                        // Remove and re-add the animation classes to restart animations
+                        familyContainer.style.animation = 'none';
+                        void familyContainer.offsetWidth; // Force reflow
+                        familyContainer.style.animation = 'fadeInContainer 0.8s ease forwards';
+                        
+                        // Reset title animation
+                        const familyTitle = familyContainer.querySelector('.family-title');
+                        familyTitle.style.animation = 'none';
+                        void familyTitle.offsetWidth;
+                        familyTitle.style.animation = 'fadeInUp 0.8s ease forwards 0.3s';
+                        
+                        // Reset member animations
+                        const familyMembers = familyContainer.querySelectorAll('.family-member');
+                        familyMembers.forEach((member, index) => {
+                            // Reset member container animation
+                            member.style.animation = 'none';
+                            void member.offsetWidth;
+                            member.style.animation = `fadeInUp 0.8s ease forwards ${0.6 + index * 0.3}s`;
+                            
+                            // Reset member image animation
+                            const memberImage = member.querySelector('.member-image');
+                            memberImage.style.animation = 'none';
+                            void memberImage.offsetWidth;
+                            memberImage.style.animation = `zoomIn 0.8s ease forwards ${0.8 + index * 0.3}s`;
+                            // Reset image decorations animation
+                            const imageDecorations = member.querySelectorAll('.image-decoration');
+                            imageDecorations.forEach((decoration, i) => {
+                                decoration.style.opacity = '0';
+                                setTimeout(() => {
+                                    decoration.style.opacity = '0.6';
+                                }, (1000 + i * 200) + (index * 300));
+                            });
+                            // Reset member name animation
+                            const memberName = member.querySelector('.member-name');
+                            memberName.style.animation = 'none';
+                            void memberName.offsetWidth;
+                            memberName.style.animation = `fadeIn 0.8s ease forwards ${1.0 + index * 0.3}s`;
+                            
+                            // Reset member parents animation
+                            const memberParents = member.querySelector('.member-parents');
+                            memberParents.style.animation = 'none';
+                            void memberParents.offsetWidth;
+                            memberParents.style.animation = `fadeIn 0.8s ease forwards ${1.2 + index * 0.3}s`;
+                            
+                            // Reset member address animation
+                            const memberAddress = member.querySelector('.member-address');
+                            memberAddress.style.animation = 'none';
+                            void memberAddress.offsetWidth;
+                            memberAddress.style.animation = `fadeIn 0.8s ease forwards ${1.4 + index * 0.3}s`;
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '-50px 0px'
+            });
+            // Poem animation observer
+        const poemObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const captionContainer = entry.target;
+                    
+                    // Animate poem lines
+                    const poemLines = captionContainer.querySelectorAll('.poem-line');
+                    poemLines.forEach((line, index) => {
+                        setTimeout(() => {
+                            line.classList.add('visible');
+                        }, 300 * (index + 1));
+                    });
+                    
+                    // Animate decorations
+                    const decorations = captionContainer.querySelectorAll('.poem-decoration');
+                    decorations.forEach((decoration, index) => {
+                        setTimeout(() => {
+                            decoration.classList.add('visible');
+                        }, 1000 + 200 * index);
+                    });
+                    
+                    // Start floating hearts animation
+                    const hearts = captionContainer.querySelectorAll('.heart-float');
+                    hearts.forEach(heart => {
+                        heart.style.opacity = '0.3';
+                    });
+                }
+            });
+        }, {
+            threshold: 0.5,
+            rootMargin: '-10px 0px'
+        });
+            const familyContainer = document.querySelector('.family-container');
+            if (familyContainer) {
+                familyObserver.observe(familyContainer);
+            }
+
+
+			// animation cho đoạn thơ
+			const captionContainer = document.querySelector('.caption-container');
+			// Hàm kích hoạt animation cho đoạn thơ
+            if (captionContainer) {
+            poemObserver.observe(captionContainer);
+			}
+
+
+
+            // Add heartbeat animation to the Thank You section
+            const thankYouText = document.querySelector('.thank-you-text');
+            if (thankYouText) {
+                thankYouText.addEventListener('mouseover', function() {
+                    this.style.animation = 'heartBeat 1.5s ease';
+                });
+                
+                thankYouText.addEventListener('animationend', function() {
+                    this.style.animation = '';
+                });
+            }
+        });
+        
+        // Album image array
+        const album = [
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9229.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9234.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9253.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9257.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9267.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9284.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9303.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9317.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9324.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9346.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9365.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9377.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9529.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9540.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9542.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9547.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9586.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9598.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9633.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9637.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9650.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9667.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9672.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9675.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9690.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9701.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9740.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9758.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9770.webp",
+            "https://raw.githubusercontent.com/nhungcute/nhungcute.github.io/main/img/MIN_9788.webp"
+        ];
+        
+        // Note: The album array is defined but not used dynamically in this version
+        // The images are already placed in the HTML structure
+// Function to create album layout
+            function createAlbumLayout() {
+                const albumGrid = document.getElementById('albumGrid');
+                
+                // Clear any existing content
+                albumGrid.innerHTML = '';
+                
+                // Create different layout types
+                const layouts = [
+                    'overlap',    // Overlapping images
+                    'group2',     // Two images group
+                    'polaroid',   // Polaroid style
+                    'group3',     // Three images group
+                    'group2',     // Two images group
+                    'polaroid',   // Polaroid style
+                    'overlap',    // Overlapping images
+                    'group3',     // Three images group
+                    'group2'      // Two images group
+                ];
+                
+                let imageIndex = 0;
+                
+                // Create each layout type with images from the album array
+                layouts.forEach((layoutType, index) => {
+                    const layoutDiv = document.createElement('div');
+                    
+                    switch(layoutType) {
+                        case 'overlap':
+                            layoutDiv.className = 'album-overlap';
+                            // Add two overlapping images
+                            for (let i = 0; i < 2; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                            
+                        case 'group2':
+                            layoutDiv.className = 'album-group-2';
+                            // Add two images side by side
+                            for (let i = 0; i < 2; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                            
+                        case 'polaroid':
+                            layoutDiv.className = 'album-polaroid';
+                            // Add single polaroid style image
+                            if (imageIndex < album.length) {
+                                const img = document.createElement('img');
+                                img.src = album[imageIndex];
+                                img.alt = 'Wedding photo';
+                                img.className = 'album-img';
+                                layoutDiv.appendChild(img);
+                                imageIndex++;
+                            }
+                            break;
+                            
+                        case 'group3':
+                            layoutDiv.className = 'album-group-3';
+                            // Add three images (one large on top, two smaller below)
+                            for (let i = 0; i < 3; i++) {
+                                if (imageIndex < album.length) {
+                                    const img = document.createElement('img');
+                                    img.src = album[imageIndex];
+                                    img.alt = 'Wedding photo';
+                                    img.className = 'album-img';
+                                    layoutDiv.appendChild(img);
+                                    imageIndex++;
+                                }
+                            }
+                            break;
+                    }
+                    
+                    // Add the layout to the album grid
+                    albumGrid.appendChild(layoutDiv);
+                });
+                
+                // Add fade-in animation to album items
+                const albumItems = document.querySelectorAll('.album-overlap, .album-group-2, .album-polaroid, .album-group-3');
+                albumItems.forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    // Create a staggered animation effect
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 200 * index);
+                });
+            }
+            
+            // Initialize the album layout
+            createAlbumLayout();
+			
+			// Ensure names stay properly sized on window resize
+			function adjustNameSizes() {
+				const imgTopBg = document.querySelector('.img-top-bg');
+				const namesContainer = document.querySelector('.names-container');
+				
+				// Make sure the names container doesn't overflow the background
+				if (imgTopBg && namesContainer) {
+					const bgHeight = imgTopBg.offsetHeight;
+					const containerHeight = namesContainer.offsetHeight;
+					
+					if (containerHeight > bgHeight * 0.9) {
+						// Reduce the gap between name rows if needed
+						const nameRows = document.querySelectorAll('.name-row');
+						nameRows.forEach(row => {
+							row.style.marginBottom = '0.3rem';
+						});
+					}
+				}
+			}
+			// Function to ensure family member names and parent info stay aligned
+        function syncFamilyMemberHeights() {
+            // Get all member names and ensure they have the same height
+            const memberNames = document.querySelectorAll('.member-name');
+            let maxNameHeight = 0;
+            
+            memberNames.forEach(name => {
+                name.style.height = 'auto'; // Reset height first
+                const height = name.offsetHeight;
+                if (height > maxNameHeight) {
+                    maxNameHeight = height;
+                }
+            });
+            
+            // Set all names to the same height
+            memberNames.forEach(name => {
+                name.style.height = maxNameHeight + 'px';
+            });
+            
+            // Ensure father rows have the same height
+            const fatherRows = document.querySelectorAll('.father-row');
+            let maxFatherHeight = 0;
+            
+            fatherRows.forEach(row => {
+                row.style.height = 'auto'; // Reset height first
+                const height = row.offsetHeight;
+                if (height > maxFatherHeight) {
+                    maxFatherHeight = height;
+                }
+            });
+            
+            // Set all father rows to the same height
+            fatherRows.forEach(row => {
+                row.style.height = maxFatherHeight + 'px';
+            });
+            
+            // Ensure mother rows have the same height
+            const motherRows = document.querySelectorAll('.mother-row');
+            let maxMotherHeight = 0;
+            
+            motherRows.forEach(row => {
+                row.style.height = 'auto'; // Reset height first
+                const height = row.offsetHeight;
+                if (height > maxMotherHeight) {
+                    maxMotherHeight = height;
+                }
+            });
+            
+            // Set all mother rows to the same height
+            motherRows.forEach(row => {
+                row.style.height = maxMotherHeight + 'px';
+            });
+            
+            // Ensure addresses have the same height
+            const addresses = document.querySelectorAll('.member-address');
+            let maxAddressHeight = 0;
+            
+            addresses.forEach(address => {
+                address.style.height = 'auto'; // Reset height first
+                const height = address.offsetHeight;
+                if (height > maxAddressHeight) {
+                    maxAddressHeight = height;
+                }
+            });
+            
+            // Set all addresses to the same height
+            addresses.forEach(address => {
+                address.style.height = maxAddressHeight + 'px';
+            });
+        }
+        
+        // Run on load and resize
+        window.addEventListener('load', function() {
+            adjustNameSizes();
+            syncFamilyMemberHeights();
+        });
+        
+        window.addEventListener('resize', function() {
+            adjustNameSizes();
+            syncFamilyMemberHeights();
+        });
