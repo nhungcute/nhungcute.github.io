@@ -1176,6 +1176,18 @@
         .map-link i {
             margin-right: 8px;
         }
+		.rotating-logo {
+                width: 50%;
+                height: 50%;
+            }
+		.rotating-logo {
+            width: 50%;
+            height: 50%;
+            margin: 10px auto;
+            animation: rotate 10s linear infinite;
+            position: relative;
+            z-index: 2;
+        }
 		
         /* Font demonstration section */
         .font-demo {
