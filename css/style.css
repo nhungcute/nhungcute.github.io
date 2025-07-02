@@ -425,8 +425,10 @@
         }
 
         .family-members {
-            display: grid;
-			grid-template-columns: 1fr 1fr; /* Always two columns */
+            /* display: grid;
+			grid-template-columns: 1fr 1fr; /* Always two columns */ 
+			display: flex;
+            flex-direction: column;
 			gap: 20px;
 			width: 100%;
         }
@@ -444,7 +446,7 @@
             border-radius: 12px;
             padding: 20px 15px;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
-            position: relative;
+            /* position: relative; */
             overflow: hidden;
         }
 		/* Add decorative elements to family member cards */
@@ -1018,13 +1020,13 @@
         right: 20px;
     }
 
-img.lazy-load {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-img.loaded {
-  opacity: 1;
-}
+	img.lazy-load {
+	  opacity: 0;
+	  transition: opacity 0.5s ease;
+	}
+	img.loaded {
+	  opacity: 1;
+	}
 
 
 
