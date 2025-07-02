@@ -114,7 +114,7 @@
                 rootMargin: '-50px 0px'
             });
             // Poem animation observer
-        const poemObserver = new IntersectionObserver((entries) => {
+			const poemObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const captionContainer = entry.target;
