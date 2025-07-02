@@ -1018,6 +1018,14 @@
         right: 20px;
     }
 
+img.lazy-load {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+img.loaded {
+  opacity: 1;
+}
+
 
 
 
