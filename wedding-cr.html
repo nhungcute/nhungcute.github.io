@@ -534,7 +534,17 @@
 			}
 		});
 
-
+		document.addEventListener('contextmenu', event => event.preventDefault()); // Chặn chuột phải
+		  document.onkeydown = function(e) {
+		    // Chặn F12, Ctrl+Shift+I, Ctrl+U
+		    if (
+		      e.keyCode == 123 ||
+		      (e.ctrlKey && e.shiftKey && e.keyCode == 73) ||
+		      (e.ctrlKey && e.keyCode == 85)
+		    ) {
+		      return false;
+		    }
+		  }
     </script>
 </body>
 </html>
